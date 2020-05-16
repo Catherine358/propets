@@ -1,0 +1,76 @@
+$green: #8DBFAC;
+$yellow: #FFE18B;
+$monserat-medium: "Montserrat Medium", sans-serif;
+$monserat-bold: "Monserrat Bold", sans-serif;
+
+.welcome-section {
+  font-family: $monserat-medium;
+  color: #393939;
+
+  .welcome-text {
+    margin-top: 99px;
+
+    p:first-child {
+      padding-left: 151px;
+      font-size: 56px;
+      span {
+        color: $green;
+      }
+    }
+  }
+
+  .i-lost-pet,
+  .i-found-pet {
+    margin-left: -21px;
+    cursor: pointer;
+    border-bottom-right-radius: 30%;
+    border-top-right-radius: 30%;
+    font-size: 32px;
+  }
+
+  .i-lost-pet {
+    width: 544px;
+    margin-top: 50px;
+    background-color: $yellow;
+
+    .i-lost-pet-text {
+      margin: 27px 0 27px 151px;
+    }
+
+    img {
+      margin-left: 81px;
+      width: 79px;
+      height: 80px;
+    }
+  }
+
+  .i-found-pet {
+    width: 470px;
+    background-color: $green;
+    color: white;
+
+    span {
+      margin: 32px 0 22px 151px;
+    }
+  }
+
+  .join {
+    margin-top: 42px;
+    margin-left: 151px;
+    font-size: 16px;
+
+    span {
+      color: $green;
+      text-decoration: underline;
+      font-family: $monserat-bold;
+      cursor: pointer;
+    }
+  }
+
+  .dog {
+    margin-top: 9px;
+    background-image: url(../../../img/dog.png);
+    background-repeat: no-repeat;
+    background-size: 452px 596px;
+  }
+}
