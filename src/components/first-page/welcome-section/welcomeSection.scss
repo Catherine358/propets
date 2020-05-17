@@ -9,10 +9,13 @@ $monserat-bold: "Monserrat Bold", sans-serif;
 
   .welcome-text {
     margin-top: 99px;
+    z-index: 1;
 
     p:first-child {
       padding-left: 151px;
       font-size: 56px;
+      margin-bottom: 0;
+
       span {
         color: $green;
       }
@@ -32,9 +35,10 @@ $monserat-bold: "Monserrat Bold", sans-serif;
     width: 544px;
     margin-top: 50px;
     background-color: $yellow;
+    z-index: 1;
 
     .i-lost-pet-text {
-      margin: 27px 0 27px 151px;
+      padding-left: 151px;
     }
 
     img {
@@ -45,17 +49,21 @@ $monserat-bold: "Monserrat Bold", sans-serif;
   }
 
   .i-found-pet {
+    position: relative;
+    bottom: 10px;
     width: 470px;
     background-color: $green;
     color: white;
+    padding-bottom: 10px;
+    padding-top: 20px;
 
     span {
-      margin: 32px 0 22px 151px;
+      padding-left: 151px;
     }
   }
 
   .join {
-    margin-top: 42px;
+    margin-top: 15px;
     margin-left: 151px;
     font-size: 16px;
 

@@ -3,6 +3,9 @@ import { Switch, Route } from "react-router";
 import Header from "./components/first-page/header";
 import './App.css';
 import WelcomeSection from "./components/first-page/welcome-section";
+import MiddleLine from "./components/first-page/middle-line";
+import PetNeedSection from "./components/first-page/pet-need-section";
+import ComingSoon from "./components/first-page/coming-soon-section";
 
 const App = (props) => {
     return (
@@ -11,6 +14,9 @@ const App = (props) => {
                 <div className="wrapper">
                     <Header/>
                     <WelcomeSection/>
+                    <MiddleLine/>
+                    <PetNeedSection/>
+                    <ComingSoon/>
                 </div>
             )}/>
         </Switch>

@@ -19,8 +19,7 @@ const WelcomeSection = (props) => {
                 </div>
                 <p className="join">I'm okay, just want to <span>JOIN</span> the pawsome community!</p>
             </Grid>
-            <Grid container item sm={6} className="dog">
-            </Grid>
+            <Grid container item sm={6} className="dog"/>
         </Grid>
     )
 };
