@@ -6,6 +6,7 @@ import WelcomeSection from "./components/first-page/welcome-section";
 import MiddleLine from "./components/first-page/middle-line";
 import PetNeedSection from "./components/first-page/pet-need-section";
 import ComingSoon from "./components/first-page/coming-soon-section";
+import Footer from "./components/first-page/footer";
 
 const App = (props) => {
     return (
@@ -17,6 +18,7 @@ const App = (props) => {
                     <MiddleLine/>
                     <PetNeedSection/>
                     <ComingSoon/>
+                    <Footer/>
                 </div>
             )}/>
         </Switch>
