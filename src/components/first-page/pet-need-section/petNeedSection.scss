@@ -1,0 +1,35 @@
+$green: #8DBFAC;
+$monserat-semibold: "Montserrat SemiBold", sans-serif;
+$monserat-medium: "Montserrat Medium", sans-serif;
+
+.pet-need-section {
+
+  .pets {
+    margin-top: 56px;
+    background-image: url(../../../img/pets.png);
+    background-repeat: no-repeat;
+    background-size: 480px 322px;
+    background-position: right;
+  }
+
+  .needs {
+    padding-top: 70px;
+    font-family: $monserat-semibold;
+
+    p {
+      font-size: 24px;
+      color: $green;
+    }
+
+    ul {
+      margin-top: 43px;
+      font-family: $monserat-medium;
+      font-size: 18px;
+      color: $green;
+
+      span {
+        color: #393939;
+      }
+    }
+  }
+}

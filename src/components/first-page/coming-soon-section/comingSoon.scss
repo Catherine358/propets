@@ -1,0 +1,41 @@
+$pink: #FF6F61;
+$monserat-medium: "Montserrat Medium", sans-serif;
+$monserat-semibold: "Montserrat SemiBold", sans-serif;
+
+.coming-soon-section {
+  background-color: $pink;
+  color: white;
+
+  .coming-soon {
+    margin-top: 20px;
+    font-family: $monserat-medium;
+    font-size: 56px;
+
+    p {
+      padding-left: 150px;
+    }
+  }
+
+  .coming-soon-text {
+    margin-top: 45px;
+    font-family: $monserat-semibold;
+    font-size: 16px;
+  }
+
+  .love {
+    font-family: $monserat-semibold;
+    font-size: 16px;
+
+    p {
+      position: relative;
+      right: 80px;
+      top: 10px;
+      margin-top: 38px;
+      z-index: 1;
+    }
+
+    i {
+      font-size: 128px;
+    }
+  }
+}

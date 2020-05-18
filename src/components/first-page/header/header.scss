@@ -1,0 +1,34 @@
+$green: #8DBFAC;
+$grayForShadow: #00000029;
+$yellow: #FFE18B;
+
+.header {
+  background-color: $green;
+  box-shadow: 0 3px 6px $grayForShadow;
+  opacity: 1;
+
+  .header-logo {
+    margin-top: 24px;
+    margin-left: 151px;
+    width: 142px;
+    height: 33px;
+    opacity: 1;
+  }
+
+  .header-signin-btn {
+    margin-top: 18px;
+    margin-right: 160px;
+    width: 112px;
+    height: 34px;
+    border: 1px solid white;
+    border-radius: 17px;
+    opacity: 1;
+    font-family: "Montserrat Medium", sans-serif;
+    background-color: $green;
+    color: white;
+  }
+
+  .header-signin-btn:hover {
+    background-color: $yellow;
+  }
+}

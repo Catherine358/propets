@@ -1,0 +1,16 @@
+$green: #8DBFAC;
+$monserat-medium: "Montserrat Medium", sans-serif;
+
+.middle-line {
+  text-align: center;
+  background-color: $green;
+  font-family: $monserat-medium;
+  font-size: 32px;
+  color: white;
+  padding-left: 261px;
+  padding-top: 84px;
+
+  p {
+    width: 75%;
+  }
+}

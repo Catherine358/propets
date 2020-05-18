@@ -1,0 +1,48 @@
+$green: #8DBFAC;
+$monserat-medium: "Montserrat Medium", sans-serif;
+
+.footer {
+  background-color: $green;
+  font-family: $monserat-medium;
+  color: white;
+
+  .footer-logo {
+    width: 201px;
+    height: 47px;
+    margin-top: 75px;
+    margin-left: 150px;
+  }
+
+  .icon-fb {
+    width: 29px;
+    height: 29px;
+    margin-top: 60px;
+    border-radius: 50%;
+  }
+
+  .icon-insta {
+    width: 25px;
+    height: 29px;
+    margin-top: 60px;
+    margin-left: 20px;
+  }
+
+  p {
+    margin-top: 20px;
+    font-size: 12px;
+  }
+
+  .footer-menu-right,
+  .footer-menu-left {
+    margin-top: 62px;
+    font-size: 16px;
+
+    span {
+      margin-left: 20px;
+    }
+  }
+
+  .footer-menu-left {
+    margin-right: 50px;
+  }
+}
