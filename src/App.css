@@ -1,4 +1,10 @@
 .wrapper {
     display: grid;
-    grid-template-rows: 70px 623px 260px 450px 125px 193px;
+    grid-template-rows: 70px 623px 260px auto 125px 193px;
+}
+
+@media screen and (max-width: 600px){
+    .wrapper {
+        grid-template-rows: 70px auto;
+    }
 }
