@@ -11,7 +11,7 @@ const SignIn = (props) => {
 
     return (
         <Grid container direction="column" className="signin-window">
-            <Grid container direction="row">
+            <Grid container direction="row" className="logo-container">
                 <Grid container item sm={6} justify="flex-start">
                     <img src={logo} alt="logo" className="logo-green"/>
                 </Grid>
@@ -25,13 +25,13 @@ const SignIn = (props) => {
                 <p>Welcome! Please sign in / sign up to continue or</p>
                 <Facebook/>
             </Grid>
-            <Grid container direction="row">
-                <Grid container item sm={6} justify="flex-end">
+            <Grid container direction="row" className="btn-container">
+                <Grid container item xs={6} justify="flex-end">
                     <Button variant="contained" className="btn-signup" onClick={() => {
                         setSignType("signup");
                     }} style={{backgroundColor: `${signType === "signup" ? "#8DBFAC" : "#BABABA"}`}}>Sign up</Button>
                 </Grid>
-                <Grid container item sm={6}>
+                <Grid container item xs={6}>
                     <Button variant="contained" className="btn-signin" onClick={() => {
                         setSignType("signin");
                     }} style={{backgroundColor: `${signType === "signin" ? "#8DBFAC" : "#BABABA"}`}}>Sign in</Button>
@@ -80,13 +80,16 @@ const SignIn = (props) => {
                 <Grid container item sm={6} className="signin-footer-text">
                     <p>By clicking “Submit”, you agree to us processing your information in accordance with these terms.</p>
                 </Grid>
-                <Grid container item sm={6} justify="center">
-                    <Button variant="contained" className="btn-cancel">Cancel</Button>
+                <Grid container item sm={6} justify="center" className="btn-submit-container">
+                    <Button variant="contained" className="btn-cancel" onClick={() => {
+                        setForm(false);
+                    }}>Cancel</Button>
                     <Button variant="contained" className="btn-submit" type="submit"><i className="fas fa-paw"/>Submit</Button>
                 </Grid>
             </Grid>
             </form>
         </Grid>
+
     )
 };
 

@@ -7,7 +7,7 @@ const WelcomeSection = (props) => {
     const { setForm, form } = props;
 
     return (
-        <Grid container direction="row" className="welcome-section">
+        <Grid container direction="row" className={form ? "welcome-section under-form" : "welcome-section"}>
             <Grid container item direction="column" sm={6} xs={3} className="welcome-text">
                 <p>Welcome to your<br/>
                     <span>pawfessional</span><br/>

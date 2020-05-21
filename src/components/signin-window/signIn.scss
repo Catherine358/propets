@@ -173,3 +173,129 @@ $monserat-bold: "Monserrat Bold", sans-serif;
     left: 10%;
   }
 }
+
+@media screen and (max-width: 730px){
+  .signin-window {
+    left: 5%;
+  }
+}
+
+@media screen and (max-width: 720px){
+  .signin-window {
+    left: 3%;
+  }
+}
+
+@media screen and (max-width: 600px){
+  div.signin-window {
+    top: 100px;
+    max-width: none;
+    height: calc(100% - 70px);
+    left: 0;
+    grid-template-rows: 34px 64px auto 61px;
+
+    .logo-container {
+      display: none;
+    }
+
+    .btn-container {
+      order: -1;
+    }
+
+    .btn-signup,
+    .btn-signin {
+      width: 100%;
+      height: 50px;
+      font-size: 20px;
+    }
+
+    .btn-signin {
+      margin-right: 10px;
+    }
+
+    .btn-signup {
+      margin-left: 10px;
+      justify-items: left;
+    }
+
+    .signin-text {
+      margin-top: 10px;
+      font-size: 20px;
+    }
+
+    .signup-form {
+      margin-top: 3rem;
+      font-size: 16px;
+
+      label {
+        margin-bottom: 13px;
+        margin-left: 3rem;
+      }
+
+      label:nth-of-type(3),
+      label:nth-of-type(4) {
+        margin-left: 0.7rem;
+      }
+    }
+
+    .signup-text {
+      margin-top: 20px;
+      margin-left: 3rem;
+      font-size: 16px;
+      width: 80%;
+    }
+
+    .signin-form {
+      margin-top: 3rem;
+      font-size: 16px;
+
+      label {
+        margin-bottom: 13px;
+        margin-left: 3rem;
+      }
+
+      label:nth-of-type(2) {
+        margin-left: 0.7rem;
+      }
+
+      span {
+        margin-top: 20px;
+        font-size: 16px;
+      }
+    }
+
+    .btn-submit-container {
+      order: -1;
+    }
+
+    .btn-cancel,
+    .btn-submit {
+      width: 80%;
+    }
+
+    .btn-submit {
+      order: -1;
+      justify-content: flex-start;
+
+      .fa-paw {
+        margin-right: 30%;
+      }
+    }
+
+    .signin-footer {
+      border-top: none;
+
+      .signin-footer-text {
+        margin-left: 3rem;
+        margin-top: 20px;
+        font-size: 12px;
+        width: 80%;
+      }
+    }
+
+    .btn-fb {
+      margin-left: 3rem;
+    }
+
+  }
+}

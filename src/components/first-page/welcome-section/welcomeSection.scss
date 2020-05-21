@@ -130,3 +130,9 @@ $monserat-bold: "Monserrat Bold", sans-serif;
     }
   }
 }
+
+@media screen and (max-width: 600px){
+  div.under-form {
+    display: none;
+  }
+}
