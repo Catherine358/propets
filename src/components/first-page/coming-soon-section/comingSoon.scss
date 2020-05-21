@@ -5,6 +5,7 @@ $monserat-semibold: "Montserrat SemiBold", sans-serif;
 .coming-soon-section {
   background-color: $pink;
   color: white;
+  margin-top: 50px;
 
   .coming-soon {
     margin-top: 20px;
@@ -37,5 +38,11 @@ $monserat-semibold: "Montserrat SemiBold", sans-serif;
     i {
       font-size: 128px;
     }
+  }
+}
+
+@media screen and (max-width: 600px){
+  div.coming-soon-section {
+    display: none;
   }
 }

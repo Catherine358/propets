@@ -1,7 +1,6 @@
 import React from "react";
 import './comingSoon.scss';
 import Grid from "@material-ui/core/Grid";
-import love from "../../../img/icons/love.svg";
 
 const ComingSoon = (props) => {
     return (

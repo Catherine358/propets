@@ -46,3 +46,9 @@ $monserat-medium: "Montserrat Medium", sans-serif;
     margin-right: 50px;
   }
 }
+
+@media screen and (max-width: 600px){
+  div.footer {
+    display: none;
+  }
+}
