@@ -8,17 +8,17 @@ import inst from "../../../img/icons/icon-inst.png";
 const Footer = (props) => {
     return (
         <Grid container direction="row" className="footer">
-            <Grid container item sm={5}>
+            <Grid container item md={5} sm={6}>
                 <img src={logo} alt="logo" className="footer-logo"/>
             </Grid>
-            <Grid container item sm={2} direction="column">
+            <Grid container item md={2} sm={6} direction="column">
                 <div>
                     <img src={fb} alt="fb" className="icon-fb"/>
                     <img src={inst} alt="instagram" className="icon-insta"/>
                 </div>
                 <p>1600 Amphitheatre Pkwy <br/>Mountain View, CA 94043, USA</p>
             </Grid>
-            <Grid container item sm={5} direction="row" justify="center">
+            <Grid container item md={5} sm={12} direction="row" justify="center">
                 <table className="footer-menu-left">
                     <tr>
                         <td><i className="fas fa-search"/></td>

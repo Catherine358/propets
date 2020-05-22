@@ -5,8 +5,8 @@ import Grid from "@material-ui/core/Grid";
 const PetNeedSection = (props) => {
     return (
         <Grid container direction="row" className="pet-need-section">
-            <Grid container item sm={6} className="pets"/>
-            <Grid container item direction="column" sm={6} className="needs">
+            <Grid container item md={6} sm={7} className="pets"/>
+            <Grid container item direction="column" md={6} sm={5} className="needs">
                 <p>Here is collected everything that your pet needs:</p>
                 <ul>
                     <li><span>professional veterinarian tips;</span></li>

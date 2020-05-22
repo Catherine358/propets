@@ -3,6 +3,16 @@ $yellow: #FFE18B;
 $monserat-medium: "Montserrat Medium", sans-serif;
 $monserat-bold: "Monserrat Bold", sans-serif;
 
+@keyframes textTransition {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes textTransition-back {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
 .welcome-section {
   font-family: $monserat-medium;
   color: #393939;
@@ -24,10 +34,10 @@ $monserat-bold: "Monserrat Bold", sans-serif;
 
   .i-lost-pet,
   .i-found-pet {
+    text-align: right;
     margin-left: -21px;
     cursor: pointer;
-    border-bottom-right-radius: 30%;
-    border-top-right-radius: 30%;
+    border-radius: 0 180px 200px 180px;
     font-size: 32px;
   }
 
@@ -36,13 +46,15 @@ $monserat-bold: "Monserrat Bold", sans-serif;
     margin-top: 50px;
     background-color: $yellow;
     z-index: 1;
+    overflow: hidden;
 
     .i-lost-pet-text {
       padding-left: 151px;
     }
 
     img {
-      margin-left: 81px;
+      margin-top: 10px;
+      margin-left: 90px;
       width: 79px;
       height: 80px;
     }
@@ -58,8 +70,18 @@ $monserat-bold: "Monserrat Bold", sans-serif;
     padding-top: 20px;
 
     span {
-      padding-left: 151px;
+      margin-right: 90px;
     }
+  }
+
+  .animated {
+    animation-name: textTransition;
+    animation-duration: 1s;
+  }
+
+  .animated-back {
+    animation-name: textTransition-back;
+    animation-duration: 1s;
   }
 
   .join {
@@ -80,5 +102,60 @@ $monserat-bold: "Monserrat Bold", sans-serif;
     background-image: url(../../../img/dog.png);
     background-repeat: no-repeat;
     background-size: 452px 596px;
+  }
+}
+
+@media screen and (max-width: 745px){
+  .welcome-section {
+    .welcome-text {
+      margin-top: 50px;
+
+      p:first-child {
+        padding-left: 30px;
+        font-size: 32px;
+      }
+    }
+
+    .i-lost-pet,
+    .i-found-pet {
+      font-size: 24px;
+    }
+
+    .i-lost-pet {
+      width: 344px;
+      margin-top: 300px;
+
+      .i-lost-pet-text {
+        padding-left: 50px;
+      }
+
+      img {
+        margin-left: 40px;
+      }
+    }
+
+    .i-found-pet {
+      width: 270px;
+
+      span {
+        margin-right: 40px;
+      }
+    }
+
+    .join {
+      margin-left: 30px;
+      margin-top: 100px;
+      font-size: 20px;
+    }
+
+    .dog {
+      margin-top: 150px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px){
+  div.under-form {
+    display: none;
   }
 }

@@ -7,17 +7,19 @@ $yellow: #FFE18B;
   box-shadow: 0 3px 6px $grayForShadow;
   opacity: 1;
 
+  .menu-burger-btn {
+    display: none;
+  }
+
   .header-logo {
-    margin-top: 24px;
-    margin-left: 151px;
+    margin: 24px 0 24px 151px;
     width: 142px;
     height: 33px;
     opacity: 1;
   }
 
   .header-signin-btn {
-    margin-top: 18px;
-    margin-right: 160px;
+    margin: 18px 160px 18px 0;
     width: 112px;
     height: 34px;
     border: 1px solid white;
@@ -30,5 +32,25 @@ $yellow: #FFE18B;
 
   .header-signin-btn:hover {
     background-color: $yellow;
+  }
+}
+
+@media screen and (max-width: 600px){
+  .header {
+    .menu-burger-btn {
+      display: flex;
+      margin-top: 12px;
+      font-size: 32px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .header-signin-btn {
+      display: none;
+    }
+
+    .header-logo {
+      margin: 24px 0;
+    }
   }
 }

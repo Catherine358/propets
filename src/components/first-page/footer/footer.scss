@@ -46,3 +46,32 @@ $monserat-medium: "Montserrat Medium", sans-serif;
     margin-right: 50px;
   }
 }
+
+@media screen and (max-width: 600px){
+  div.footer {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 960px){
+  div.footer {
+    .footer-menu-right,
+    .footer-menu-left {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .footer-logo {
+      margin-top: 30px;
+      margin-left: 50px;
+    }
+
+    .icon-fb {
+      margin-top: 30px;
+    }
+
+    .icon-insta {
+      margin-top: 30px;
+    }
+  }
+}

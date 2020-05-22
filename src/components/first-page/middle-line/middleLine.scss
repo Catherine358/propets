@@ -7,10 +7,15 @@ $monserat-medium: "Montserrat Medium", sans-serif;
   font-family: $monserat-medium;
   font-size: 32px;
   color: white;
-  padding-left: 261px;
-  padding-top: 84px;
+  padding: 84px 0 84px 261px;
 
   p {
     width: 75%;
+  }
+}
+
+@media screen and (max-width: 600px){
+  .middle-line {
+    display: none;
   }
 }
