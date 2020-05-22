@@ -10,13 +10,14 @@ import SignIn from "../signin-window";
 
 const Home = (props) => {
     const [form, setForm] = useState(false);
+    const [page, setPage] = useState('');
 
     return (
         <>
-            {form && <SignIn setForm={setForm}/>}
+            {form && <SignIn setForm={setForm} page={page}/>}
         <div className={form && "blur"}>
             <Header setForm={setForm}/>
-            <WelcomeSection setForm={setForm} form={form}/>
+            <WelcomeSection setForm={setForm} form={form} setPage={setPage}/>
             <MiddleLine/>
             <PetNeedSection/>
             <ComingSoon/>

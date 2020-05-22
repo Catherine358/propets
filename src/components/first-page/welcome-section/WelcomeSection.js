@@ -4,7 +4,7 @@ import loop from "../../../img/icons/loop.svg";
 import Grid from "@material-ui/core/Grid";
 
 const WelcomeSection = (props) => {
-    const { setForm, form } = props;
+    const { setForm, form, setPage } = props;
     const [btnTextLost, setBtnText] = useState('I lost my pet');
     const [btnTextFound, setBtnTextFound] = useState('I found a pet');
     const [hoveredLost, setHoverLost] = useState(false);
@@ -19,6 +19,7 @@ const WelcomeSection = (props) => {
                     <span>pawfessional</span><br/>
                 community</p>
                 <div className="i-lost-pet" onClick={() => {
+                    setPage('lost');
                     setForm(true);
                 }} onMouseEnter={() => {
                     setHoverLost(true);
