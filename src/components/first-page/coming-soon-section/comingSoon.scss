@@ -46,3 +46,15 @@ $monserat-semibold: "Montserrat SemiBold", sans-serif;
     display: none;
   }
 }
+
+@media screen and (max-width: 960px){
+  div.coming-soon-section {
+    .coming-soon-text {
+      justify-content: center;
+    }
+
+    .love {
+      justify-content: center;
+    }
+  }
+}
