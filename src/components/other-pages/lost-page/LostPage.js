@@ -7,10 +7,10 @@ import MainBlock from "./main-block";
 const LostPage = (props) => {
     return (
         <div>
-            <HeaderWhite/>
+            <HeaderWhite props={props}/>
             <Grid container direction="row">
                 <Grid container item sm={3}>
-                    <AsideBlock/>
+                    <AsideBlock selected={true}/>
                 </Grid>
                 <Grid container item sm={9}>
                     <MainBlock/>
