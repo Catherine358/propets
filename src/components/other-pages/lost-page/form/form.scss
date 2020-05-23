@@ -1,6 +1,118 @@
 $green: #8DBFAC;
+$monserat-bold: "Monserrat Bold", sans-serif;
+$monserat-medium: "Montserrat Medium", sans-serif;
 
 .main-block-lost-form {
+  font-size: 16px;
+  color: $green;
+
+  .header-form-lost {
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-bottom: 0;
+    font-family: $monserat-bold;
+    font-weight: 700;
+  }
+
+  .lost-form-container {
+    width: 641px;
+    height: 503px;
+    box-shadow: 0 3px 6px #00000029;
+    padding-left: 13px;
+    margin-left: 19px;
+    margin-top: 30px;
+
+    .basic-pet-info {
+      margin-top: 11px;
+      font-family: $monserat-medium;
+      font-size: 12px;
+      color: #393939;
+
+      .labels {
+        box-sizing: border-box;
+        float: left;
+        width: 30%;
+
+        label {
+          display: block;
+          text-align: right;
+          margin-bottom: 3px;
+          margin-right: 17px;
+          padding-top: 3px;
+        }
+
+        .features {
+          margin-top: 11px;
+        }
+
+        .description {
+          margin-top: 20px;
+        }
+
+        .location {
+          margin-top: 90px;
+        }
+      }
+
+      .inputs {
+        box-sizing: border-box;
+        float: right;
+        width: 70%;
+
+        select {
+          display: block;
+          border: none;
+          margin-bottom: 3px;
+          padding-top: 3px;
+        }
+
+        input {
+          display: block;
+          margin-bottom: 3px;
+          border: none;
+          border-bottom: 1px solid $green;
+        }
+
+        textarea {
+          border-color: $green;
+        }
+
+        .features-input {
+          margin-top: 12px;
+        }
+
+        .description-input {
+          margin-top: 16px;
+        }
+
+        .location-input {
+          margin-top: 10px;
+        }
+      }
+    }
+
+    .images {
+      border-top: 1px solid #BABABA;
+      font-family: $monserat-medium;
+
+      .scale {
+        background-image: url(../../../../img/Screenshot_Scale.png);
+        background-repeat: no-repeat;
+        background-size: 192px 183px;
+      }
+
+      .fa-sign-out {
+        transform: rotate(90deg);
+        font-size: 30px;
+        color: $green;
+      }
+
+      .drag-and-drop {
+        font-size: 12px;
+        color: #393939;
+      }
+    }
+  }
 
   .form-right-side {
     background-color: $green;
