@@ -38,7 +38,7 @@ $monserat-bold: "Monserrat Bold", sans-serif;
   }
 
   .pet-info-container {
-    width: 651px;
+    width: 641px;
     height: 278px;
     margin-left: 19px;
     margin-top: 38px;
@@ -138,6 +138,26 @@ $monserat-bold: "Monserrat Bold", sans-serif;
             margin-right: 13px;
           }
         }
+      }
+    }
+  }
+
+  .map-container {
+    margin-top: 10px;
+    padding-left: 6px;
+    background-color: $green;
+    border-top-left-radius: 15px;
+    font-size: 12px;
+    color: white;
+
+    span {
+      margin-left: 14px;
+      margin-top: 5px;
+      cursor: pointer;
+
+      i {
+        margin-left: -6px;
+        margin-right: 10px;
       }
     }
   }

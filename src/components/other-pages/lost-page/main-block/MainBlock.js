@@ -2,6 +2,7 @@ import React from "react";
 import './mainBlock.scss';
 import Grid from "@material-ui/core/Grid";
 import PetInfo from "./pet-info";
+import GoogleMap from "./google-map";
 
 const MainBlock = (props) => {
     return (
@@ -12,12 +13,13 @@ const MainBlock = (props) => {
                 <input type="text" placeholder="Additional features"/>
                 <input type="text" placeholder="Location"/>
             </div>
-            <Grid container item sm={9}>
+            <Grid container item sm={8}>
                 <PetInfo/>
                 <PetInfo/>
             </Grid>
-            <Grid container item sm={3}>
-
+            <Grid container item sm={4} className="map-container">
+                <span><i className="fas fa-chevron-left"/>Expand map</span>
+                <GoogleMap/>
             </Grid>
         </Grid>
     )
