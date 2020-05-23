@@ -13,7 +13,7 @@ const App = (props) => {
                 </div>
             )}/>
             <Route exact path="/lost" render={props => (
-                <div className="wrapper">
+                <div className="wrapper-main">
                     <LostPage/>
                 </div>
             )}/>
