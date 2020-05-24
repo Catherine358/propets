@@ -1,6 +1,8 @@
 import React from "react";
 import './form.scss';
 import Grid from "@material-ui/core/Grid";
+import pic from "../../../../img/dog-photo-small.png";
+import Button from "@material-ui/core/Button";
 
 const FormMainBlock = (props) => {
     return (
@@ -48,20 +50,38 @@ const FormMainBlock = (props) => {
                             <Grid container item sm={6} className="images">
                                 <Grid container direction="column">
                                     <Grid container item className="scale"/>
-                                    <Grid container direction="row">
-                                        <Grid container item sm={6}>
-                                            <i className="fas fa-sign-out"/>
-                                            <p className="drag-and-drop">Drag and drop photos or</p>
+                                    <Grid container direction="row" className="drag-and-drop">
+                                        <Grid container item sm={6} justify="center">
+                                            <i className="fa fa-sign-out"/>
+                                            <p>Drag and drop photos or</p>
+                                            <label htmlFor="file">Browse</label>
                                         </Grid>
                                         <Grid container item sm={6}>
-
+                                            <input type="file" id="file" name="file" multiple className="file-browser"/>
                                         </Grid>
                                     </Grid>
                                 </Grid>
                             </Grid>
                         </Grid>
                         <Grid container direction="column">
-
+                            <div className="contacts">
+                                <label>
+                                    Contacts:
+                                    <input type="phone" placeholder="Phone"/>
+                                    <input type="email" placeholder="Email"/>
+                                    <input type="link" placeholder="Facebook profile"/>
+                                </label>
+                            </div>
+                            <Grid container direction="row">
+                                <Grid container item sm={6} className="footer-form">
+                                    <img src={pic} alt="dog-photo-small"/>
+                                    <p>John Goodboi</p>
+                                </Grid>
+                                <Grid container item sm={6} justify="flex-end">
+                                    <Button className="footer-form-submit-btn" variant="contained">
+                                        <i className="fas fa-paw"/>Publish</Button>
+                                </Grid>
+                            </Grid>
                         </Grid>
                     </Grid>
                 </form>
