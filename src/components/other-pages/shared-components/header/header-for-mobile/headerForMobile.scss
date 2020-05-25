@@ -14,6 +14,10 @@ $monserat-medium: "Montserrat Medium", sans-serif;
     font-size: 32px;
     color: white;
     cursor: pointer;
+
+    .cross {
+      margin-top: -5px;
+    }
   }
 
   .header-logo {

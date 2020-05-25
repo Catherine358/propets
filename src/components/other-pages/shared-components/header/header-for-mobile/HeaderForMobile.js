@@ -6,14 +6,19 @@ import Button from "@material-ui/core/Button";
 import { withRouter } from "react-router";
 
 const HeaderForMobile = (props) => {
-    const { history, type } = props;
+    const { history, type, setMenu, menu } = props;
     const [buttons, setButtons] = useState(false);
 
     return (
         <Grid container direction="column">
             <Grid container direction="row" className="header-for-mobile">
                 <Grid xs={2} container item justify="center" className="menu-burger-btn">
-                    <span className="burger">&#9776;</span>
+                    {!menu ? <span className="burger" onClick={() => {
+                        setMenu(true);
+                    }}>&#9776;</span> :
+                    <span className="cross" onClick={() => {
+                        setMenu(false);
+                    }}>x</span>}
                 </Grid>
                 <Grid container item xs={9}>
                     <img src={logo} alt="logo" className="header-logo"/>

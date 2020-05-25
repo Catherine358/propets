@@ -7,16 +7,19 @@ import ComingSoon from "./coming-soon-section";
 import Footer from "./footer";
 import './home.css';
 import SignIn from "../signin-window";
+import Menu from "../other-pages/shared-components/menu";
 
 const Home = (props) => {
     const [form, setForm] = useState(false);
     const [page, setPage] = useState('');
+    const [menu, setMenu] = useState(false);
 
     return (
         <>
             {form && <SignIn setForm={setForm} page={page}/>}
         <div className={form && "blur"}>
-            <Header setForm={setForm}/>
+            <Header setForm={setForm} setMenu={setMenu} menu={menu}/>
+            {menu && <Menu/>}
             <WelcomeSection setForm={setForm} form={form} setPage={setPage}/>
             <MiddleLine/>
             <PetNeedSection/>

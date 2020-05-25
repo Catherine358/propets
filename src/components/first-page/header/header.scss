@@ -43,6 +43,10 @@ $yellow: #FFE18B;
       font-size: 32px;
       color: white;
       cursor: pointer;
+
+      .cross {
+        margin-top: -5px;
+      }
     }
 
     .header-signin-btn {
