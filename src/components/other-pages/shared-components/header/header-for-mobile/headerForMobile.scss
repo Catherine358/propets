@@ -1,27 +1,46 @@
+$green: #8DBFAC;
 $grayForShadow: #00000029;
 $yellow: #FFE18B;
-$green: #8DBFAC;
 $monserat-medium: "Montserrat Medium", sans-serif;
 
-.header-white {
-  background-color: white;
+.header-for-mobile {
+  background-color: $green;
   box-shadow: 0 3px 6px $grayForShadow;
+  opacity: 1;
 
-  .header-white-menu-burger-btn {
+  .menu-burger-btn {
+    display: flex;
     margin-top: 12px;
     font-size: 32px;
-    color: $green;
+    color: white;
     cursor: pointer;
   }
 
-  .header-white-logo {
-    margin: 24px 0 24px 10px;
+  .header-logo {
+    margin: 24px 0;
     width: 142px;
     height: 33px;
+    opacity: 1;
   }
 
-  .header-white-lost-btn,
-  .header-white-found-btn {
+  .fa-arrow-down,
+  .fa-arrow-up {
+    display: flex;
+    margin-top: 24px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+  }
+}
+
+.header-for-mobile-buttons {
+  position: relative;
+  background-color: white;
+  box-shadow: 0 3px 6px $grayForShadow;
+  text-align: center;
+
+  .header-for-mobile-lost-btn,
+  .header-for-mobile-found-btn {
     margin: 18px 0;
     height: 34px;
     font-family: $monserat-medium;
@@ -29,20 +48,20 @@ $monserat-medium: "Montserrat Medium", sans-serif;
     border-radius: 17px;
   }
 
-  .header-white-lost-btn:hover {
+  .header-for-mobile-lost-btn:hover {
     background-color: $yellow;
   }
 
-  .header-white-found-btn:hover {
+  .header-for-mobile-found-btn:hover {
     background-color: $green;
   }
 
-  .header-white-lost-btn {
+  .header-for-mobile-lost-btn {
     background-color: $yellow;
     color: #393939;
   }
 
-  .header-white-found-btn {
+  .header-for-mobile-found-btn {
     margin-left: 23px;
     background-color: $green;
     color: white;
@@ -56,19 +75,5 @@ $monserat-medium: "Montserrat Medium", sans-serif;
   .fa-paw {
     margin-right: 20px;
     font-size: 16px;
-  }
-}
-
-@media screen and (min-width: 1025px){
-  .header-white {
-    .header-white-menu-burger-btn {
-      display: none;
-    }
-  }
-}
-
-@media screen and (max-width: 599px){
-  div.header-white {
-    display: none;
   }
 }

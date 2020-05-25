@@ -10,10 +10,13 @@ const HeaderWhite = (props) => {
 
     return (
         <Grid container direction="row" className="header-white">
-            <Grid container item sm={6} xs={10}>
+            <Grid sm={1} container item justify="center" className="header-white-menu-burger-btn">
+                <span className="burger">&#9776;</span>
+            </Grid>
+            <Grid container item lg={6} md={3} sm={3}>
                 <img src={logo} alt="logo" className="header-white-logo"/>
             </Grid>
-            <Grid container item sm={6} justify="center">
+            <Grid container item lg={6} md={9} sm={8} justify="center">
                 <Button className="header-white-lost-btn" variant="contained" onClick={() => {
                     history.push("/lost/form");
                 }}><i className="fas fa-search"/>I lost my pet</Button>

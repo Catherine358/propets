@@ -35,6 +35,21 @@ $monserat-bold: "Monserrat Bold", sans-serif;
     input:nth-of-type(4) {
       width: 226px;
     }
+
+    .map-view-btn,
+    .list-view-btn {
+      justify-content: space-around;
+      justify-self: right;
+      border-radius: 17px;
+      background-color: $green;
+      font-size: 12px;
+      color: white;
+
+      .fa-map-marked,
+      .fa-list {
+        margin-right: 10px;
+      }
+    }
   }
 
   .pet-info-container {
@@ -158,6 +173,57 @@ $monserat-bold: "Monserrat Bold", sans-serif;
       i {
         margin-left: -6px;
         margin-right: 10px;
+      }
+    }
+  }
+
+  .lost-right-side {
+    background-color: $green;
+  }
+}
+
+@media screen and (max-width: 1024px){
+  .main-block-lost {
+    .lost-right-side {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 1215px){
+  .main-block-lost {
+    .map-view-btn,
+    .list-view-btn {
+      display: none;
+    }
+  }
+
+}
+
+@media screen and (max-width: 600px){
+  .main-block-lost {
+    .tags-for-search {
+      input {
+        width: 90%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1214px){
+  .main-block-lost {
+
+    .map-container {
+      display: none;
+    }
+
+    .tags-for-search {
+      height: fit-content;
+      margin-bottom: 10px;
+
+      input:nth-of-type(3) {
+        width: 250px;
+        margin-bottom: 10px;
       }
     }
   }

@@ -82,3 +82,9 @@ $monserat-medium: "Montserrat Medium", sans-serif;
     color: $green;
   }
 }
+
+@media screen and (max-width: 1024px){
+  .aside-block {
+    display: none;
+  }
+}
