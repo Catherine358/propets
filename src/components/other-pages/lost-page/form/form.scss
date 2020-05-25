@@ -52,6 +52,21 @@ $monserat-medium: "Montserrat Medium", sans-serif;
         .location {
           margin-top: 90px;
         }
+
+        .file {
+          margin-top: 30px;
+        }
+
+        .file-for-mobile {
+          position: relative;
+          top: 60px;
+          padding: 7px 16px 8px 16px;
+          border: 1px solid $green;
+          border-radius: 15px;
+          color: $green;
+          cursor: pointer;
+          text-align: center;
+        }
       }
 
       .inputs {
@@ -202,7 +217,180 @@ $monserat-medium: "Montserrat Medium", sans-serif;
     }
   }
 
+  .mobile-form-btn {
+    position: relative;
+    bottom: 740px;
+    left: 85%;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 56px;
+  }
+
   .form-right-side {
     background-color: $green;
+  }
+}
+
+@media screen and (max-width: 1023px){
+  .main-block-lost-form {
+    .form-right-side {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 601px){
+  .main-block-lost-form {
+    .lost-form-container {
+      .basic-pet-info {
+        .labels {
+          .file {
+            display: none;
+          }
+
+          .file-for-mobile {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .mobile-form-btn {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 600px){
+  .main-block-lost-form {
+    font-size: 24px;
+
+    .lost-form-container {
+      width: 90%;
+      height: fit-content;
+
+      .basic-pet-info {
+        .labels {
+          height: fit-content;
+
+          .location {
+            margin-top: 70px;
+          }
+        }
+
+        .inputs {
+          .features-input {
+            margin-top: 5px;
+          }
+
+          .description-input {
+            margin-top: 5px;
+          }
+
+          .location-input {
+            margin-top: 5px;
+          }
+        }
+      }
+
+      .images {
+        .scale {
+          display: none;
+        }
+
+        .drag-and-drop {
+          border: none;
+          margin-top: 0;
+
+          .fa-sign-out {
+            display: none;
+          }
+
+          p {
+            display: none;
+          }
+
+          label {
+            display: none;
+          }
+
+          div {
+            justify-content: center;
+
+            .file-browser {
+              position: relative;
+              bottom: 55px;
+              margin-top: 0;
+              margin-left: 30px;
+            }
+          }
+        }
+      }
+
+      .contacts-container {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 410px){
+  .main-block-lost-form {
+    .lost-form-container {
+      .images {
+        .drag-and-drop {
+
+          div {
+            .file-browser {
+              margin-left: 40px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 379px){
+  .main-block-lost-form {
+    .lost-form-container {
+      .images {
+        .drag-and-drop {
+
+          div {
+            .file-browser {
+              margin-left: 50px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 345px){
+  .main-block-lost-form {
+    .lost-form-container {
+      .basic-pet-info {
+        .labels {
+          .file-for-mobile {
+            padding-left: 10px;
+          }
+        }
+      }
+      .images {
+        .drag-and-drop {
+          div {
+            .file-browser {
+              margin-left: 55px;
+            }
+          }
+        }
+      }
+    }
+    .mobile-form-btn {
+      bottom: 770px;
+    }
   }
 }

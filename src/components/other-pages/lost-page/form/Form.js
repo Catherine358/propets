@@ -7,7 +7,7 @@ import Button from "@material-ui/core/Button";
 const FormMainBlock = (props) => {
     return (
         <Grid container direction="row" className="main-block-lost-form">
-            <Grid container item sm={8}>
+            <Grid container item md={11} lg={8}>
                 <p className="header-form-lost">Lost your buddy? Keep calm and complete the form.</p>
                 <form>
                     <Grid container direction="column" className="lost-form-container">
@@ -23,6 +23,8 @@ const FormMainBlock = (props) => {
                                         <label htmlFor="features" className="features">Distinctive features:</label>
                                         <label htmlFor="description" className="description">Description:</label>
                                         <label htmlFor="location" className="location">Location:</label>
+                                        <label htmlFor="file" className="file">Photos:</label>
+                                        <label htmlFor="file" className="file-for-mobile">Browse</label>
                                     </div>
                                     <div className="inputs">
                                         <select name="type">
@@ -63,7 +65,7 @@ const FormMainBlock = (props) => {
                                 </Grid>
                             </Grid>
                         </Grid>
-                        <Grid container direction="column">
+                        <Grid container direction="column" className="contacts-container">
                             <div className="contacts">
                                 <label>
                                     Contacts:
@@ -78,15 +80,16 @@ const FormMainBlock = (props) => {
                                     <p>John Goodboi</p>
                                 </Grid>
                                 <Grid container item sm={6} justify="flex-end">
-                                    <Button className="footer-form-submit-btn" variant="contained">
+                                    <Button className="footer-form-submit-btn" variant="contained" type="submit">
                                         <i className="fas fa-paw"/>Publish</Button>
                                 </Grid>
                             </Grid>
                         </Grid>
                     </Grid>
+                    <button className="mobile-form-btn" type="submit">+</button>
                 </form>
             </Grid>
-            <Grid container item sm={4} className="form-right-side"/>
+            <Grid container item md={1} lg={4} className="form-right-side"/>
         </Grid>
     )
 };

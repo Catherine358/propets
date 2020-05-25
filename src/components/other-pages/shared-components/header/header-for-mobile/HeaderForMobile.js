@@ -6,7 +6,7 @@ import Button from "@material-ui/core/Button";
 import { withRouter } from "react-router";
 
 const HeaderForMobile = (props) => {
-    const { history } = props;
+    const { history, type } = props;
     const [buttons, setButtons] = useState(false);
 
     return (
@@ -18,14 +18,14 @@ const HeaderForMobile = (props) => {
                 <Grid container item xs={9}>
                     <img src={logo} alt="logo" className="header-logo"/>
                 </Grid>
-                <Grid container item xs={1}>
+                {type !== "form" && <Grid container item xs={1}>
                     {!buttons ? <i className="fas fa-arrow-down" onClick={() => {
                         setButtons(true);
                     }}/> :
                     <i className="fas fa-arrow-up" onClick={() => {
                         setButtons(false);
                     }}/>}
-                </Grid>
+                </Grid>}
             </Grid>
             {buttons && <div className="header-for-mobile-buttons">
                 <Button className="header-for-mobile-lost-btn" variant="contained" onClick={() => {
