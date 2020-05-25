@@ -1,0 +1,74 @@
+$grayForShadow: #00000029;
+$yellow: #FFE18B;
+$green: #8DBFAC;
+$monserat-medium: "Montserrat Medium", sans-serif;
+
+.header-white {
+  background-color: white;
+  box-shadow: 0 3px 6px $grayForShadow;
+
+  .header-white-menu-burger-btn {
+    margin-top: 12px;
+    font-size: 32px;
+    color: $green;
+    cursor: pointer;
+  }
+
+  .header-white-logo {
+    margin: 24px 0 24px 10px;
+    width: 142px;
+    height: 33px;
+  }
+
+  .header-white-lost-btn,
+  .header-white-found-btn {
+    margin: 18px 0;
+    height: 34px;
+    font-family: $monserat-medium;
+    font-size: 12px;
+    border-radius: 17px;
+  }
+
+  .header-white-lost-btn:hover {
+    background-color: $yellow;
+  }
+
+  .header-white-found-btn:hover {
+    background-color: $green;
+  }
+
+  .header-white-lost-btn {
+    background-color: $yellow;
+    color: #393939;
+  }
+
+  .header-white-found-btn {
+    margin-left: 23px;
+    background-color: $green;
+    color: white;
+  }
+
+  .fa-search {
+    margin-right: 20px;
+    font-size: 16px;
+  }
+
+  .fa-paw {
+    margin-right: 20px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 1025px){
+  .header-white {
+    .header-white-menu-burger-btn {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 599px){
+  div.header-white {
+    display: none;
+  }
+}

@@ -1,0 +1,83 @@
+$green: #8DBFAC;
+$grayForShadow: #00000029;
+$yellow: #FFE18B;
+$monserat-medium: "Montserrat Medium", sans-serif;
+
+.header-for-mobile {
+  background-color: $green;
+  box-shadow: 0 3px 6px $grayForShadow;
+  opacity: 1;
+
+  .menu-burger-btn {
+    display: flex;
+    margin-top: 12px;
+    font-size: 32px;
+    color: white;
+    cursor: pointer;
+
+    .cross {
+      margin-top: -5px;
+    }
+  }
+
+  .header-logo {
+    margin: 24px 0;
+    width: 142px;
+    height: 33px;
+    opacity: 1;
+  }
+
+  .fa-arrow-down,
+  .fa-arrow-up {
+    display: flex;
+    margin-top: 24px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+  }
+}
+
+.header-for-mobile-buttons {
+  position: relative;
+  background-color: white;
+  box-shadow: 0 3px 6px $grayForShadow;
+  text-align: center;
+
+  .header-for-mobile-lost-btn,
+  .header-for-mobile-found-btn {
+    margin: 18px 0;
+    height: 34px;
+    font-family: $monserat-medium;
+    font-size: 12px;
+    border-radius: 17px;
+  }
+
+  .header-for-mobile-lost-btn:hover {
+    background-color: $yellow;
+  }
+
+  .header-for-mobile-found-btn:hover {
+    background-color: $green;
+  }
+
+  .header-for-mobile-lost-btn {
+    background-color: $yellow;
+    color: #393939;
+  }
+
+  .header-for-mobile-found-btn {
+    margin-left: 23px;
+    background-color: $green;
+    color: white;
+  }
+
+  .fa-search {
+    margin-right: 20px;
+    font-size: 16px;
+  }
+
+  .fa-paw {
+    margin-right: 20px;
+    font-size: 16px;
+  }
+}

@@ -3,8 +3,19 @@
     grid-template-rows: 70px 623px 260px auto 125px 193px;
 }
 
+.wrapper-main {
+    display: grid;
+    grid-template-rows: 70px auto;
+}
+
 @media screen and (max-width: 600px){
     .wrapper {
         grid-template-rows: 70px auto;
+    }
+}
+
+@media screen and (min-width: 600px){
+    .header-for-mobile {
+        display: none;
     }
 }
