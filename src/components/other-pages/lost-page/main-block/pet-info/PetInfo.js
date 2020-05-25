@@ -6,8 +6,8 @@ import pic from "../../../../../img/dog-photo-small.png";
 const PetInfo = (props) => {
     return (
         <Grid container direction="row" className="pet-info-container">
-            <Grid container item sm={5} className="pet-photo" style={{backgroundImage: `url(${photo})`}}/>
-            <Grid container item sm={7} className="pet-info">
+            <Grid container item xs={5} className="pet-photo" style={{backgroundImage: `url(${photo})`}}/>
+            <Grid container item xs={7} className="pet-info">
                 <p className="breed">Dog, Golden Retriever</p>
                 <Grid container direction="row" className="details">
                     <Grid container item sm={6}>
@@ -23,14 +23,14 @@ const PetInfo = (props) => {
                 <div className="info-footer">
                     <p><i className="fas fa-map-marker"/>Florentin, 27, Tel Aviv</p>
                     <Grid container direction="row">
-                        <Grid container item sm={8} className="footer-picture-name-container">
+                        <Grid container item xs={8} className="footer-picture-name-container">
                             <img src={pic} alt="dog-photo-small"/>
                             <div>
                                 <p>John Goodboi</p>
                                 <p className="date">Dec 12 2019</p>
                             </div>
                         </Grid>
-                        <Grid container item sm={4} className="icons" justify="flex-end"alignItems="flex-end">
+                        <Grid container item xs={4} className="icons" justify="flex-end"alignItems="flex-end">
                             <i className="fas fa-phone-square-alt"/>
                             <i className="fab fa-facebook-square"/>
                             <i className="fas fa-envelope-square"/>

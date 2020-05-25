@@ -200,16 +200,6 @@ $monserat-bold: "Monserrat Bold", sans-serif;
 
 }
 
-@media screen and (max-width: 600px){
-  .main-block-lost {
-    .tags-for-search {
-      input {
-        width: 90%;
-      }
-    }
-  }
-}
-
 @media screen and (max-width: 1214px){
   .main-block-lost {
 
@@ -224,6 +214,46 @@ $monserat-bold: "Monserrat Bold", sans-serif;
       input:nth-of-type(3) {
         width: 250px;
         margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px){
+  .main-block-lost {
+    .tags-for-search {
+      text-align: center;
+      input:nth-of-type(1),
+      input:nth-of-type(2),
+      input:nth-of-type(3),
+      input:nth-of-type(4),
+      .map-view-btn,
+      .list-view-btn {
+        width: 90%;
+        height: 40px;
+        margin-top: 20px;
+      }
+
+      input:nth-of-type(3) {
+        margin-bottom: 0;
+      }
+
+      .map-view-btn,
+      .list-view-btn {
+        justify-content: center;
+      }
+    }
+
+    .pet-info-container {
+      height: fit-content;
+      padding-bottom: 10px;
+
+      .pet-info {
+        grid-template-rows: 30px auto 71px 97px;
+        
+        .description {
+          margin-top: 5px;
+        }
       }
     }
   }
