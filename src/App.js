@@ -6,6 +6,7 @@ import LostFoundPage from "./components/other-pages/lost-page";
 import LostFoundPageForm from "./components/other-pages/lost-page/form";
 import PreviewPage from "./components/other-pages/preview-page";
 import {Context} from "./context";
+import ProfilePage from "./components/other-pages/profile-page";
 
 const App = (props) => {
     const [page, setPage] = useState("");
@@ -44,6 +45,11 @@ const App = (props) => {
                 <Route exact path="/found" render={props => (
                     <div className="wrapper-main">
                         <LostFoundPage page="found"/>
+                    </div>
+                )}/>
+                <Route exact path="/profile" render={props => (
+                    <div className="wrapper-main">
+                        <ProfilePage page="profile"/>
                     </div>
                 )}/>
             </Context.Provider>
