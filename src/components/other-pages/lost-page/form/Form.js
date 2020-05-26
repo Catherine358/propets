@@ -12,12 +12,13 @@ const onHandleSubmit = (event, history) => {
 };
 
 const FormMainBlock = (props) => {
-    const { history } = props;
+    const { history, page } = props;
 
     return (
         <Grid container direction="row" className="main-block-lost-form">
             <Grid container item md={11} lg={8}>
-                <p className="header-form-lost">Lost your buddy? Keep calm and complete the form.</p>
+                {page === "lost" && <p className="header-form-lost">Lost your buddy? Keep calm and complete the form.</p>}
+                {page === "found" && <p className="header-form-lost">Found a pet? Please complete the form to help.</p>}
                 <form onSubmit={(event) => onHandleSubmit(event, history)}>
                     <Grid container direction="column" className="lost-form-container">
                         <Grid container direction="row">

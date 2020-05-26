@@ -8,6 +8,7 @@ import Menu from "../shared-components/menu";
 
 const LostFoundPage = (props) => {
     const [menu, setMenu] = useState(false);
+    const { page } = props;
 
     return (
         <div>
@@ -18,7 +19,7 @@ const LostFoundPage = (props) => {
             {menu && <Menu/>}
             <Grid container direction="row">
                 <Grid container item md={3}>
-                    <AsideBlock/>
+                    <AsideBlock page={page} selected={true}/>
                 </Grid>
                 <Grid container item md={9}>
                     <MainBlock/>

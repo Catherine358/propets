@@ -21,9 +21,14 @@ const App = (props) => {
                         <Home/>
                     </div>
                 )}/>
-                <Route exact path="/lost_found/form" render={props => (
+                <Route exact path="/lost/form" render={props => (
                     <div className="wrapper-main">
-                        <LostFoundPageForm/>
+                        <LostFoundPageForm page="lost"/>
+                    </div>
+                )}/>
+                <Route exact path="/found/form" render={props => (
+                    <div className="wrapper-main">
+                        <LostFoundPageForm page="found"/>
                     </div>
                 )}/>
                 <Route exact path="/lost/preview" render={props => (
@@ -31,9 +36,14 @@ const App = (props) => {
                         <PreviewPage/>
                     </div>
                 )}/>
-                <Route exact path="/lost_found" render={props => (
+                <Route exact path="/lost" render={props => (
                     <div className="wrapper-main">
-                        <LostFoundPage/>
+                        <LostFoundPage page="lost"/>
+                    </div>
+                )}/>
+                <Route exact path="/found" render={props => (
+                    <div className="wrapper-main">
+                        <LostFoundPage page="found"/>
                     </div>
                 )}/>
             </Context.Provider>

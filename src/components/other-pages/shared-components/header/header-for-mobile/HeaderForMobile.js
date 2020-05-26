@@ -34,9 +34,11 @@ const HeaderForMobile = (props) => {
             </Grid>
             {buttons && <div className="header-for-mobile-buttons">
                 <Button className="header-for-mobile-lost-btn" variant="contained" onClick={() => {
-                    history.push("/lost_found/form");
+                    history.push("/lost/form");
                 }}><i className="fas fa-search"/>I lost my pet</Button>
-                <Button className="header-for-mobile-found-btn" variant="contained"><i className="fas fa-paw"/>I found a pet</Button>
+                <Button className="header-for-mobile-found-btn" variant="contained" onClick={() => {
+                    history.push("/found/form");
+                }}><i className="fas fa-paw"/>I found a pet</Button>
             </div>}
         </Grid>
     )
