@@ -11,16 +11,16 @@ import Menu from "../other-pages/shared-components/menu";
 
 const Home = (props) => {
     const [form, setForm] = useState(false);
-    const [page, setPage] = useState('');
+    //const [page, setPage] = useState('');
     const [menu, setMenu] = useState(false);
 
     return (
         <>
-            {form && <SignIn setForm={setForm} page={page}/>}
+            {form && <SignIn setForm={setForm} />}
         <div className={form && "blur"}>
             <Header setForm={setForm} setMenu={setMenu} menu={menu}/>
             {menu && <Menu/>}
-            <WelcomeSection setForm={setForm} form={form} setPage={setPage}/>
+            <WelcomeSection setForm={setForm} form={form} />
             <MiddleLine/>
             <PetNeedSection/>
             <ComingSoon/>

@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, {useContext, useState} from "react";
 import './welcomeSection.scss';
 import loop from "../../../img/icons/loop.svg";
 import Grid from "@material-ui/core/Grid";
+import {Context} from "../../../context";
 
 const WelcomeSection = (props) => {
-    const { setForm, form, setPage } = props;
+    const { setForm, form } = props;
+    const context = useContext(Context);
     const [btnTextLost, setBtnText] = useState('I lost my pet');
     const [btnTextFound, setBtnTextFound] = useState('I found a pet');
     const [hoveredLost, setHoverLost] = useState(false);
@@ -19,7 +21,7 @@ const WelcomeSection = (props) => {
                     <span>pawfessional</span><br/>
                 community</p>
                 <div className="i-lost-pet" onClick={() => {
-                    setPage('lost');
+                    context.setPage('lost');
                     setForm(true);
                 }} onMouseEnter={() => {
                     setHoverLost(true);
@@ -36,6 +38,7 @@ const WelcomeSection = (props) => {
                     <img src={loop} alt="loop"/>
                 </div>
                 <div className="i-found-pet" onClick={() => {
+                    context.setPage('found');
                     setForm(true);
                 }} onMouseEnter={() => {
                     setHoverFound(true);

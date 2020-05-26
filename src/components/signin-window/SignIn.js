@@ -9,11 +9,11 @@ import { withRouter } from "react-router";
 const onSubmitForm = (event, history) => {
     event.preventDefault();
     console.log(event.target.name.value);
-    history.push("/lost");
+    history.push("/lost_found");
 };
 
 const SignIn = (props) => {
-    const { setForm, page, history } = props;
+    const { setForm, history } = props;
     const [signType, setSignType] = useState("signup");
 
     return (

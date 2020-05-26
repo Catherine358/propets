@@ -6,7 +6,7 @@ import FormMainBlock from "./Form";
 import HeaderForMobile from "../../shared-components/header/header-for-mobile";
 import Menu from "../../shared-components/menu";
 
-const LostPageForm = (props) => {
+const LostFoundPageForm = (props) => {
     const [menu, setMenu] = useState(false);
 
     return (
@@ -28,4 +28,4 @@ const LostPageForm = (props) => {
     )
 };
 
-export default LostPageForm;
+export default LostFoundPageForm;

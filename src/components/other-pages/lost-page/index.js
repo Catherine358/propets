@@ -1,3 +1,3 @@
-import LostPage from "./LostPage";
+import LostFoundPage from "./LostFoundPage";
 
-export default LostPage;
+export default LostFoundPage;

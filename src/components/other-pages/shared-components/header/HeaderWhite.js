@@ -18,7 +18,7 @@ const HeaderWhite = (props) => {
             </Grid>
             <Grid container item lg={6} md={9} sm={8} justify="center">
                 <Button className="header-white-lost-btn" variant="contained" onClick={() => {
-                    history.push("/lost/form");
+                    history.push("/lost_found/form");
                 }}><i className="fas fa-search"/>I lost my pet</Button>
                 <Button className="header-white-found-btn" variant="contained"><i className="fas fa-paw"/>I found a pet</Button>
             </Grid>

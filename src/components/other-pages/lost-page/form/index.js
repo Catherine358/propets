@@ -1,3 +1,3 @@
-import LostPageForm from "./LostPageForm";
+import LostFoundPageForm from "./LostFoundPageForm";
 
-export default LostPageForm;
+export default LostFoundPageForm;
