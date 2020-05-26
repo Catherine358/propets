@@ -4,6 +4,7 @@ import './App.css';
 import Home from "./components/first-page/Home";
 import LostPage from "./components/other-pages/lost-page";
 import LostPageForm from "./components/other-pages/lost-page/form";
+import PreviewPage from "./components/other-pages/preview-page";
 
 const App = (props) => {
     return (
@@ -16,6 +17,11 @@ const App = (props) => {
             <Route exact path="/lost/form" render={props => (
                 <div className="wrapper-main">
                     <LostPageForm/>
+                </div>
+            )}/>
+            <Route exact path="/lost/preview" render={props => (
+                <div className="wrapper-main">
+                    <PreviewPage/>
                 </div>
             )}/>
             <Route exact path="/lost" render={props => (

@@ -1,4 +1,5 @@
 import React from "react";
+import './petInfo.scss';
 import Grid from "@material-ui/core/Grid";
 import photo from "../../../../../img/pet_photo.png";
 import pic from "../../../../../img/dog-photo-small.png";
