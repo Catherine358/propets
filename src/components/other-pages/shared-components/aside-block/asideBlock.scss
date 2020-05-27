@@ -16,9 +16,16 @@ $monserat-medium: "Montserrat Medium", sans-serif;
 
     svg {
       position: absolute;
-      top: 150px;
       left: 0;
       fill: white;
+    }
+
+    .selected-lost {
+      top: 150px;
+    }
+
+    .selected-found {
+      top: 190px;
     }
 
     ul {
@@ -47,25 +54,40 @@ $monserat-medium: "Montserrat Medium", sans-serif;
     font-size: 12px;
     color: white;
 
-    .profile-picture {
-      margin-top: 30px;
-      margin-bottom: 54px;
+    svg {
+      position: absolute;
+      left: 0;
+      fill: white;
+    }
 
-      img {
-        vertical-align: top;
-        width: 35px;
-        height: 35px;
-        border: 1px solid white;
-        border-radius: 50%;
+    .selected-profile {
+      top: 377px;
+    }
+
+    a {
+      color: white;
+    }
+
+      .profile-picture {
+        margin-top: 30px;
+        margin-bottom: 54px;
+
+        img {
+          vertical-align: top;
+          width: 35px;
+          height: 35px;
+          border: 1px solid white;
+          border-radius: 50%;
+        }
       }
-    }
 
-    p {
-      display: inline-block;
-      margin-left: 10px;
-      margin-bottom: 0;
-      cursor: pointer;
-    }
+      p {
+        display: inline-block;
+        margin-left: 10px;
+        margin-bottom: 0;
+        cursor: pointer;
+      }
+
 
     span {
       display: block;
@@ -80,6 +102,13 @@ $monserat-medium: "Montserrat Medium", sans-serif;
 
   ul .selected {
     color: $green;
+  }
+
+  div .selected-profile-picture {
+    position: relative;
+    z-index: 1;
+    color: $green;
+
   }
 }
 

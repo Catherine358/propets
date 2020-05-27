@@ -3,13 +3,23 @@ import './form.scss';
 import Grid from "@material-ui/core/Grid";
 import pic from "../../../../img/dog-photo-small.png";
 import Button from "@material-ui/core/Button";
+import { withRouter } from "react-router";
+
+const onHandleSubmit = (event, history) => {
+    event.preventDefault();
+    console.log(event.target.type.value);
+    history.push("/lost/preview");
+};
 
 const FormMainBlock = (props) => {
+    const { history, page } = props;
+
     return (
         <Grid container direction="row" className="main-block-lost-form">
             <Grid container item md={11} lg={8}>
-                <p className="header-form-lost">Lost your buddy? Keep calm and complete the form.</p>
-                <form>
+                {page === "lost" && <p className="header-form-lost">Lost your buddy? Keep calm and complete the form.</p>}
+                {page === "found" && <p className="header-form-lost">Found a pet? Please complete the form to help.</p>}
+                <form onSubmit={(event) => onHandleSubmit(event, history)}>
                     <Grid container direction="column" className="lost-form-container">
                         <Grid container direction="row">
                             <Grid container item sm={6} className="basic-pet-info">
@@ -94,4 +104,4 @@ const FormMainBlock = (props) => {
     )
 };
 
-export default FormMainBlock;
+export default withRouter(FormMainBlock);

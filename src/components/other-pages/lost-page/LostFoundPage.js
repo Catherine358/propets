@@ -6,8 +6,9 @@ import MainBlock from "./main-block";
 import HeaderForMobile from "../shared-components/header/header-for-mobile";
 import Menu from "../shared-components/menu";
 
-const LostPage = (props) => {
+const LostFoundPage = (props) => {
     const [menu, setMenu] = useState(false);
+    const { page } = props;
 
     return (
         <div>
@@ -18,7 +19,7 @@ const LostPage = (props) => {
             {menu && <Menu/>}
             <Grid container direction="row">
                 <Grid container item md={3}>
-                    <AsideBlock selected={true}/>
+                    <AsideBlock page={page} selected={true}/>
                 </Grid>
                 <Grid container item md={9}>
                     <MainBlock/>
@@ -28,4 +29,4 @@ const LostPage = (props) => {
     )
 };
 
-export default LostPage;
+export default LostFoundPage;

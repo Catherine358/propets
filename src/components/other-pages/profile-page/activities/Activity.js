@@ -1,15 +1,21 @@
 import React from "react";
-import './petInfo.scss';
+import './activity.scss';
 import Grid from "@material-ui/core/Grid";
-import photo from "../../../../../img/pet_photo.png";
-import pic from "../../../../../img/dog-photo-small.png";
+import photo from "../../../../img/pet_photo.png";
+import pic from "../../../../img/dog-photo-small.png";
 
-const PetInfo = (props) => {
+const Activity = (props) => {
+    const { inactive } = props;
+
     return (
-        <Grid container direction="row" className="pet-info-container">
+        <Grid container direction="row" className={inactive ? "activity-container inactive" : "activity-container"}>
             <Grid container item xs={5} className="pet-photo" style={{backgroundImage: `url(${photo})`}}/>
             <Grid container item xs={7} className="pet-info">
-                <p className="breed">Dog, Golden Retriever</p>
+                <div>
+                    <p className="breed">Dog, Golden Retriever</p>
+                    <i className="fas fa-pencil-alt"/>
+                    <i className="fas fa-trash-alt"/>
+                </div>
                 <Grid container direction="row" className="details">
                     <Grid container item sm={6}>
                         <p><span>Color:</span> golden</p>
@@ -43,4 +49,4 @@ const PetInfo = (props) => {
     )
 };
 
-export default PetInfo;
+export default Activity;

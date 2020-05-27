@@ -6,8 +6,9 @@ import FormMainBlock from "./Form";
 import HeaderForMobile from "../../shared-components/header/header-for-mobile";
 import Menu from "../../shared-components/menu";
 
-const LostPageForm = (props) => {
+const LostFoundPageForm = (props) => {
     const [menu, setMenu] = useState(false);
+    const { page } = props;
 
     return (
         <div>
@@ -21,11 +22,11 @@ const LostPageForm = (props) => {
                     <AsideBlock selected={false}/>
                 </Grid>
                 <Grid container item md={9}>
-                    <FormMainBlock/>
+                    <FormMainBlock page={page}/>
                 </Grid>
             </Grid>
         </div>
     )
 };
 
-export default LostPageForm;
+export default LostFoundPageForm;

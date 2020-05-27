@@ -1,20 +1,26 @@
-import React, { useState } from "react";
+import React, {useContext, useState} from "react";
 import './signIn.scss';
 import logo from "../../img/icons/logo_green.svg";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import Facebook from "./Facebook";
 import { withRouter } from "react-router";
+import {Context} from "../../context";
 
-const onSubmitForm = (event, history) => {
+const onSubmitForm = (event, history, page) => {
     event.preventDefault();
     console.log(event.target.name.value);
-    history.push("/lost");
+    if(page === "lost") {
+        history.push("/lost");
+    }else if(page === "found"){
+        history.push("/found");
+    }
 };
 
 const SignIn = (props) => {
-    const { setForm, page, history } = props;
+    const { setForm, history } = props;
     const [signType, setSignType] = useState("signup");
+    const context = useContext(Context);
 
     return (
         <Grid container direction="column" className="signin-window">
@@ -44,7 +50,7 @@ const SignIn = (props) => {
                     }} style={{backgroundColor: `${signType === "signin" ? "#8DBFAC" : "#BABABA"}`}}>Sign in</Button>
                 </Grid>
             </Grid>
-            <form onSubmit={(event) => onSubmitForm(event, history)}>
+            <form onSubmit={(event) => onSubmitForm(event, history, context.page)}>
                 {signType === "signup" ? <Grid container direction="row">
                      <Grid container item sm={6} direction="column" className="signup-form">
                             <label>
