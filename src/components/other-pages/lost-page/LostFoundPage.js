@@ -5,9 +5,11 @@ import AsideBlock from "../shared-components/aside-block";
 import MainBlock from "./main-block";
 import HeaderForMobile from "../shared-components/header/header-for-mobile";
 import Menu from "../shared-components/menu";
+import MenuMini from "../shared-components/aside-block/MenuMini";
 
 const LostFoundPage = (props) => {
     const [menu, setMenu] = useState(false);
+    const [bigMap, setBigMap] = useState(false);
     const { page } = props;
 
     return (
@@ -18,11 +20,14 @@ const LostFoundPage = (props) => {
             </div>
             {menu && <Menu/>}
             <Grid container direction="row">
-                <Grid container item md={3}>
+                {!bigMap && <Grid container item md={3}>
                     <AsideBlock page={page} selected={true}/>
-                </Grid>
-                <Grid container item md={9}>
-                    <MainBlock/>
+                </Grid>}
+                {bigMap && <Grid container item md={2}>
+                    <MenuMini/>
+                </Grid>}
+                <Grid container item md={bigMap ? 10 : 9}>
+                    <MainBlock setBigMap={setBigMap} bigMap={bigMap}/>
                 </Grid>
             </Grid>
         </div>

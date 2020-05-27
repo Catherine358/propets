@@ -7,6 +7,7 @@ import Button from "@material-ui/core/Button";
 
 const MainBlock = (props) => {
     const [map, setMap] = useState(false);
+    const { setBigMap, bigMap } = props;
 
     return (
         <Grid container direction="row" className="main-block-lost">
@@ -29,12 +30,14 @@ const MainBlock = (props) => {
                             <GoogleMap/>
                         </Grid>
                         : <Grid container direction="row">
-                        <Grid container item lg={8}>
+                        <Grid container item lg={bigMap ? 7 : 8}>
                             <PetInfo/>
                             <PetInfo/>
                         </Grid>
-                        <Grid container item lg={4} className="map-container">
-                            <span><i className="fas fa-chevron-left"/>Expand map</span>
+                        <Grid container item lg={bigMap ? 5 : 4} className="map-container">
+                            <span onClick={() => {
+                                setBigMap(true);
+                            }}><i className="fas fa-chevron-left"/>Expand map</span>
                             <GoogleMap/>
                         </Grid>
                     </Grid>}

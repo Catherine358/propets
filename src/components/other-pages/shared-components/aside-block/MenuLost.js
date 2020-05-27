@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 const MenuLost = (props) => {
     return (
@@ -8,8 +9,12 @@ const MenuLost = (props) => {
             </svg>
             <ul>
                 <li><i className="fas fa-home"/>Home</li>
-                <li className="selected"><i className="fas fa-search"/>Lost</li>
-                <li><i className="fas fa-paw"/>Found</li>
+                <Link to={"/lost"}>
+                    <li className="selected"><i className="fas fa-search"/>Lost</li>
+                </Link>
+                <Link to={"/found"}>
+                    <li><i className="fas fa-paw"/>Found</li>
+                </Link>
                 <li><i className="fas fa-bullhorn"/>Services</li>
                 <li><i className="fas fa-star"/>Favourites</li>
             </ul>
