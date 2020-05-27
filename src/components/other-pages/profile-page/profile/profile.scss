@@ -42,6 +42,21 @@ $monserat-medium: "Montserrat Medium", sans-serif;
       }
     }
 
+    .deactivated-text {
+      margin-top: 21px;
+      padding-top: 11px;
+      padding-bottom: 8px;
+      text-align: center;
+      font-size: 12px;
+      font-family: $monserat-medium;
+      background-color: $green;
+      color: white;
+
+      p {
+        margin: 0;
+      }
+    }
+
     .profile-info {
       .profile-info-picture {
         margin-top: 27px;
@@ -58,6 +73,12 @@ $monserat-medium: "Montserrat Medium", sans-serif;
           display: inline-block;
           margin-left: 40px;
           margin-bottom: 0;
+        }
+
+        input {
+          margin-left: 5px;
+          border: none;
+          border-bottom: 1px solid $green;
         }
 
         .fa-pencil-alt {
