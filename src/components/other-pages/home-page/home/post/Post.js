@@ -16,11 +16,11 @@ const Post = (props) => {
                     <p>John Goodboi</p>
                     <p className="time">2 h</p>
                 </div>
-                <div className="post-icon">
+                {!favourite && <div className="post-icon">
                     <i className="fas fa-ellipsis-h" onClick={() => {
                         setMenu(!miniMenu);
                     }}/>
-                </div>
+                </div>}
                 {miniMenu && <div className="mini-menu">
                     <span><i className="fas fa-eye-slash"/>Hide from feed</span>
                     <span><i className="fas fa-times"/>Unfollow</span>
@@ -43,7 +43,7 @@ const Post = (props) => {
                             }}/>}
                     </Grid> :
                     <Grid container item sm={2} justify="flex-end">
-                        <i className="fas fa-star favourite"/>
+                        <i className="fas fa-star favourite" style={{cursor: "auto"}}/>
                     </Grid>
                 }
             </Grid>

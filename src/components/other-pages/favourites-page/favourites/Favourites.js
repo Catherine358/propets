@@ -7,6 +7,7 @@ const Favourites = (props) => {
     return (
         <Grid container direction="row">
             <Grid container item lg={8}>
+                <p className="favourite-header">Your favorites. Find them here anytime.</p>
                 <Post favourite={true}/>
                 <Post favourite={true}/>
             </Grid>
