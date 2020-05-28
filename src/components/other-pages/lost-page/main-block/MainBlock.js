@@ -1,13 +1,23 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import './mainBlock.scss';
 import Grid from "@material-ui/core/Grid";
 import PetInfo from "./pet-info";
 import GoogleMap from "./google-map";
 import Button from "@material-ui/core/Button";
+import { getPostLostPets } from "../../../../services";
 
 const MainBlock = (props) => {
     const [map, setMap] = useState(false);
     const { setBigMap, bigMap } = props;
+
+    useEffect(() => {
+        async function fetchPosts() {
+            await getPostLostPets()
+                .then(data => console.log(data))
+                .catch(error => console.log(error));
+        }
+        fetchPosts();
+    }, []);
 
     return (
         <Grid container direction="row" className="main-block-lost">
@@ -35,9 +45,12 @@ const MainBlock = (props) => {
                             <PetInfo/>
                         </Grid>
                         <Grid container item lg={bigMap ? 5 : 4} className="map-container">
-                            <span onClick={() => {
+                            {!bigMap ? <span onClick={() => {
                                 setBigMap(true);
-                            }}><i className="fas fa-chevron-left"/>Expand map</span>
+                            }}><i className="fas fa-chevron-left"/>Expand map</span> :
+                            <span onClick={() => {
+                                setBigMap(false);
+                            }}><i className="fas fa-chevron-right"/>Collapse map</span>}
                             <GoogleMap/>
                         </Grid>
                     </Grid>}

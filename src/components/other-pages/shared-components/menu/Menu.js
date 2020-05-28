@@ -32,7 +32,9 @@ const Menu = (props) => {
                     <p>Anna<br/> Smith</p>
                 </div>
             </Link>
-            <span><i className="fas fa-sign-out-alt"/>Logout</span>
+            <Link to={"/"}>
+                <span><i className="fas fa-sign-out-alt"/>Logout</span>
+            </Link>
         </div>
     </div>
     );

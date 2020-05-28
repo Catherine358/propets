@@ -74,6 +74,7 @@ $monserat-medium: "Montserrat Medium", sans-serif;
     }
 
     a {
+      text-decoration: none;
       color: white;
     }
 
@@ -126,6 +127,24 @@ $monserat-medium: "Montserrat Medium", sans-serif;
     font-size: 16px;
     color: white;
 
+    svg {
+      position: absolute;
+      left: 100px;
+      fill: white;
+    }
+
+    .selected-lost {
+      top: 120px;
+    }
+
+    .selected-found {
+      top: 160px;
+    }
+
+    .selected-home {
+      top: 105px;
+    }
+
     a {
       text-decoration: none;
       color: white;
@@ -145,6 +164,10 @@ $monserat-medium: "Montserrat Medium", sans-serif;
           margin-right: 13px;
         }
       }
+    }
+
+    ul .selected {
+      color: $green;
     }
   }
 

@@ -24,7 +24,7 @@ const LostFoundPage = (props) => {
                     <AsideBlock page={page} selected={true}/>
                 </Grid>}
                 {bigMap && <Grid container item md={2}>
-                    <MenuMini/>
+                    <MenuMini page={page}/>
                 </Grid>}
                 <Grid container item md={bigMap ? 10 : 9}>
                     <MainBlock setBigMap={setBigMap} bigMap={bigMap}/>
