@@ -9,6 +9,7 @@ import {Context} from "./context";
 import ProfilePage from "./components/other-pages/profile-page";
 import HomePage from "./components/other-pages/home-page";
 import FavouritesPage from "./components/other-pages/favourites-page";
+import NewPostForm from "./components/other-pages/home-page/home/new-post-form";
 
 const App = (props) => {
     const [page, setPage] = useState("");
@@ -52,6 +53,11 @@ const App = (props) => {
                 <Route exact path="/profile" render={props => (
                     <div className="wrapper-main">
                         <ProfilePage page="profile"/>
+                    </div>
+                )}/>
+                <Route exact path="/home/new_post" render={props => (
+                    <div className="wrapper-main">
+                        <NewPostForm/>
                     </div>
                 )}/>
                 <Route exact path="/home" render={props => (

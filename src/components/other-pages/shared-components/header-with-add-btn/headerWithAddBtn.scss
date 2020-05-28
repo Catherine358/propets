@@ -7,6 +7,10 @@ $monserat-medium: "Montserrat Medium", sans-serif;
   background-color: white;
   box-shadow: 0 3px 6px $grayForShadow;
 
+  a:hover {
+    text-decoration: none;
+  }
+
   .header-add-menu-burger-btn {
     margin-top: 12px;
     font-size: 32px;

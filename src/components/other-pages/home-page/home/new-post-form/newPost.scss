@@ -1,0 +1,146 @@
+$green: #8DBFAC;
+$monserat-bold: "Monserrat Bold", sans-serif;
+$monserat-medium: "Montserrat Medium", sans-serif;
+
+.new-post-container {
+  font-size: 16px;
+  color: $green;
+
+  .new-post-left-side {
+    margin-bottom: 35px;
+    
+    .new-post-header {
+      margin-top: 30px;
+      margin-left: 20px;
+      margin-bottom: 0;
+      font-family: $monserat-bold;
+      font-weight: 700;
+    }
+
+    .new-post {
+      width: 641px;
+      height: fit-content;
+      box-shadow: 0 3px 6px #00000029;
+      padding-left: 13px;
+      margin-left: 19px;
+      margin-top: 30px;
+      font-family: $monserat-medium;
+      font-size: 12px;
+      color: #393939;
+
+      .new-post-labels {
+        margin-top: 20px;
+        box-sizing: border-box;
+        float: left;
+        width: 20%;
+
+        label {
+          display: block;
+          text-align: right;
+          margin-bottom: 3px;
+          margin-right: 17px;
+          padding-top: 3px;
+        }
+
+        .file {
+          margin-top: 280px;
+        }
+      }
+
+      .new-post-inputs {
+        margin-top: 20px;
+        box-sizing: border-box;
+        float: right;
+        width: 80%;
+
+        textarea {
+          width: 95%;
+          border-color: $green;
+        }
+
+        .new-post-drag-and-drop {
+          margin-top: 30px;
+          font-size: 12px;
+          color: #393939;
+          text-align: center;
+
+          .fa-sign-out {
+            margin-bottom: 7px;
+            transform: rotate(-90deg);
+            font-size: 30px;
+            color: $green;
+          }
+
+          p {
+            height: fit-content;
+            margin-bottom: 15px;
+          }
+
+          label {
+            height: fit-content;
+            width: fit-content;
+            margin-bottom: 0;
+            padding: 7px 16px 8px 16px;
+            border: 1px solid $green;
+            border-radius: 15px;
+            color: $green;
+            cursor: pointer;
+          }
+
+          .file-browser {
+            margin-left: 10px;
+            border: 1px solid $green;
+            width: 142px;
+            height: 111px;
+            color: $green;
+          }
+
+          .file-browser::-webkit-file-upload-button {
+            visibility: hidden;
+          }
+        }
+      }
+
+      .new-post-footer {
+        display: flex;
+        margin-top: 45px;
+        font-family: $monserat-bold;
+        font-weight: 700;
+        font-size: 16px;
+        color: $green;
+
+        img {
+          vertical-align: top;
+          width: 43px;
+          height: 43px;
+          margin-right: 10px;
+          border-radius: 50%;
+        }
+
+        p {
+          display: inline-block;
+          align-self: center;
+          margin-left: 13px;
+          height: fit-content;
+          margin-bottom: 0;
+        }
+
+        .new-post-submit-btn {
+          margin-left: auto;
+          margin-right: 20px;
+          width: 148px;
+          height: 34px;
+          justify-content: space-around;
+          background-color: $green;
+          font-size: 12px;
+          border-radius: 17px;
+          color: white;
+        }
+      }
+    }
+  }
+
+  .new-post-right-side {
+    background-color: $green;
+  }
+}
