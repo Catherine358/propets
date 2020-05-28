@@ -1,18 +1,18 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-const MenuLost = (props) => {
+const MenuHome = (props) => {
     return (
         <div className="aside-menu">
-            <svg className="selected-lost" width="296" height="40">
+            <svg className="selected-home" width="296" height="40">
                 <rect x="-20" y="0" rx="20" ry="20" width="296" height="40"/>
             </svg>
             <ul>
                 <Link to={"/home"}>
-                    <li><i className="fas fa-home"/>Home</li>
+                    <li className="selected"><i className="fas fa-home"/>Home</li>
                 </Link>
                 <Link to={"/lost"}>
-                    <li className="selected"><i className="fas fa-search"/>Lost</li>
+                    <li><i className="fas fa-search"/>Lost</li>
                 </Link>
                 <Link to={"/found"}>
                     <li><i className="fas fa-paw"/>Found</li>
@@ -24,4 +24,4 @@ const MenuLost = (props) => {
     )
 };
 
-export default MenuLost;
+export default MenuHome;

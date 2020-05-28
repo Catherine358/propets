@@ -8,7 +8,9 @@ const MenuFound = (props) => {
                 <rect x="-20" y="0" rx="20" ry="20" width="296" height="40"/>
             </svg>
             <ul>
-                <li><i className="fas fa-home"/>Home</li>
+                <Link to={"/home"}>
+                    <li><i className="fas fa-home"/>Home</li>
+                </Link>
                 <Link to={"/lost"}>
                     <li><i className="fas fa-search"/>Lost</li>
                 </Link>

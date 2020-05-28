@@ -5,7 +5,9 @@ const Menu = (props) => {
     return (
         <div className="aside-menu">
             <ul>
-                <li><i className="fas fa-home"/>Home</li>
+                <Link to={"/home"}>
+                    <li><i className="fas fa-home"/>Home</li>
+                </Link>
                 <Link to={"/lost"}>
                     <li><i className="fas fa-search"/>Lost</li>
                 </Link>

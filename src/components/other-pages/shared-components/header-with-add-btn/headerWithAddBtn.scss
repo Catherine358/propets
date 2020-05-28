@@ -1,0 +1,59 @@
+$grayForShadow: #00000029;
+$yellow: #FFE18B;
+$green: #8DBFAC;
+$monserat-medium: "Montserrat Medium", sans-serif;
+
+.header-add {
+  background-color: white;
+  box-shadow: 0 3px 6px $grayForShadow;
+
+  .header-add-menu-burger-btn {
+    margin-top: 12px;
+    font-size: 32px;
+    color: $green;
+    cursor: pointer;
+  }
+
+  .header-add-logo {
+    margin: 24px 0 24px 10px;
+    width: 142px;
+    height: 33px;
+  }
+
+  .header-add-btn {
+    margin: 18px 0;
+    height: 34px;
+    font-family: $monserat-medium;
+    font-size: 12px;
+    border-radius: 17px;
+  }
+
+  .header-add-btn:hover {
+    background-color: $green;
+  }
+
+  .header-add-btn {
+    margin-left: 23px;
+    background-color: $green;
+    color: white;
+  }
+
+  .fa-plus {
+    margin-right: 20px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 1025px){
+  .header-add {
+    .header-add-menu-burger-btn {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 599px){
+  div.header-add {
+    display: none;
+  }
+}

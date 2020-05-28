@@ -5,11 +5,16 @@ import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import Facebook from "./Facebook";
 import { withRouter } from "react-router";
-import {Context} from "../../context";
+import { Context } from "../../context";
+import { Login } from "../../services";
 
 const onSubmitForm = (event, history, page) => {
     event.preventDefault();
-    console.log(event.target.name.value);
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+    Login(email, password)
+        .then(response => console.log(response))
+        .catch(error => console.log(error));
     if(page === "lost") {
         history.push("/lost");
     }else if(page === "found"){
@@ -79,11 +84,11 @@ const SignIn = (props) => {
                         <Grid container item sm={6} direction="column" className="signin-form">
                             <label>
                                 Email:
-                                <input type="email"/>
+                                <input type="email" name="email"/>
                             </label>
                             <label>
                                 Password:
-                                <input type="password"/>
+                                <input type="password" name="password"/>
                             </label>
                             <span>Forgot password?</span>
                         </Grid>
