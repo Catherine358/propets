@@ -22,7 +22,9 @@ const Menu = (props) => {
                     <li><i className="fas fa-paw"/>Found</li>
                 </Link>
                 <li><i className="fas fa-bullhorn"/>Services</li>
-                <li><i className="fas fa-star"/>Favourites</li>
+                <Link to={"/favourites"}>
+                    <li><i className="fas fa-star"/>Favourites</li>
+                </Link>
             </ul>
         </div>
         <div className="profile">

@@ -8,6 +8,7 @@ import PreviewPage from "./components/other-pages/preview-page";
 import {Context} from "./context";
 import ProfilePage from "./components/other-pages/profile-page";
 import HomePage from "./components/other-pages/home-page";
+import FavouritesPage from "./components/other-pages/favourites-page";
 
 const App = (props) => {
     const [page, setPage] = useState("");
@@ -56,6 +57,11 @@ const App = (props) => {
                 <Route exact path="/home" render={props => (
                     <div className="wrapper-main">
                         <HomePage page="home"/>
+                    </div>
+                )}/>
+                <Route exact path="/favourites" render={props => (
+                    <div className="wrapper-main">
+                        <FavouritesPage page="favourites"/>
                     </div>
                 )}/>
             </Context.Provider>

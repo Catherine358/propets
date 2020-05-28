@@ -1,18 +1,18 @@
 import React from "react";
-import './post.scss';
+import '../../home-page/home/post.scss';
 import Grid from "@material-ui/core/Grid";
-import Post from "./post";
+import Post from "../../home-page/home/post";
 
-const Home = (props) => {
+const Favourites = (props) => {
     return (
         <Grid container direction="row">
             <Grid container item lg={8}>
-                <Post favourite={false}/>
-                <Post favourite={false}/>
+                <Post favourite={true}/>
+                <Post favourite={true}/>
             </Grid>
             <Grid container item lg={4} className="post-right-side"/>
         </Grid>
     )
 };
 
-export default Home;
+export default Favourites;

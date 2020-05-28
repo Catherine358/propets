@@ -4,6 +4,7 @@ import photo from "../../../../../img/pet_photo.png";
 import Grid from "@material-ui/core/Grid";
 
 const Post = (props) => {
+    const { favourite } = props;
     const [miniMenu, setMenu] = useState(false);
     const [fav, setFavourite] = useState(false);
 
@@ -33,14 +34,18 @@ const Post = (props) => {
                         <span>…more</span>
                     </p>
                 </Grid>
-                <Grid container item sm={2} justify="flex-end">
-                    {!fav ? <i className="far fa-star" onClick={() => {
-                        setFavourite(true);
-                    }}/> :
-                    <i className="fas fa-star favourite" onClick={() => {
-                        setFavourite(false);
-                    }}/>}
-                </Grid>
+                {!favourite ? <Grid container item sm={2} justify="flex-end">
+                        {!fav ? <i className="far fa-star" onClick={() => {
+                                setFavourite(true);
+                            }}/> :
+                            <i className="fas fa-star favourite" onClick={() => {
+                                setFavourite(false);
+                            }}/>}
+                    </Grid> :
+                    <Grid container item sm={2} justify="flex-end">
+                        <i className="fas fa-star favourite"/>
+                    </Grid>
+                }
             </Grid>
         </div>
     )

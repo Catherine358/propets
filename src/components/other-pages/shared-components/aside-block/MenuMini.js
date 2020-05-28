@@ -24,7 +24,9 @@ const MenuMini = (props) => {
                         <li className={page === "found" && "selected"}><i className="fas fa-paw"/></li>
                     </Link>
                     <li><i className="fas fa-bullhorn"/></li>
-                    <li><i className="fas fa-star"/></li>
+                    <Link to={"/favourites"}>
+                        <li><i className="fas fa-star"/></li>
+                    </Link>
                 </ul>
             </div>
             <div className="profile-mini">

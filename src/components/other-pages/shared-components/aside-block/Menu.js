@@ -6,8 +6,8 @@ const Menu = (props) => {
 
     return (
         <div className="aside-menu">
-            {selected && <svg className={`selected-${page}`} width="296" height="40">
-                <rect x="-20" y="0" rx="20" ry="20" width="296" height="40"/>
+            {selected && <svg className={`selected-${page}`} width="320" height="40">
+                <rect x="-20" y="0" rx="20" ry="20" width="320" height="40"/>
             </svg>}
             <ul>
                 <Link to={"/home"}>
@@ -20,7 +20,9 @@ const Menu = (props) => {
                     <li className={page === "found" && "selected"}><i className="fas fa-paw"/>Found</li>
                 </Link>
                 <li><i className="fas fa-bullhorn"/>Services</li>
-                <li><i className="fas fa-star"/>Favourites</li>
+                <Link to={"/favourites"}>
+                    <li className={page === "favourites" && "selected"}><i className="fas fa-star"/>Favourites</li>
+                </Link>
             </ul>
         </div>
     )
