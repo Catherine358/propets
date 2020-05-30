@@ -26,19 +26,19 @@ $monserat-medium: "Montserrat Medium", sans-serif;
     }
 
     .selected-lost {
-      top: 150px;
+      top: 140px;
     }
 
     .selected-found {
-      top: 190px;
+      top: 185px;
     }
 
     .selected-home {
-      top: 105px;
+      top: 96px;
     }
 
     .selected-favourites {
-      top: 280px;
+      top: 270px;
     }
 
     ul {
@@ -74,7 +74,7 @@ $monserat-medium: "Montserrat Medium", sans-serif;
     }
 
     .selected-profile {
-      top: 377px;
+      top: 368px;
     }
 
     a {
@@ -215,8 +215,8 @@ $monserat-medium: "Montserrat Medium", sans-serif;
   }
 }
 
-@media screen and (max-width: 1023px){
-  .aside-block {
-    display: none;
-  }
-}
+//@media screen and (max-width: 599px){
+//  .aside-block {
+//    display: none;
+//  }
+//}

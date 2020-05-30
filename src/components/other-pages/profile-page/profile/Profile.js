@@ -13,7 +13,7 @@ const Profile = (props) => {
 
     return (
         <Grid container direction="row" className="profile-main-block">
-            <Grid container item lg={8}>
+            <Grid container item lg={8} direction="column" className="profile-left-side">
                 <p className="header-profile">Your profile. Change, edit and manage your data.</p>
                 <form>
                     <Grid container direction="column" className="profile-info-container">

@@ -5,57 +5,62 @@ $monserat-bold: "Monserrat Bold", sans-serif;
   font-size: 16px;
   color: $green;
 
-  .header-preview {
-    margin-top: 30px;
-    margin-left: 20px;
-    margin-bottom: 0;
-    font-family: $monserat-bold;
-    font-weight: 700;
-  }
+  .preview-left-side {
+    margin-bottom: 35px;
 
-  .fb-share {
-    span {
-      margin-left: 15px;
+    .header-preview {
+      width: calc(100% - 20px);
+      margin-top: 30px;
+      margin-left: 20px;
+      margin-bottom: 0;
+      font-family: $monserat-bold;
+      font-weight: 700;
+    }
+
+    .fb-share {
+      span {
+        margin-left: 15px;
+        font-size: 12px;
+        color: #393939;
+      }
+    }
+
+    .preview-submit-btn {
+      margin-top: 10px;
+      margin-right: 20px;
+      width: 148px;
+      height: 34px;
+      justify-content: space-around;
+      background-color: $green;
       font-size: 12px;
-      color: #393939;
+      border-radius: 17px;
+      color: white;
     }
-  }
 
-  .preview-submit-btn {
-    margin-top: 10px;
-    margin-right: 20px;
-    width: 148px;
-    height: 34px;
-    justify-content: space-around;
-    background-color: $green;
-    font-size: 12px;
-    border-radius: 17px;
-    color: white;
-  }
+    .preview-btn-edit {
+      margin-top: 10px;
+      width: 105px;
+      height: 34px;
+      background-color: transparent;
+      border: 1px solid $green;
+      border-radius: 17px;
+      font-size: 12px;
+      color: $green;
 
-  .preview-btn-edit {
-    margin-top: 10px;
-    width: 105px;
-    height: 34px;
-    background-color: transparent;
-    border: 1px solid $green;
-    border-radius: 17px;
-    font-size: 12px;
-    color: $green;
-
-    .fa-edit {
-      margin-right: 10px;
+      .fa-edit {
+        margin-right: 10px;
+      }
     }
-  }
 
-  .preview-agree {
-    display: flex;
-    margin-right: 13px;
-    width: 100%;
-    justify-content: flex-end;
-    margin-top: 34px;
-    font-size: 10px;
-    color: #BABABA;
+    .preview-agree {
+      display: flex;
+      margin-right: 13px;
+      width: 100%;
+      justify-content: flex-end;
+      margin-top: 34px;
+      font-size: 10px;
+      color: #BABABA;
+    }
   }
 
   .preview-right-side {

@@ -9,7 +9,7 @@ const Post = (props) => {
     const [fav, setFavourite] = useState(false);
 
     return (
-        <div className="post-container">
+        <div className="post-left-side">
             <div className="post-header">
                 <img src={pic} alt="dog-photo-small"/>
                 <div className="post-header-text">

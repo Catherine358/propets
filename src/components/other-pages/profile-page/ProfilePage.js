@@ -8,7 +8,7 @@ const ProfilePage = (props) => {
     const { page } = props;
 
     return (
-        <div>
+        <div className="wrapper-main">
             <HeaderWhiteWithoutButtons/>
             {/*<div className="header-for-mobile">*/}
             {/*    <HeaderForMobile type={""} setMenu={setMenu} menu={menu}/>*/}

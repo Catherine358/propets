@@ -10,7 +10,7 @@ const url = "http://localhost:3000/lost/preview";
 const Preview = (props) => {
     return (
         <Grid container direction="row" className="preview-main-block">
-            <Grid container item lg={8}>
+            <Grid container item lg={8} className="preview-left-side" direction="column">
                 <p className="header-preview">Preview and Publish. Please share the post to your FB to be more effective.</p>
                 <PetInfo/>
                 <p className="header-preview">Fingers crossed. We wish your fluffy to be found as soon as possible. Your post will expire in two weeks. To make it active again follow the instructions you’ll get in email.</p>

@@ -21,7 +21,7 @@ const MainBlock = (props) => {
 
     return (
         <Grid container direction="row" className="main-block-lost">
-            <Grid container item md={9} lg={12}>
+            <Grid container item md={9} lg={12} className="lost-left-side">
                 <Grid container direction="column">
                     <div className="tags-for-search">
                         <input type="text" placeholder="Type"/>

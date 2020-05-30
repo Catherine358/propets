@@ -6,225 +6,232 @@ $monserat-medium: "Montserrat Medium", sans-serif;
   font-size: 16px;
   color: $green;
 
-  .header-form-lost {
-    margin-top: 30px;
-    margin-left: 20px;
-    margin-bottom: 0;
-    font-family: $monserat-bold;
-    font-weight: 700;
-  }
+  .form-left-side {
+    margin-bottom: 35px;
 
-  .lost-form-container {
-    width: 641px;
-    height: 503px;
-    box-shadow: 0 3px 6px #00000029;
-    padding-left: 13px;
-    margin-left: 19px;
-    margin-top: 30px;
+    .header-form-lost {
+      width: calc(100% - 20px);
+      margin-top: 30px;
+      margin-left: 20px;
+      margin-bottom: 0;
+      font-family: $monserat-bold;
+      font-weight: 700;
+    }
 
-    .basic-pet-info {
-      margin-top: 11px;
-      font-family: $monserat-medium;
-      font-size: 12px;
-      color: #393939;
+    .lost-form-container {
+      width: 94.722222%;
+      height: fit-content;
+      box-shadow: 0 3px 6px #00000029;
+      padding-left: 1.085556%;
+      margin-left: 2.083333%;
+      margin-top: 30px;
 
-      .labels {
-        box-sizing: border-box;
-        float: left;
-        width: 30%;
+      .basic-pet-info {
+        margin-top: 11px;
+        font-family: $monserat-medium;
+        font-size: 12px;
+        color: #393939;
 
-        label {
-          display: block;
-          text-align: right;
-          margin-bottom: 3px;
-          margin-right: 17px;
-          padding-top: 3px;
+        .labels {
+          box-sizing: border-box;
+          float: left;
+          width: 30%;
+
+          label {
+            display: block;
+            text-align: right;
+            margin-bottom: 3px;
+            margin-right: 17px;
+            padding-top: 3px;
+          }
+
+          .features {
+            margin-top: 11px;
+          }
+
+          .description {
+            margin-top: 20px;
+          }
+
+          .location {
+            margin-top: 90px;
+          }
+
+          .file {
+            margin-top: 30px;
+          }
+
+          .file-for-mobile {
+            position: relative;
+            top: 60px;
+            padding: 7px 16px 8px 16px;
+            border: 1px solid $green;
+            border-radius: 15px;
+            color: $green;
+            cursor: pointer;
+            text-align: center;
+          }
         }
 
-        .features {
-          margin-top: 11px;
-        }
+        .inputs {
+          display: flex;
+          flex-direction: column;
+          box-sizing: border-box;
+          float: right;
+          width: 70%;
 
-        .description {
-          margin-top: 20px;
-        }
+          select {
+            display: block;
+            border: none;
+            margin-bottom: 3px;
+            padding-top: 3px;
+          }
 
-        .location {
-          margin-top: 90px;
-        }
+          input {
+            display: block;
+            margin-bottom: 3px;
+            border: none;
+            border-bottom: 1px solid $green;
+          }
 
-        .file {
-          margin-top: 30px;
-        }
+          textarea {
+            border-color: $green;
+          }
 
-        .file-for-mobile {
-          position: relative;
-          top: 60px;
-          padding: 7px 16px 8px 16px;
-          border: 1px solid $green;
-          border-radius: 15px;
-          color: $green;
-          cursor: pointer;
-          text-align: center;
+          .features-input {
+            margin-top: 12px;
+          }
+
+          .description-input {
+            margin-top: 16px;
+          }
+
+          .location-input {
+            margin-top: 10px;
+          }
         }
       }
 
-      .inputs {
-        box-sizing: border-box;
-        float: right;
-        width: 70%;
+      .images {
+        font-family: $monserat-medium;
 
-        select {
-          display: block;
-          border: none;
-          margin-bottom: 3px;
-          padding-top: 3px;
+        .scale {
+          width: 192px;
+          height: 183px;
+          margin-top: 17px;
+          margin-left: 16px;
+          background-image: url(../../../../img/Screenshot_Scale.png);
+          background-repeat: no-repeat;
+          background-size: 192px 183px;
+        }
+
+        .drag-and-drop {
+          width: 90%;
+          margin-top: 30px;
+          border-top: 1px solid #BABABA;
+          font-size: 12px;
+          color: #393939;
+          text-align: center;
+
+          .fa-sign-out {
+            margin-top: 25px;
+            margin-bottom: 7px;
+            transform: rotate(-90deg);
+            font-size: 30px;
+            color: $green;
+          }
+
+          label {
+            padding: 7px 16px 8px 16px;
+            border: 1px solid $green;
+            border-radius: 15px;
+            color: $green;
+            cursor: pointer;
+          }
+        }
+
+        .file-browser {
+          margin-top: 25px;
+          margin-left: 10px;
+          border: 1px solid $green;
+          width: 142px;
+          height: 111px;
+          color: $green;
+        }
+
+        .file-browser::-webkit-file-upload-button {
+          visibility: hidden;
+        }
+      }
+
+      .contacts {
+        margin-top: 20px;
+        border-top: 1px solid #BABABA;
+
+        label {
+          margin-top: 16px;
+          margin-bottom: 0;
+          font-size: 12px;
+          color: #393939;
         }
 
         input {
-          display: block;
-          margin-bottom: 3px;
+          margin-left: 23px;
           border: none;
           border-bottom: 1px solid $green;
-        }
-
-        textarea {
-          border-color: $green;
-        }
-
-        .features-input {
-          margin-top: 12px;
-        }
-
-        .description-input {
-          margin-top: 16px;
-        }
-
-        .location-input {
-          margin-top: 10px;
-        }
-      }
-    }
-
-    .images {
-      font-family: $monserat-medium;
-
-      .scale {
-        width: 192px;
-        height: 183px;
-        margin-top: 17px;
-        margin-left: 16px;
-        background-image: url(../../../../img/Screenshot_Scale.png);
-        background-repeat: no-repeat;
-        background-size: 192px 183px;
-      }
-
-      .drag-and-drop {
-        width: 90%;
-        margin-top: 30px;
-        border-top: 1px solid #BABABA;
-        font-size: 12px;
-        color: #393939;
-        text-align: center;
-
-        .fa-sign-out {
-          margin-top: 25px;
-          margin-bottom: 7px;
-          transform: rotate(-90deg);
-          font-size: 30px;
           color: $green;
         }
 
-        label {
-          padding: 7px 16px 8px 16px;
-          border: 1px solid $green;
-          border-radius: 15px;
-          color: $green;
-          cursor: pointer;
+        input:nth-of-type(2) {
+          margin-left: 50px;
+        }
+
+        input:nth-of-type(3) {
+          margin-left: 43px;
         }
       }
 
-      .file-browser {
-        margin-top: 25px;
-        margin-left: 10px;
-        border: 1px solid $green;
-        width: 142px;
-        height: 111px;
-        color: $green;
+      .footer-form {
+        margin-top: 10px;
+
+        img {
+          width: 43px;
+          height: 43px;
+          margin-right: 13px;
+          border-radius: 50%;
+        }
+
+        p {
+          align-self: center;
+          height: fit-content;
+          margin-bottom: 0;
+          font-family: $monserat-bold;
+          font-weight: 700;
+        }
       }
 
-      .file-browser::-webkit-file-upload-button {
-        visibility: hidden;
-      }
-    }
-
-    .contacts {
-      margin-top: 20px;
-      border-top: 1px solid #BABABA;
-
-      label {
-        margin-top: 16px;
-        margin-bottom: 0;
+      .footer-form-submit-btn {
+        margin-top: 10px;
+        margin-right: 20px;
+        width: 148px;
+        height: 34px;
+        justify-content: space-around;
+        background-color: $green;
         font-size: 12px;
-        color: #393939;
-      }
-
-      input {
-        margin-left: 23px;
-        border: none;
-        border-bottom: 1px solid $green;
-        color: $green;
-      }
-
-      input:nth-of-type(2) {
-        margin-left: 50px;
-      }
-
-      input:nth-of-type(3) {
-        margin-left: 43px;
+        border-radius: 17px;
+        color: white;
       }
     }
 
-    .footer-form {
-      margin-top: 10px;
-
-      img {
-        width: 43px;
-        height: 43px;
-        margin-right: 13px;
-        border-radius: 50%;
-      }
-
-      p {
-        align-self: center;
-        height: fit-content;
-        margin-bottom: 0;
-        font-family: $monserat-bold;
-        font-weight: 700;
-      }
-    }
-
-    .footer-form-submit-btn {
-      margin-top: 10px;
-      margin-right: 20px;
-      width: 148px;
-      height: 34px;
-      justify-content: space-around;
-      background-color: $green;
-      font-size: 12px;
-      border-radius: 17px;
+    .mobile-form-btn {
+      position: absolute;
+      top: -10px;
+      right: 0;
+      border: none;
+      background-color: transparent;
       color: white;
+      font-size: 56px;
     }
-  }
-
-  .mobile-form-btn {
-    position: relative;
-    bottom: 740px;
-    left: 85%;
-    border: none;
-    background-color: transparent;
-    color: white;
-    font-size: 56px;
   }
 
   .form-right-side {
@@ -242,22 +249,24 @@ $monserat-medium: "Montserrat Medium", sans-serif;
 
 @media screen and (min-width: 601px){
   .main-block-lost-form {
-    .lost-form-container {
-      .basic-pet-info {
-        .labels {
-          .file {
-            display: none;
-          }
+    .form-left-side {
+      .lost-form-container {
+        .basic-pet-info {
+          .labels {
+            .file {
+              display: none;
+            }
 
-          .file-for-mobile {
-            display: none;
+            .file-for-mobile {
+              display: none;
+            }
           }
         }
       }
-    }
 
-    .mobile-form-btn {
-      display: none;
+      .mobile-form-btn {
+        display: none;
+      }
     }
   }
 }
@@ -266,70 +275,71 @@ $monserat-medium: "Montserrat Medium", sans-serif;
   .main-block-lost-form {
     font-size: 24px;
 
-    .lost-form-container {
-      width: 90%;
-      height: fit-content;
+    .form-left-side {
+      .lost-form-container {
+        height: fit-content;
 
-      .basic-pet-info {
-        .labels {
-          height: fit-content;
+        .basic-pet-info {
+          .labels {
+            height: fit-content;
 
-          .location {
-            margin-top: 70px;
-          }
-        }
-
-        .inputs {
-          .features-input {
-            margin-top: 5px;
+            .location {
+              margin-top: 70px;
+            }
           }
 
-          .description-input {
-            margin-top: 5px;
-          }
+          .inputs {
+            .features-input {
+              margin-top: 5px;
+            }
 
-          .location-input {
-            margin-top: 5px;
-          }
-        }
-      }
+            .description-input {
+              margin-top: 5px;
+            }
 
-      .images {
-        .scale {
-          display: none;
-        }
-
-        .drag-and-drop {
-          border: none;
-          margin-top: 0;
-
-          .fa-sign-out {
-            display: none;
-          }
-
-          p {
-            display: none;
-          }
-
-          label {
-            display: none;
-          }
-
-          div {
-            justify-content: center;
-
-            .file-browser {
-              position: relative;
-              bottom: 55px;
-              margin-top: 0;
-              margin-left: 30px;
+            .location-input {
+              margin-top: 5px;
             }
           }
         }
-      }
 
-      .contacts-container {
-        display: none;
+        .images {
+          .scale {
+            display: none;
+          }
+
+          .drag-and-drop {
+            border: none;
+            margin-top: 0;
+
+            .fa-sign-out {
+              display: none;
+            }
+
+            p {
+              display: none;
+            }
+
+            label {
+              display: none;
+            }
+
+            div {
+              justify-content: center;
+
+              .file-browser {
+                position: relative;
+                bottom: 55px;
+                margin-top: 0;
+                margin-left: 30px;
+              }
+            }
+          }
+        }
+
+        .contacts-container {
+          display: none;
+        }
       }
     }
   }
@@ -337,13 +347,15 @@ $monserat-medium: "Montserrat Medium", sans-serif;
 
 @media screen and (max-width: 410px){
   .main-block-lost-form {
-    .lost-form-container {
-      .images {
-        .drag-and-drop {
+    .form-left-side {
+      .lost-form-container {
+        .images {
+          .drag-and-drop {
 
-          div {
-            .file-browser {
-              margin-left: 40px;
+            div {
+              .file-browser {
+                margin-left: 40px;
+              }
             }
           }
         }
@@ -354,13 +366,15 @@ $monserat-medium: "Montserrat Medium", sans-serif;
 
 @media screen and (max-width: 379px){
   .main-block-lost-form {
-    .lost-form-container {
-      .images {
-        .drag-and-drop {
+    .form-left-side {
+      .lost-form-container {
+        .images {
+          .drag-and-drop {
 
-          div {
-            .file-browser {
-              margin-left: 50px;
+            div {
+              .file-browser {
+                margin-left: 50px;
+              }
             }
           }
         }
@@ -371,26 +385,30 @@ $monserat-medium: "Montserrat Medium", sans-serif;
 
 @media screen and (max-width: 345px){
   .main-block-lost-form {
-    .lost-form-container {
-      .basic-pet-info {
-        .labels {
-          .file-for-mobile {
-            padding-left: 10px;
+    .form-left-side {
+      .lost-form-container {
+        .basic-pet-info {
+          .labels {
+            .file-for-mobile {
+              padding-left: 10px;
+            }
           }
         }
-      }
-      .images {
-        .drag-and-drop {
-          div {
-            .file-browser {
-              margin-left: 55px;
+
+        .images {
+          .drag-and-drop {
+            div {
+              .file-browser {
+                margin-left: 55px;
+              }
             }
           }
         }
       }
-    }
-    .mobile-form-btn {
-      bottom: 770px;
+
+      .mobile-form-btn {
+        bottom: 770px;
+      }
     }
   }
 }

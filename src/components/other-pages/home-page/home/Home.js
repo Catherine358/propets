@@ -5,7 +5,7 @@ import Post from "./post";
 
 const Home = (props) => {
     return (
-        <Grid container direction="row">
+        <Grid container direction="row" className="post-container">
             <Grid container item lg={8}>
                 <Post favourite={false}/>
                 <Post favourite={false}/>

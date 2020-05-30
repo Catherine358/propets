@@ -10,7 +10,7 @@ const NewPostForm = (props) => {
     const [menu, setMenu] = useState(false);
 
     return (
-        <div>
+        <div className="wrapper-main">
             <HeaderWhiteWithoutButtons/>
             <div className="header-for-mobile">
                 <HeaderForMobile type={"form"} setMenu={setMenu} menu={menu}/>

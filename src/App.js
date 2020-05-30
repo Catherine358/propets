@@ -26,49 +26,31 @@ const App = (props) => {
                     </div>
                 )}/>
                 <Route exact path="/lost/form" render={props => (
-                    <div className="wrapper-main">
-                        <LostFoundPageForm page="lost"/>
-                    </div>
+                    <LostFoundPageForm page="lost"/>
                 )}/>
                 <Route exact path="/found/form" render={props => (
-                    <div className="wrapper-main">
-                        <LostFoundPageForm page="found"/>
-                    </div>
+                    <LostFoundPageForm page="found"/>
                 )}/>
                 <Route exact path="/lost/preview" render={props => (
-                    <div className="wrapper-main">
-                        <PreviewPage/>
-                    </div>
+                    <PreviewPage/>
                 )}/>
                 <Route exact path="/lost" render={props => (
-                    <div className="wrapper-main">
-                        <LostFoundPage page="lost"/>
-                    </div>
+                    <LostFoundPage page="lost"/>
                 )}/>
                 <Route exact path="/found" render={props => (
-                    <div className="wrapper-main">
-                        <LostFoundPage page="found"/>
-                    </div>
+                    <LostFoundPage page="found"/>
                 )}/>
                 <Route exact path="/profile" render={props => (
-                    <div className="wrapper-main">
-                        <ProfilePage page="profile"/>
-                    </div>
+                    <ProfilePage page="profile"/>
                 )}/>
                 <Route exact path="/home/new_post" render={props => (
-                    <div className="wrapper-main">
-                        <NewPostForm/>
-                    </div>
+                    <NewPostForm/>
                 )}/>
                 <Route exact path="/home" render={props => (
-                    <div className="wrapper-main">
-                        <HomePage page="home"/>
-                    </div>
+                    <HomePage page="home"/>
                 )}/>
                 <Route exact path="/favourites" render={props => (
-                    <div className="wrapper-main">
-                        <FavouritesPage page="favourites"/>
-                    </div>
+                    <FavouritesPage page="favourites"/>
                 )}/>
             </Context.Provider>
         </Switch>

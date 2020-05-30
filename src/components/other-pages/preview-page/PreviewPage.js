@@ -9,7 +9,7 @@ import HeaderWhiteWithoutButtons from "../shared-components/header-without-butto
 
 const PreviewPage = (props) => {
     return (
-        <div>
+        <div className="wrapper-main">
             <HeaderWhiteWithoutButtons/>
             {/*<div className="header-for-mobile">*/}
             {/*    <HeaderForMobile type={""} setMenu={setMenu} menu={menu}/>*/}

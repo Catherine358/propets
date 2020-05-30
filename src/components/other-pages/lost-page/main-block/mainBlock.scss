@@ -6,68 +6,73 @@ $monserat-bold: "Monserrat Bold", sans-serif;
   font-family: $monserat-medium;
   color: $green;
 
-  .tags-for-search {
-    margin-top: 26px;
-    height: 30px;
+  .lost-left-side {
+    margin-bottom: 35px;
 
-    input {
+    .tags-for-search {
+      margin-top: 26px;
       height: 30px;
-      border: 1px solid $green;
-      border-radius: 15px;
-      font-size: 12px;
-      padding-left: 10px;
-      margin-right: 12px;
+
+      input {
+        height: 30px;
+        border: 1px solid $green;
+        border-radius: 15px;
+        font-size: 12px;
+        padding-left: 10px;
+        margin-right: 12px;
+      }
+
+      input:nth-of-type(1) {
+        margin-left: 10px;
+      }
+
+      input:nth-of-type(1),
+      input:nth-of-type(2) {
+        width: 145px;
+      }
+
+      input:nth-of-type(3) {
+        width: 337px;
+      }
+
+      input:nth-of-type(4) {
+        width: 226px;
+      }
+
+      .map-view-btn,
+      .list-view-btn {
+        justify-content: space-around;
+        justify-self: right;
+        border-radius: 17px;
+        background-color: $green;
+        font-size: 12px;
+        color: white;
+
+        .fa-map-marked,
+        .fa-list {
+          margin-right: 10px;
+        }
+      }
     }
 
-    input:nth-of-type(1) {
-      margin-left: 10px;
-    }
-
-    input:nth-of-type(1),
-    input:nth-of-type(2) {
-      width: 145px;
-    }
-
-    input:nth-of-type(3) {
-      width: 337px;
-    }
-
-    input:nth-of-type(4) {
-      width: 226px;
-    }
-
-    .map-view-btn,
-    .list-view-btn {
-      justify-content: space-around;
-      justify-self: right;
-      border-radius: 17px;
+    .map-container {
+      margin-top: 10px;
+      margin-bottom: -35px;
+      padding-left: 6px;
       background-color: $green;
+      border-top-left-radius: 15px;
       font-size: 12px;
       color: white;
 
-      .fa-map-marked,
-      .fa-list {
-        margin-right: 10px;
-      }
-    }
-  }
+      span {
+        margin-left: 14px;
+        margin-top: 5px;
+        cursor: pointer;
 
-  .map-container {
-    margin-top: 10px;
-    padding-left: 6px;
-    background-color: $green;
-    border-top-left-radius: 15px;
-    font-size: 12px;
-    color: white;
-
-    span {
-      margin-left: 14px;
-      margin-top: 5px;
-      cursor: pointer;
-
-      i {
-        margin-left: -6px;
-        margin-right: 10px;
+        i {
+          margin-left: -6px;
+          margin-right: 10px;
+        }
       }
     }
   }
@@ -87,9 +92,11 @@ $monserat-bold: "Monserrat Bold", sans-serif;
 
 @media screen and (min-width: 1215px){
   .main-block-lost {
-    .map-view-btn,
-    .list-view-btn {
-      display: none;
+    .lost-left-side {
+      .map-view-btn,
+      .list-view-btn {
+        display: none;
+      }
     }
   }
 
@@ -97,18 +104,19 @@ $monserat-bold: "Monserrat Bold", sans-serif;
 
 @media screen and (max-width: 1214px){
   .main-block-lost {
+    .lost-left-side {
+      .map-container {
+        display: none;
+      }
 
-    .map-container {
-      display: none;
-    }
-
-    .tags-for-search {
-      height: fit-content;
-      margin-bottom: 10px;
-
-      input:nth-of-type(3) {
-        width: 250px;
+      .tags-for-search {
+        height: fit-content;
         margin-bottom: 10px;
+
+        input:nth-of-type(3) {
+          width: 250px;
+          margin-bottom: 10px;
+        }
       }
     }
   }
@@ -116,26 +124,29 @@ $monserat-bold: "Monserrat Bold", sans-serif;
 
 @media screen and (max-width: 600px){
   .main-block-lost {
-    .tags-for-search {
-      text-align: center;
-      input:nth-of-type(1),
-      input:nth-of-type(2),
-      input:nth-of-type(3),
-      input:nth-of-type(4),
-      .map-view-btn,
-      .list-view-btn {
-        width: 90%;
-        height: 40px;
-        margin-top: 20px;
-      }
+    .lost-left-side {
+      .tags-for-search {
+        text-align: center;
 
-      input:nth-of-type(3) {
-        margin-bottom: 0;
-      }
+        input:nth-of-type(1),
+        input:nth-of-type(2),
+        input:nth-of-type(3),
+        input:nth-of-type(4),
+        .map-view-btn,
+        .list-view-btn {
+          width: 90%;
+          height: 40px;
+          margin-top: 20px;
+        }
 
-      .map-view-btn,
-      .list-view-btn {
-        justify-content: center;
+        input:nth-of-type(3) {
+          margin-bottom: 0;
+        }
+
+        .map-view-btn,
+        .list-view-btn {
+          justify-content: center;
+        }
       }
     }
   }

@@ -16,7 +16,7 @@ const FormMainBlock = (props) => {
 
     return (
         <Grid container direction="row" className="main-block-lost-form">
-            <Grid container item md={11} lg={8}>
+            <Grid container item md={11} lg={8} direction="column" className="form-left-side">
                 {page === "lost" && <p className="header-form-lost">Lost your buddy? Keep calm and complete the form.</p>}
                 {page === "found" && <p className="header-form-lost">Found a pet? Please complete the form to help.</p>}
                 <form onSubmit={(event) => onHandleSubmit(event, history)}>

@@ -2,14 +2,18 @@ $green: #8DBFAC;
 $monserat-bold: "Monserrat Bold", sans-serif;
 $monserat-medium: "Montserrat Medium", sans-serif;
 
-.pet-info-container {
-  width: 641px;
+div.pet-info-container {
+  //width: 641px;
+  width: 94.722222%;
   height: 278px;
-  margin-left: 15px;
-  margin-right: 10px;
+  //margin-left: 15px;
+  margin-left: 2.083333%;
+  //margin-right: 10px;
+  margin-right: 1.388889%;
   margin-top: 38px;
   box-shadow: 0 3px 6px #00000029;
-  padding-left: 13px;
+  //padding-left: 13px;
+  padding-left: 1.085556%;
   font-family: $monserat-medium;
   color: $green;
 

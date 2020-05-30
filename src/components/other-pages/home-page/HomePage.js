@@ -8,7 +8,7 @@ const HomePage = (props) => {
     const { page } = props;
 
     return (
-        <div>
+        <div className="wrapper-main">
             <HeaderWithAddBtn/>
             <Grid container direction="row">
                 <Grid container item md={3}>

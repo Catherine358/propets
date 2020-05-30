@@ -11,17 +11,17 @@ const LostFoundPageForm = (props) => {
     const { page } = props;
 
     return (
-        <div>
+        <div className="wrapper-main">
             <HeaderWhiteWithoutButtons/>
             <div className="header-for-mobile">
                 <HeaderForMobile type={"form"} setMenu={setMenu} menu={menu}/>
             </div>
             {menu && <Menu/>}
             <Grid container direction="row">
-                <Grid container item md={3}>
+                <Grid container item sm={3} className="aside-block-container">
                     <AsideBlock selected={false}/>
                 </Grid>
-                <Grid container item md={9}>
+                <Grid container item sm={9}>
                     <FormMainBlock page={page}/>
                 </Grid>
             </Grid>
