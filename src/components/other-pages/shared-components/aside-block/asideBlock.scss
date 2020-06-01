@@ -215,8 +215,26 @@ $monserat-medium: "Montserrat Medium", sans-serif;
   }
 }
 
-//@media screen and (max-width: 599px){
-//  .aside-block {
-//    display: none;
-//  }
-//}
+@media screen and (max-width: 1210px){
+  div.aside-block {
+    div.aside-menu {
+      svg {
+        rect {
+          transform: translateX(-10%);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1100px){
+  div.aside-block {
+    div.aside-menu {
+      svg {
+        rect {
+          transform: translateX(-20%);
+        }
+      }
+    }
+  }
+}

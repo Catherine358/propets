@@ -3,17 +3,14 @@ $monserat-bold: "Monserrat Bold", sans-serif;
 $monserat-medium: "Montserrat Medium", sans-serif;
 
 div.pet-info-container {
-  //width: 641px;
   width: 94.722222%;
-  height: 278px;
-  //margin-left: 15px;
+  height: fit-content;
   margin-left: 2.083333%;
-  //margin-right: 10px;
   margin-right: 1.388889%;
   margin-top: 38px;
   box-shadow: 0 3px 6px #00000029;
-  //padding-left: 13px;
   padding-left: 1.085556%;
+  padding-bottom: 10px;
   font-family: $monserat-medium;
   color: $green;
 
@@ -27,19 +24,20 @@ div.pet-info-container {
 
   .pet-info {
     display: grid;
-    grid-template-rows: 30px 65px 71px 97px;
-
-    .breed {
-      margin-top: 10px;
-      font-family: $monserat-bold;
-      font-size: 22px;
-      font-weight: 700;
-    }
+    grid-template-rows: 95px 71px 97px;
 
     .details {
       margin-top: 12px;
       font-size: 12px;
       color: #393939;
+
+      .breed {
+        margin-top: 10px;
+        font-family: $monserat-bold;
+        font-size: 22px;
+        font-weight: 700;
+        color: $green;
+      }
 
       p {
         width: 100%;
@@ -114,15 +112,43 @@ div.pet-info-container {
   }
 }
 
-@media screen and (max-width: 600px){
+@media screen and (min-width: 600px){
   .pet-info-container {
-    height: fit-content;
-    padding-bottom: 10px;
-
     .pet-info {
-      grid-template-rows: 30px auto 71px 97px;
+      .pet-photo-mini {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 599px){
+  .pet-info-container {
+
+    div.pet-photo {
+      display: none;
+    }
+
+    div.pet-info {
+      display: flex;
+      flex-direction: row;
+
+      .pet-photo-mini {
+        display: inline-block;
+        width: 125px;
+        height: 125px;
+        background-size: 125px;
+        margin-top: 12px;
+        align-self: center;
+      }
+
+      .details {
+        width: calc(100% - 140px);
+        margin-left: 10px;
+      }
 
       .description {
+        width: 100%;
         margin-top: 5px;
       }
     }

@@ -40,7 +40,7 @@ const MainBlock = (props) => {
                             <GoogleMap/>
                         </Grid>
                         : <Grid container direction="row">
-                        <Grid container item lg={bigMap ? 7 : 8}>
+                        <Grid container item lg={bigMap ? 7 : 8} direction="column">
                             <PetInfo/>
                             <PetInfo/>
                         </Grid>

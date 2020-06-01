@@ -7,10 +7,11 @@ import pic from "../../../../../img/dog-photo-small.png";
 const PetInfo = (props) => {
     return (
         <Grid container direction="row" className="pet-info-container">
-            <Grid container item xs={5} className="pet-photo" style={{backgroundImage: `url(${photo})`}}/>
-            <Grid container item xs={7} className="pet-info">
-                <p className="breed">Dog, Golden Retriever</p>
+            <Grid container item sm={5} className="pet-photo" style={{backgroundImage: `url(${photo})`}}/>
+            <Grid container item sm={7} className="pet-info">
+                <div className="pet-photo-mini" style={{backgroundImage: `url(${photo})`}}/>
                 <Grid container direction="row" className="details">
+                    <p className="breed">Dog, Golden Retriever</p>
                     <Grid container item sm={6}>
                         <p><span>Color:</span> golden</p>
                         <p><span>Sex:</span> male</p>

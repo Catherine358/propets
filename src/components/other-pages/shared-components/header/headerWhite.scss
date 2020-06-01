@@ -15,7 +15,7 @@ $monserat-medium: "Montserrat Medium", sans-serif;
   }
 
   .header-white-logo {
-    margin: 24px 0 24px 151px;
+    margin: 24px 0 24px 11%;
     width: 142px;
     height: 33px;
   }
@@ -59,7 +59,7 @@ $monserat-medium: "Montserrat Medium", sans-serif;
   }
 }
 
-@media screen and (min-width: 1025px){
+@media screen and (min-width: 960px){
   .header-white {
     .header-white-menu-burger-btn {
       display: none;

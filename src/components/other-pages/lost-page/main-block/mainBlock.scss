@@ -82,7 +82,7 @@ $monserat-bold: "Monserrat Bold", sans-serif;
   }
 }
 
-@media screen and (max-width: 1024px){
+@media screen and (min-width: 1280px){
   .main-block-lost {
     .lost-right-side {
       display: none;
@@ -90,7 +90,15 @@ $monserat-bold: "Monserrat Bold", sans-serif;
   }
 }
 
-@media screen and (min-width: 1215px){
+@media screen and (max-width: 959px){
+  .main-block-lost {
+    .lost-right-side {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 1280px){
   .main-block-lost {
     .lost-left-side {
       .map-view-btn,
@@ -102,7 +110,7 @@ $monserat-bold: "Monserrat Bold", sans-serif;
 
 }
 
-@media screen and (max-width: 1214px){
+@media screen and (max-width: 1279px){
   .main-block-lost {
     .lost-left-side {
       .map-container {
