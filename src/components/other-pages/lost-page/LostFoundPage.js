@@ -14,7 +14,7 @@ const LostFoundPage = (props) => {
 
     return (
         <div className="wrapper-main">
-            <HeaderWhite props={props}/>
+            <HeaderWhite props={props} setMenu={setMenu} menu={menu}/>
             <div className="header-for-mobile">
                 <HeaderForMobile type={""} setMenu={setMenu} menu={menu}/>
             </div>

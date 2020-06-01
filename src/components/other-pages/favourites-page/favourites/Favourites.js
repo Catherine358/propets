@@ -6,12 +6,12 @@ import Post from "../../home-page/home/post";
 const Favourites = (props) => {
     return (
         <Grid container direction="row" className="post-container">
-            <Grid container item lg={8}>
+            <Grid container item lg={8} md={11} direction="column">
                 <p className="favourite-header">Your favorites. Find them here anytime.</p>
                 <Post favourite={true}/>
                 <Post favourite={true}/>
             </Grid>
-            <Grid container item lg={4} className="post-right-side"/>
+            <Grid container item lg={4} md={1} className="post-right-side"/>
         </Grid>
     )
 };

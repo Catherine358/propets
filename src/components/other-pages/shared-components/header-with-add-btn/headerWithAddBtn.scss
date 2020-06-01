@@ -37,7 +37,7 @@ $monserat-medium: "Montserrat Medium", sans-serif;
   }
 
   .header-add-btn {
-    margin-left: 23px;
+    //margin-left: 23px;
     background-color: $green;
     color: white;
   }
@@ -48,7 +48,7 @@ $monserat-medium: "Montserrat Medium", sans-serif;
   }
 }
 
-@media screen and (min-width: 1025px){
+@media screen and (min-width: 960px){
   .header-add {
     .header-add-menu-burger-btn {
       display: none;

@@ -17,10 +17,10 @@ const NewPostForm = (props) => {
             </div>
             {menu && <Menu/>}
             <Grid container direction="row">
-                <Grid container item md={3}>
+                <Grid container item sm={3} className="aside-block-container">
                     <AsideBlock selected={false}/>
                 </Grid>
-                <Grid container item md={9}>
+                <Grid container item sm={9}>
                     <NewPost/>
                 </Grid>
             </Grid>

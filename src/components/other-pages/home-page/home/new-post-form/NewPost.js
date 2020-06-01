@@ -10,7 +10,7 @@ const NewPost = (props) => {
 
     return (
         <Grid container direction="row" className="new-post-container">
-            <Grid container item md={11} lg={8} className="new-post-left-side">
+            <Grid container item md={11} lg={8} className="new-post-left-side" direction="column">
                 <p className="new-post-header">Your new post! Simply text, add photos and publish.</p>
                 <div className="new-post">
                     <form>
