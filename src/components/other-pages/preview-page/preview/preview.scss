@@ -67,3 +67,11 @@ $monserat-bold: "Monserrat Bold", sans-serif;
     background-color: $green;
   }
 }
+
+@media screen and (max-width: 959px){
+  .preview-main-block {
+    .preview-right-side {
+      display: none;
+    }
+  }
+}

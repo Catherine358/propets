@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import './profile.scss';
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
-import PetInfo from "../../lost-page/main-block/pet-info";
 import Activity from "../activities";
 
 const pic = "https://sun6-16.userapi.com/E-J3H_cTJO9xr3DE2g_g_6vazm5YPD-gGqeqIQ/7Z1WCb9JJiw.jpg";
