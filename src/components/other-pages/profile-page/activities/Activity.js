@@ -9,13 +9,14 @@ const Activity = (props) => {
 
     return (
         <Grid container direction="row" className={inactive ? "activity-container inactive" : "activity-container"}>
-            <Grid container item xs={5} className="pet-photo" style={{backgroundImage: `url(${photo})`}}/>
-            <Grid container item xs={7} className="pet-info">
+            <Grid container item sm={5} className="pet-photo" style={{backgroundImage: `url(${photo})`}}/>
+            <Grid container item sm={7} className="pet-info">
                 <div>
                     <p className="breed">Dog, Golden Retriever</p>
                     <i className="fas fa-pencil-alt"/>
                     <i className="fas fa-trash-alt"/>
                 </div>
+                <div className="pet-photo-mini" style={{backgroundImage: `url(${photo})`}}/>
                 <Grid container direction="row" className="details">
                     <Grid container item sm={6}>
                         <p><span>Color:</span> golden</p>
