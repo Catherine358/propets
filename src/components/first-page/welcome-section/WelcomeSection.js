@@ -2,7 +2,7 @@ import React, {useContext, useState} from "react";
 import './welcomeSection.scss';
 import loop from "../../../img/icons/loop.svg";
 import Grid from "@material-ui/core/Grid";
-import {Context} from "../../../context";
+import { Context } from "../../../context";
 
 const WelcomeSection = (props) => {
     const { setForm, form } = props;
@@ -52,7 +52,10 @@ const WelcomeSection = (props) => {
                 }}>
                     <span className={hoveredFound ? "animated" : hoveredFoundBack ? "animated-back" : ""}>{btnTextFound}</span>
                 </div>
-                <p className="join">I'm okay, just want to <span>JOIN</span> the pawsome community!</p>
+                <p className="join">I'm okay, just want to <span onClick={() => {
+                    context.setPage('home');
+                    setForm(true);
+                }}>JOIN</span> the pawsome community!</p>
             </Grid>
             <Grid container item sm={6} xs={9} className="dog"/>
         </Grid>

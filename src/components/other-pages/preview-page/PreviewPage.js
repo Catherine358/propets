@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import HeaderWhite from "../shared-components/header";
 import HeaderForMobile from "../shared-components/header/header-for-mobile";
 import Menu from "../shared-components/menu";
 import Grid from "@material-ui/core/Grid";

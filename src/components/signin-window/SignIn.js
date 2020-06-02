@@ -6,26 +6,121 @@ import Button from "@material-ui/core/Button";
 import Facebook from "./Facebook";
 import { withRouter } from "react-router";
 import { Context } from "../../context";
-import { Login } from "../../services";
+import { Login, Register } from "../../services";
 
-const onSubmitForm = (event, history, page) => {
+const passwordvalidation = (password) => {
+  if(password.length < 8){
+      return "Password must be at least 8 characters long";
+  }  else {
+      // array of flags flags[0] - if at least one capital letter;
+      // flags[1] - if at least one low letter;
+      // flags[2] = if at least one number or special character
+      let flags = [false, false, false];
+      const str = "/*!@#$%^&*()\"{}_[]|\\?/<>,.";
+      for(let i = 0; i < password.length; i++){
+          if (parseInt(password[i]) >= 0 || parseInt(password[i]) <= 9 || str.includes(password[i])){
+              flags[2] = true;
+          } else if(password[i] === password[i].toUpperCase()){
+              flags[0] = true;
+          } else if (password[i] === password[i].toLowerCase()) {
+              flags[1] = true;
+          }
+      }
+      if(flags.includes(false)) {
+          return "Password must contain at least one capital letter, one lower case letter and one number or special character"
+      } else {
+          return "OK";
+      }
+  }
+};
+
+const onSubmitFormSignUp = (event, history, page) => {
+    event.preventDefault();
+    const name = event.target.name.value;
+    const email = event.target.emailReg.value;
+    const password = event.target.passwordReg.value;
+    const password2 = event.target.passwordReg2.value;
+    const valid = passwordvalidation(password);
+    if(valid !== "OK") {
+        alert(valid);
+    } else {
+        if (password !== password2) {
+            alert("Passwords do not match! Please re-enter");
+        } else {
+            event.target.name.value = "";
+            event.target.emailReg.value = "";
+            event.target.passwordReg.value = "";
+            event.target.passwordReg2.value = "";
+            Register(name, email, password)
+                .then(response => {
+                    console.log(response);
+                    if (page === "lost") {
+                        history.push("/lost");
+                    } else if (page === "found") {
+                        history.push("/found");
+                    } else if (page === "home") {
+                        history.push("/home");
+                    }
+                })
+                .catch(error => console.log(error));
+        }
+    }
+};
+
+const onSubmitFormSignIn = (event, history, page) => {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
+    event.target.email.value = "";
+    event.target.password.value = "";
     Login(email, password)
-        .then(response => console.log(response))
+        .then(response => {
+            console.log(response);
+            if(page === "lost") {
+                history.push("/lost");
+            }else if(page === "found") {
+                history.push("/found");
+            }else if(page === "home") {
+                history.push("/home");
+            }
+        })
         .catch(error => console.log(error));
-    if(page === "lost") {
-        history.push("/lost");
-    }else if(page === "found"){
-        history.push("/found");
-    }
 };
 
 const SignIn = (props) => {
     const { setForm, history } = props;
     const [signType, setSignType] = useState("signup");
+    const [name, setName] = useState("");
+    const [emailReg, setEmailReg] = useState("");
+    const [passwordReg, setPassReg] = useState("");
+    const [passwordReg2, setPassReg2] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPass] = useState("");
     const context = useContext(Context);
+
+    function handleChangeName(event) {
+        setName(event.target.value);
+    }
+
+    function handleChangeEmailReg(event) {
+        setEmailReg(event.target.value);
+    }
+
+    function handleChangePasswordReg(event) {
+        setPassReg(event.target.value);
+    }
+
+    function handleChangePasswordReg2(event) {
+        setPassReg2(event.target.value);
+    }
+
+    function handleChangeEmail(event) {
+        setEmail(event.target.value);
+    }
+
+    function handleChangePassword(event) {
+        setPass(event.target.value);
+    }
 
     return (
         <Grid container direction="column" className="signin-window">
@@ -55,24 +150,30 @@ const SignIn = (props) => {
                     }} style={{backgroundColor: `${signType === "signin" ? "#8DBFAC" : "#BABABA"}`}}>Sign in</Button>
                 </Grid>
             </Grid>
-            <form onSubmit={(event) => onSubmitForm(event, history, context.page)}>
+            <form onSubmit={(event) => {
+                if(signType === "signin") {
+                    onSubmitFormSignIn(event, history, context.page);
+                }else if(signType === "signup"){
+                    onSubmitFormSignUp(event, history, context.page);
+                }
+            }}>
                 {signType === "signup" ? <Grid container direction="row">
                      <Grid container item sm={6} direction="column" className="signup-form">
                             <label>
                                 Name:
-                                <input type="text" name="name"/>
+                                <input value={name} type="text" name="name" required onChange={handleChangeName}/>
                             </label>
                             <label>
                                 Email:
-                                <input type="email"/>
+                                <input value={emailReg} type="email" name="emailReg" required onChange={handleChangeEmailReg}/>
                             </label>
                             <label>
                                 Password:
-                                <input type="password"/>
+                                <input value={passwordReg} type="password" name="passwordReg" required onChange={handleChangePasswordReg}/>
                             </label>
                             <label>
                                 Password:
-                                <input type="password"/>
+                                <input value={passwordReg2} type="password" name="passwordReg2" required onChange={handleChangePasswordReg2}/>
                             </label>
                     </Grid>
                     <Grid container item sm={6} direction="column" className="signup-text">
@@ -84,11 +185,11 @@ const SignIn = (props) => {
                         <Grid container item sm={6} direction="column" className="signin-form">
                             <label>
                                 Email:
-                                <input type="email" name="email"/>
+                                <input value={email} type="email" name="email" required onChange={handleChangeEmail}/>
                             </label>
                             <label>
                                 Password:
-                                <input type="password" name="password"/>
+                                <input value={password} type="password" name="password" required onChange={handleChangePassword}/>
                             </label>
                             <span>Forgot password?</span>
                         </Grid>
