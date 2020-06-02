@@ -74,6 +74,21 @@ $monserat-bold: "Monserrat Bold", sans-serif;
           margin-right: 10px;
         }
       }
+
+      .fa-map-marker {
+        font-size: 32px;
+        color: #FFE18B;
+        text-shadow: -1px 1px 0 #414141, 1px 1px 0 #414141, 1px -1px 0 #414141, -1px -1px 0 #414141;
+
+        .fa-paw {
+          position: absolute;
+          top: 5px;
+          left: 3.5px;
+          font-size: 16px;
+          text-shadow: none;
+          color: #393939;
+        }
+      }
     }
   }
 

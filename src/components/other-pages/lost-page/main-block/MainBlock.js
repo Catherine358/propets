@@ -9,6 +9,7 @@ import { getPostLostPets } from "../../../../services";
 const MainBlock = (props) => {
     const [map, setMap] = useState(false);
     const { setBigMap, bigMap } = props;
+    let address = "Florentin, 27, Tel Aviv";
 
     useEffect(() => {
         async function fetchPosts() {
@@ -51,7 +52,7 @@ const MainBlock = (props) => {
                             <span onClick={() => {
                                 setBigMap(false);
                             }}><i className="fas fa-chevron-right"/>Collapse map</span>}
-                            <GoogleMap/>
+                            <GoogleMap address={address}/>
                         </Grid>
                     </Grid>}
                 </Grid>
