@@ -36,33 +36,38 @@ const passwordvalidation = (password) => {
 
 const onSubmitFormSignUp = (event, history, page) => {
     event.preventDefault();
-    const name = event.target.name.value;
-    const email = event.target.emailReg.value;
-    const password = event.target.passwordReg.value;
-    const password2 = event.target.passwordReg2.value;
-    const valid = passwordvalidation(password);
-    if(valid !== "OK") {
-        alert(valid);
+    const name = event.target.name.value.trim();
+    const email = event.target.emailReg.value.trim();
+    const password = event.target.passwordReg.value.trim();
+    const password2 = event.target.passwordReg2.value.trim();
+    if(!name){
+        alert("Please fill in the name field");
+        event.target.name.value = "";
     } else {
-        if (password !== password2) {
-            alert("Passwords do not match! Please re-enter");
+        const valid = passwordvalidation(password);
+        if (valid !== "OK") {
+            alert(valid);
         } else {
-            event.target.name.value = "";
-            event.target.emailReg.value = "";
-            event.target.passwordReg.value = "";
-            event.target.passwordReg2.value = "";
-            Register(name, email, password)
-                .then(response => {
-                    console.log(response);
-                    if (page === "lost") {
-                        history.push("/lost");
-                    } else if (page === "found") {
-                        history.push("/found");
-                    } else if (page === "home") {
-                        history.push("/home");
-                    }
-                })
-                .catch(error => console.log(error));
+            if (password !== password2) {
+                alert("Passwords do not match! Please re-enter");
+            } else {
+                event.target.name.value = "";
+                event.target.emailReg.value = "";
+                event.target.passwordReg.value = "";
+                event.target.passwordReg2.value = "";
+                Register(name, email, password)
+                    .then(response => {
+                        console.log(response);
+                        if (page === "lost") {
+                            history.push("/lost");
+                        } else if (page === "found") {
+                            history.push("/found");
+                        } else if (page === "home") {
+                            history.push("/home");
+                        }
+                    })
+                    .catch(error => console.log(error));
+            }
         }
     }
 };

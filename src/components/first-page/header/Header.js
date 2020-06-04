@@ -5,7 +5,7 @@ import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 
 const Header = (props) => {
-    const { setForm, setMenu, menu } = props;
+    const { setForm, form, setMenu, menu } = props;
 
     return (
         <Grid container direction="row" className="header">
@@ -21,7 +21,7 @@ const Header = (props) => {
                 <img src={logo} alt="logo" className="header-logo"/>
             </Grid>
             <Grid container item sm={6} justify="flex-end">
-                <Button className="header-signin-btn" variant="contained" onClick={() => {
+                <Button className="header-signin-btn" variant="contained" disabled={form} onClick={() => {
                     setForm(true);
                 }}>Sign in</Button>
             </Grid>

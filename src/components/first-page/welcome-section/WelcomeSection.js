@@ -21,8 +21,10 @@ const WelcomeSection = (props) => {
                     <span>pawfessional</span><br/>
                 community</p>
                 <div className="i-lost-pet" onClick={() => {
-                    context.setPage('lost');
-                    setForm(true);
+                    if(!form) {
+                        context.setPage('lost');
+                        setForm(true);
+                    }
                 }} onMouseEnter={() => {
                     setHoverLost(true);
                     setHoverLostBack(false);
@@ -38,8 +40,10 @@ const WelcomeSection = (props) => {
                     <img src={loop} alt="loop"/>
                 </div>
                 <div className="i-found-pet" onClick={() => {
-                    context.setPage('found');
-                    setForm(true);
+                    if(!form) {
+                        context.setPage('found');
+                        setForm(true);
+                    }
                 }} onMouseEnter={() => {
                     setHoverFound(true);
                     setHoverFoundBack(false);
@@ -53,8 +57,10 @@ const WelcomeSection = (props) => {
                     <span className={hoveredFound ? "animated" : hoveredFoundBack ? "animated-back" : ""}>{btnTextFound}</span>
                 </div>
                 <p className="join">I'm okay, just want to <span onClick={() => {
-                    context.setPage('home');
-                    setForm(true);
+                    if(!form) {
+                        context.setPage('home');
+                        setForm(true);
+                    }
                 }}>JOIN</span> the pawsome community!</p>
             </Grid>
             <Grid container item sm={6} xs={9} className="dog"/>
