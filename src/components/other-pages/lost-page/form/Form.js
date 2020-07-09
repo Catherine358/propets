@@ -4,11 +4,45 @@ import Grid from "@material-ui/core/Grid";
 import pic from "../../../../img/dog-photo-small.png";
 import Button from "@material-ui/core/Button";
 import { withRouter } from "react-router";
+import { postLostPet } from "../../../../services";
+import { getCoordinates } from "../../../../utils";
 
-const onHandleSubmit = (event, history) => {
+const onHandleSubmit = (event, history, userName, avatar, email) => {
     event.preventDefault();
     console.log(event.target.type.value);
-    history.push("/lost/preview");
+    const type = event.target.type.value;
+    const sex = event.target.sex.value;
+    const breed = event.target.breed.value;
+    const address = event.target.location.value;
+    const addressArr = address.split(',');
+    const location = getCoordinates(address);
+    const photos = [];
+    const tags = event.target.features.value.split(',');
+    const post = {
+        type: type,
+        sex: sex,
+        breed: breed,
+        username: userName,
+        avatar: avatar,
+        address: {
+            country: addressArr[0],
+            city: addressArr[1],
+            street: addressArr[2],
+            building: addressArr[3]
+        },
+        location:{
+            lat: location.lat,
+            lon: location.lng
+        },
+        photos: photos,
+        tags: tags
+    };
+    postLostPet(email, post)
+        .then(data => {
+            console.log(data)
+            history.push("/lost/preview");
+        })
+        .catch(error => console.log(error));
 };
 
 const FormMainBlock = (props) => {
@@ -53,9 +87,11 @@ const FormMainBlock = (props) => {
                                             <option>45-70 cm</option>
                                             <option>more than 70 cm</option>
                                         </select>
-                                        <textarea name="features" className="features-input" rows={2}/>
+                                        <textarea name="features" className="features-input" rows={2}
+                                                  placeholder="feature1, feature2..."/>
                                         <textarea name="description" className="description-input" rows={5}/>
-                                        <textarea name="location" className="location-input"/>
+                                        <textarea name="location" className="location-input"
+                                                  placeholder="Country, City, Street, Building"/>
                                     </div>
                                 </fieldset>
                             </Grid>

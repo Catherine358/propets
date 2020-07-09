@@ -1,6 +1,6 @@
 import { Login, Register } from "./Accounting";
-import { getPostLostPets, getPostFoundPets } from "./SearchingPets";
+import { getPostLostPets, getPostFoundPets, postLostPet } from "./SearchingPets";
 
 export { Login, Register };
 
-export { getPostLostPets, getPostFoundPets };
+export { getPostLostPets, getPostFoundPets, postLostPet };

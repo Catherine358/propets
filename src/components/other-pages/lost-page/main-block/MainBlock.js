@@ -5,6 +5,7 @@ import PetInfo from "./pet-info";
 import GoogleMap from "./google-map";
 import Button from "@material-ui/core/Button";
 import { getPostLostPets, getPostFoundPets } from "../../../../services";
+import Spinner from "../../../../spinner/Spinner";
 
 const MainBlock = (props) => {
     const [map, setMap] = useState(false);
@@ -16,6 +17,7 @@ const MainBlock = (props) => {
         async function fetchLostPosts() {
             await getPostLostPets()
                 .then(data => {
+                    console.log(data)
                     setPosts(data.posts);
                 })
                 .catch(error => console.log(error));
@@ -23,6 +25,7 @@ const MainBlock = (props) => {
         async function fetchFoundPosts() {
             await getPostFoundPets()
                 .then(data => {
+                    console.log(data)
                     setPosts(data.posts);
                 })
                 .catch(error => console.log(error));
@@ -63,7 +66,7 @@ const MainBlock = (props) => {
                         </Grid>
                         : <Grid container direction="row">
                         <Grid container item lg={bigMap ? 7 : 8} direction="column">
-                            {posts.length > 0 ? arrTmp : "Loading"}
+                            {posts.length > 0 ? arrTmp : <Spinner/>}
                         </Grid>
                         <Grid container item lg={bigMap ? 5 : 4} className="map-container">
                             {!bigMap ? <span onClick={() => {

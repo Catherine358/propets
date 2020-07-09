@@ -1,17 +1,5 @@
 import React, {useEffect, useState} from "react";
 import GoogleMapReact from "google-map-react";
-import Geocode from "react-geocode";
-
-const getCoordinates = (address, setCoordinates) => {
-    Geocode.setApiKey("AIzaSyBGnPllE-HDwXma7Q-uySoKBxw8Kyz2-Go");
-    Geocode.fromAddress(address).then(
-        response => {
-            const {lat, lng} = response.results[0].geometry.location;
-            console.log(lat, lng);
-            setCoordinates({lat, lng});
-        }
-    );
-};
 
 const AnyReactComponent = ( ) => {
     return (
@@ -41,7 +29,6 @@ const GoogleMap = (props) => {
            });
         });
         setCoordinates(arrTmp);
-        //getCoordinates(address, setCoordinates);
     }, [posts]);
 
     navigator.geolocation.getCurrentPosition(showPosition);
