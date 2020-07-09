@@ -14,3 +14,18 @@ export const getPostLostPets = () => {
           return response.json();
       })
 };
+
+export const getPostFoundPets = () => {
+  const token = localStorage.getItem('token');
+  return fetch(`${BASE_URL_SEARCHING}/founds?currentPage=${0}&itemsOnPage=${5}`, {
+      method: 'GET',
+      headers: {
+          'Content-Type': 'application/json',
+          'X-Token': token
+      }
+  })
+      .then(response => {
+          console.log(response)
+          return response.json();
+      })
+};

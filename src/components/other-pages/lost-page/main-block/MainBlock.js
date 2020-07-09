@@ -4,24 +4,35 @@ import Grid from "@material-ui/core/Grid";
 import PetInfo from "./pet-info";
 import GoogleMap from "./google-map";
 import Button from "@material-ui/core/Button";
-import { getPostLostPets } from "../../../../services";
+import { getPostLostPets, getPostFoundPets } from "../../../../services";
 
 const MainBlock = (props) => {
     const [map, setMap] = useState(false);
     const [posts, setPosts] = useState([]);
-    const { setBigMap, bigMap } = props;
-    let address = "Florentin, 27, Tel Aviv";
+    const { setBigMap, bigMap, page } = props;
 
     useEffect(() => {
-        async function fetchPosts() {
+        console.log(page)
+        async function fetchLostPosts() {
             await getPostLostPets()
                 .then(data => {
                     setPosts(data.posts);
                 })
                 .catch(error => console.log(error));
         }
-        fetchPosts();
-    }, []);
+        async function fetchFoundPosts() {
+            await getPostFoundPets()
+                .then(data => {
+                    setPosts(data.posts);
+                })
+                .catch(error => console.log(error));
+        }
+        if(page === 'lost') {
+            fetchLostPosts();
+        } else if (page === 'found'){
+            fetchFoundPosts();
+        }
+    }, [page]);
 
     console.log(posts)
 
@@ -48,7 +59,7 @@ const MainBlock = (props) => {
                     </div>
                     {map ?
                         <Grid container item lg={8}>
-                            <GoogleMap/>
+                            <GoogleMap posts={posts}/>
                         </Grid>
                         : <Grid container direction="row">
                         <Grid container item lg={bigMap ? 7 : 8} direction="column">
@@ -61,7 +72,7 @@ const MainBlock = (props) => {
                             <span onClick={() => {
                                 setBigMap(false);
                             }}><i className="fas fa-chevron-right"/>Collapse map</span>}
-                            <GoogleMap address={address} posts={posts}/>
+                            <GoogleMap posts={posts}/>
                         </Grid>
                     </Grid>}
                 </Grid>
