@@ -13,12 +13,15 @@ import NewPostForm from "./components/other-pages/home-page/home/new-post-form";
 
 const App = (props) => {
     const [page, setPage] = useState("");
+    const [email, setEmail] = useState("");
 
     return (
         <Switch>
             <Context.Provider value={{
                 page: page,
-                setPage: setPage
+                setPage: setPage,
+                email: email,
+                setEmail: setEmail
             }}>
                 <Route exact path="/" render={props => (
                     <div className="wrapper">

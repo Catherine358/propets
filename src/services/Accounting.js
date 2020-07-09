@@ -1,6 +1,6 @@
 import { BASE_URL_ACCOUNTING } from "../constants/Constants";
 
-export const Login = (email, password) => {
+export const login = (email, password) => {
     // const token = Buffer.from(`${email}:${password}`, 'utf8').toString('base64');
     const token = btoa(email + ":" + password);
     return fetch(`${BASE_URL_ACCOUNTING}/login`, {
@@ -21,7 +21,7 @@ export const Login = (email, password) => {
         });
 };
 
-export const Register = (name, email, password) => {
+export const register = (name, email, password) => {
     console.log(name, " ", email, " ", password);
     const user = {
         name: name,
@@ -44,4 +44,19 @@ export const Register = (name, email, password) => {
           }
           return response.json();
       });
+};
+
+export const getUserInfo = (email) => {
+    const token = localStorage.getItem('token');
+    return fetch(`${BASE_URL_ACCOUNTING}/${email}/info`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-Token': token
+        }
+    })
+        .then(response => {
+            console.log(response);
+            return response.json();
+        })
 };

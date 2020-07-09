@@ -6,7 +6,7 @@ import Button from "@material-ui/core/Button";
 import Facebook from "./Facebook";
 import { withRouter } from "react-router";
 import { Context } from "../../context";
-import { Login, Register } from "../../services";
+import { login, register } from "../../services";
 
 const passwordvalidation = (password) => {
   if(password.length < 8){
@@ -34,7 +34,7 @@ const passwordvalidation = (password) => {
   }
 };
 
-const onSubmitFormSignUp = (event, history, page) => {
+const onSubmitFormSignUp = (event) => {
     event.preventDefault();
     const name = event.target.name.value.trim();
     const email = event.target.emailReg.value.trim();
@@ -55,16 +55,10 @@ const onSubmitFormSignUp = (event, history, page) => {
                 event.target.emailReg.value = "";
                 event.target.passwordReg.value = "";
                 event.target.passwordReg2.value = "";
-                Register(name, email, password)
+                register(name, email, password)
                     .then(response => {
                         console.log(response);
-                        if (page === "lost") {
-                            history.push("/lost");
-                        } else if (page === "found") {
-                            history.push("/found");
-                        } else if (page === "home") {
-                            history.push("/home");
-                        }
+                        alert("You are successfully registered! Please. sign in");
                     })
                     .catch(error => console.log(error));
             }
@@ -72,15 +66,16 @@ const onSubmitFormSignUp = (event, history, page) => {
     }
 };
 
-const onSubmitFormSignIn = (event, history, page) => {
+const onSubmitFormSignIn = (event, history, page, setEmail) => {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
     event.target.email.value = "";
     event.target.password.value = "";
-    Login(email, password)
+    login(email, password)
         .then(response => {
             console.log(response);
+            setEmail(response.email);
             if(page === "lost") {
                 history.push("/lost");
             }else if(page === "found") {
@@ -157,9 +152,9 @@ const SignIn = (props) => {
             </Grid>
             <form onSubmit={(event) => {
                 if(signType === "signin") {
-                    onSubmitFormSignIn(event, history, context.page);
+                    onSubmitFormSignIn(event, history, context.page, context.setEmail);
                 }else if(signType === "signup"){
-                    onSubmitFormSignUp(event, history, context.page);
+                    onSubmitFormSignUp(event);
                 }
             }}>
                 {signType === "signup" ? <Grid container direction="row">
@@ -170,15 +165,18 @@ const SignIn = (props) => {
                             </label>
                             <label>
                                 Email:
-                                <input value={emailReg} type="email" name="emailReg" required onChange={handleChangeEmailReg}/>
+                                <input value={emailReg} type="email" name="emailReg" required
+                                       onChange={handleChangeEmailReg}/>
                             </label>
                             <label>
                                 Password:
-                                <input value={passwordReg} type="password" name="passwordReg" required onChange={handleChangePasswordReg}/>
+                                <input value={passwordReg} type="password" name="passwordReg" required
+                                       onChange={handleChangePasswordReg}/>
                             </label>
                             <label>
                                 Password:
-                                <input value={passwordReg2} type="password" name="passwordReg2" required onChange={handleChangePasswordReg2}/>
+                                <input value={passwordReg2} type="password" name="passwordReg2" required
+                                       onChange={handleChangePasswordReg2}/>
                             </label>
                     </Grid>
                     <Grid container item sm={6} direction="column" className="signup-text">

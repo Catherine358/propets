@@ -1,10 +1,12 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const pic = "https://sun6-16.userapi.com/E-J3H_cTJO9xr3DE2g_g_6vazm5YPD-gGqeqIQ/7Z1WCb9JJiw.jpg";
 
 const ProfilePicture = (props) => {
-    const { page } = props;
+    const { page, user } = props;
+
+    const name = user.name !== undefined ? user.name.split(" ") : [];
 
     return (
         <div className="profile">
@@ -13,8 +15,8 @@ const ProfilePicture = (props) => {
             </svg>}
             <Link to={"/profile"}>
                 <div className={page === "profile" ? "profile-picture selected-profile-picture" : "profile-picture"}>
-                    <img src={pic} alt="profile-picture"/>
-                    <p>Anna<br/> Smith</p>
+                    <img src={user.avatar} alt="profile-picture"/>
+                    <p>{name[0] || ""}<br/> {name[1] || ""}</p>
                 </div>
             </Link>
             <Link to={"/"}>
