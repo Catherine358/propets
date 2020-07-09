@@ -8,17 +8,27 @@ import { getPostLostPets } from "../../../../services";
 
 const MainBlock = (props) => {
     const [map, setMap] = useState(false);
+    const [posts, setPosts] = useState([]);
     const { setBigMap, bigMap } = props;
     let address = "Florentin, 27, Tel Aviv";
 
     useEffect(() => {
         async function fetchPosts() {
             await getPostLostPets()
-                .then(data => console.log(data))
+                .then(data => {
+                    setPosts(data.posts);
+                })
                 .catch(error => console.log(error));
         }
         fetchPosts();
     }, []);
+
+    console.log(posts)
+
+    const arrTmp = [];
+    posts.forEach(post => {
+        arrTmp.push(<PetInfo post={post}/>);
+    });
 
     return (
         <Grid container direction="row" className="main-block-lost">
@@ -42,8 +52,7 @@ const MainBlock = (props) => {
                         </Grid>
                         : <Grid container direction="row">
                         <Grid container item lg={bigMap ? 7 : 8} direction="column">
-                            <PetInfo/>
-                            <PetInfo/>
+                            {posts.length > 0 ? arrTmp : "Loading"}
                         </Grid>
                         <Grid container item lg={bigMap ? 5 : 4} className="map-container">
                             {!bigMap ? <span onClick={() => {
@@ -52,7 +61,7 @@ const MainBlock = (props) => {
                             <span onClick={() => {
                                 setBigMap(false);
                             }}><i className="fas fa-chevron-right"/>Collapse map</span>}
-                            <GoogleMap address={address}/>
+                            <GoogleMap address={address} posts={posts}/>
                         </Grid>
                     </Grid>}
                 </Grid>

@@ -24,17 +24,25 @@ const AnyReactComponent = ( ) => {
 };
 
 const GoogleMap = (props) => {
-    const { address } = props;
+    const { posts } = props;
     const [lat, setLat] = useState(32.1074941);
     const [long, setLong] = useState(34.7992586);
-    const [coordinates, setCoordinates] = useState({
+    const [coordinates, setCoordinates] = useState([{
         lat: 0.0,
         lng: 0.0
-    });
+    }]);
 
     useEffect(() => {
-        getCoordinates(address, setCoordinates);
-    }, [address]);
+        const arrTmp = [];
+        posts.forEach(post => {
+           arrTmp.push({
+               lat: post.location.lat,
+               lng: post.location.lon
+           });
+        });
+        setCoordinates(arrTmp);
+        //getCoordinates(address, setCoordinates);
+    }, [posts]);
 
     navigator.geolocation.getCurrentPosition(showPosition);
 
@@ -62,6 +70,11 @@ const GoogleMap = (props) => {
         zoom: 11
     };
 
+    const arrForLocationComponent = [];
+    coordinates.forEach(coordinate => {
+        arrForLocationComponent.push(<AnyReactComponent lat={coordinate.lat} lng={coordinate.lng}/>)
+    });
+
     return (
         <div style={{ height: '100vh', width: '100%' }}>
             <GoogleMapReact
@@ -71,10 +84,7 @@ const GoogleMap = (props) => {
                 yesIWantToUseGoogleMapApiInternals
                 onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
             >
-                <AnyReactComponent
-                    lat={coordinates.lat}
-                    lng={coordinates.lng}
-                />
+                {arrForLocationComponent}
             </GoogleMapReact>
         </div>
     )

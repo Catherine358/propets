@@ -18,7 +18,9 @@ const ProfilePicture = (props) => {
                 </div>
             </Link>
             <Link to={"/"}>
-                <span><i className="fas fa-sign-out-alt"/>Logout</span>
+                <span onClick={() => {
+                    localStorage.removeItem('token');
+                }}><i className="fas fa-sign-out-alt"/>Logout</span>
             </Link>
         </div>
     )
