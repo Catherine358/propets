@@ -11,7 +11,7 @@ const getCoordinates = (address, setCoordinates) => {
             setCoordinates({lat, lng});
         }
     );
-}
+};
 
 const AnyReactComponent = ( ) => {
     return (

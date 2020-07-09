@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import './header.scss';
 import logo from "../../../img/icons/logo.svg";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
+import { Context } from "../../../context";
 
 const Header = (props) => {
     const { setForm, form, setMenu, menu } = props;
+    const context = useContext(Context);
 
     return (
         <Grid container direction="row" className="header">
@@ -22,7 +24,10 @@ const Header = (props) => {
             </Grid>
             <Grid container item sm={6} justify="flex-end">
                 <Button className="header-signin-btn" variant="contained" disabled={form} onClick={() => {
-                    setForm(true);
+                    if(!form) {
+                        context.setPage('home');
+                        setForm(true);
+                    }
                 }}>Sign in</Button>
             </Grid>
         </Grid>
