@@ -66,7 +66,7 @@ const onSubmitFormSignUp = (event) => {
     }
 };
 
-const onSubmitFormSignIn = (event, history, page, setEmail) => {
+const onSubmitFormSignIn = (event, history, page) => {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
@@ -75,7 +75,7 @@ const onSubmitFormSignIn = (event, history, page, setEmail) => {
     login(email, password)
         .then(response => {
             console.log(response);
-            setEmail(response.email);
+            localStorage.setItem('email', email);
             if(page === "lost") {
                 history.push("/lost");
             }else if(page === "found") {
@@ -152,7 +152,7 @@ const SignIn = (props) => {
             </Grid>
             <form onSubmit={(event) => {
                 if(signType === "signin") {
-                    onSubmitFormSignIn(event, history, context.page, context.setEmail);
+                    onSubmitFormSignIn(event, history, context.page);
                 }else if(signType === "signup"){
                     onSubmitFormSignUp(event);
                 }

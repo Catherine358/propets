@@ -6,54 +6,63 @@ import Button from "@material-ui/core/Button";
 import { withRouter } from "react-router";
 import { postLostPet } from "../../../../services";
 import { getCoordinates } from "../../../../utils";
+import { useSelector } from "react-redux";
 
-const onHandleSubmit = (event, history, userName, avatar, email) => {
+const onHandleSubmit = (event, history, user) => {
     event.preventDefault();
+    const { username, avatar, email } = user;
     console.log(event.target.type.value);
     const type = event.target.type.value;
     const sex = event.target.sex.value;
     const breed = event.target.breed.value;
     const address = event.target.location.value;
     const addressArr = address.split(',');
-    const location = getCoordinates(address);
-    const photos = [];
+    const photos = ["https://sun6-13.userapi.com/2xuIYHfKJjDhgUT_asXVUaXgJ8e_i2oGomXofQ/eqa5u0PWJi0.jpg"];
     const tags = event.target.features.value.split(',');
-    const post = {
-        type: type,
-        sex: sex,
-        breed: breed,
-        username: userName,
-        avatar: avatar,
-        address: {
-            country: addressArr[0],
-            city: addressArr[1],
-            street: addressArr[2],
-            building: addressArr[3]
-        },
-        location:{
-            lat: location.lat,
-            lon: location.lng
-        },
-        photos: photos,
-        tags: tags
-    };
-    postLostPet(email, post)
-        .then(data => {
-            console.log(data)
-            history.push("/lost/preview");
+    getCoordinates(address)
+        .then(location => {
+            console.log(location)
+            const post = {
+                type: type,
+                sex: sex,
+                breed: breed,
+                username: username,
+                avatar: avatar,
+                address: {
+                    country: addressArr[0],
+                    city: addressArr[1],
+                    street: addressArr[2],
+                    building: addressArr[3]
+                },
+                location:{
+                    lat: location.lat,
+                    lon: location.lng
+                },
+                photos: photos,
+                tags: tags
+            };
+            console.log(post)
+            postLostPet(email, post)
+                .then(data => {
+                    console.log(data)
+                    history.push("/lost/preview");
+                })
+                .catch(error => console.log(error));
         })
         .catch(error => console.log(error));
 };
 
 const FormMainBlock = (props) => {
     const { history, page } = props;
+    const user = useSelector(state => state.profileInfo.user);
 
+    console.log(user)
     return (
         <Grid container direction="row" className="main-block-lost-form">
             <Grid container item md={11} lg={8} direction="column" className="form-left-side">
                 {page === "lost" && <p className="header-form-lost">Lost your buddy? Keep calm and complete the form.</p>}
                 {page === "found" && <p className="header-form-lost">Found a pet? Please complete the form to help.</p>}
-                <form onSubmit={(event) => onHandleSubmit(event, history)}>
+                <form onSubmit={(event) => onHandleSubmit(event, history, user)}>
                     <Grid container direction="column" className="lost-form-container">
                         <Grid container direction="row">
                             <Grid container item sm={6} className="basic-pet-info">
@@ -115,15 +124,15 @@ const FormMainBlock = (props) => {
                             <div className="contacts">
                                 <label>
                                     Contacts:
-                                    <input type="phone" placeholder="Phone"/>
-                                    <input type="email" placeholder="Email"/>
+                                    <input type="phone" placeholder="Phone" defaultValue={user.phone}/>
+                                    <input type="email" placeholder="Email" defaultValue={user.email}/>
                                     <input type="link" placeholder="Facebook profile"/>
                                 </label>
                             </div>
                             <Grid container direction="row">
                                 <Grid container item sm={6} className="footer-form">
-                                    <img src={pic} alt="dog-photo-small"/>
-                                    <p>John Goodboi</p>
+                                    <img src={user.avatar} alt="dog-photo-small"/>
+                                    <p>{user.name}</p>
                                 </Grid>
                                 <Grid container item sm={6} justify="flex-end">
                                     <Button className="footer-form-submit-btn" variant="contained" type="submit">

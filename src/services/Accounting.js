@@ -47,6 +47,7 @@ export const register = (name, email, password) => {
 };
 
 export const getUserInfo = (email) => {
+    console.log(email)
     const token = localStorage.getItem('token');
     return fetch(`${BASE_URL_ACCOUNTING}/${email}/info`, {
         method: 'GET',

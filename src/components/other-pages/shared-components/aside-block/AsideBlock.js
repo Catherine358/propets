@@ -1,22 +1,22 @@
-import React, {useContext, useEffect} from "react";
+import React, { useEffect } from "react";
 import './asideBlock.scss';
 import Menu from "./Menu";
 import ProfilePicture from "./ProfilePicture";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProfileInfo } from "../../../../actions/actions";
-import { Context } from "../../../../context";
 
 
 const AsideBlock = (props) => {
     const { page, selected } = props;
     const user = useSelector(state => state.profileInfo.user);
     const dispatch = useDispatch();
-    const context = useContext(Context);
 
     useEffect(() => {
-        console.log(context.email)
-        fetchProfileInfo(dispatch, context.email);
+        const email = localStorage.getItem('email');
+        fetchProfileInfo(dispatch, email);
     }, []);
+
+    console.log(user)
 
     return (
         <div className="aside-block">
