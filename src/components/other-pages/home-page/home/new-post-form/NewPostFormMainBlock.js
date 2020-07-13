@@ -7,6 +7,7 @@ import AsideBlock from "../../../shared-components/aside-block";
 import NewPost from "./NewPost";
 
 const NewPostForm = (props) => {
+    const { user } = props;
     const [menu, setMenu] = useState(false);
 
     return (
@@ -15,10 +16,10 @@ const NewPostForm = (props) => {
             <div className="header-for-mobile">
                 <HeaderForMobile type={"form"} setMenu={setMenu} menu={menu}/>
             </div>
-            {menu && <Menu/>}
+            {menu && <Menu user={user}/>}
             <Grid container direction="row">
                 <Grid container item sm={3} className="aside-block-container">
-                    <AsideBlock selected={false}/>
+                    <AsideBlock selected={false} page="" user={user}/>
                 </Grid>
                 <Grid container item sm={9}>
                     <NewPost/>

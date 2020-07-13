@@ -38,16 +38,16 @@ const App = (props) => {
                     </div>
                 )}/>
                 <Route exact path="/propets/lost/form" render={props => (
-                    <LostFoundPageForm page="lost"/>
+                    <LostFoundPageForm page="lost" user={user}/>
                 )}/>
                 <Route exact path="/propets/found/form" render={props => (
-                    <LostFoundPageForm page="found"/>
+                    <LostFoundPageForm page="found" user={user}/>
                 )}/>
                 <Route exact path="/propets/lost/preview" render={props => (
-                    <PreviewPage page="lost"/>
+                    <PreviewPage page="lost" user={user}/>
                 )}/>
                 <Route exact path="/propets/found/preview" render={props => (
-                    <PreviewPage page="found"/>
+                    <PreviewPage page="found" user={user}/>
                 )}/>
                 <Route exact path="/propets/lost" render={props => (
                     <LostFoundPage page="lost" user={user}/>
@@ -59,13 +59,13 @@ const App = (props) => {
                     <ProfilePage page="profile" user={user}/>
                 )}/>
                 <Route exact path="/propets/home/new_post" render={props => (
-                    <NewPostForm/>
+                    <NewPostForm user={user}/>
                 )}/>
                 <Route exact path="/propets/home" render={props => (
                     <HomePage page="home" user={user}/>
                 )}/>
                 <Route exact path="/propets/favourites" render={props => (
-                    <FavouritesPage page="favourites"/>
+                    <FavouritesPage page="favourites" user={user}/>
                 )}/>
             </Context.Provider>
         </Switch>

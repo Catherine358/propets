@@ -7,6 +7,7 @@ import Preview from "./preview/Preview";
 import HeaderWhiteWithoutButtons from "../shared-components/header-without-buttons";
 
 const PreviewPage = (props) => {
+    const { user } = props;
     const [menu, setMenu] = useState(false);
 
     return (
@@ -15,10 +16,10 @@ const PreviewPage = (props) => {
             <div className="header-for-mobile">
                 <HeaderForMobile type={"form"} setMenu={setMenu} menu={menu}/>
             </div>
-            {menu && <Menu/>}
+            {menu && <Menu user={user}/>}
             <Grid container direction="row">
                 <Grid container item md={3} className="aside-block-container2">
-                    <AsideBlock selected={false}/>
+                    <AsideBlock selected={false} page="" user={user}/>
                 </Grid>
                 <Grid container item md={9}>
                     <Preview/>
