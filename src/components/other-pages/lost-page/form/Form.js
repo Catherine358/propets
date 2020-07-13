@@ -43,8 +43,13 @@ const onHandleSubmit = (event, history, user, setPost, setPage, page) => {
             };
             console.log(post)
             setPost(post);
-            setPage(page);
-            history.push(`/propets/${page}/preview`);
+            if(page === 'lost') {
+                setPage('lost');
+                history.push("/propets/lost/preview");
+            } else if(page === 'found') {
+                setPage('found');
+                history.push("/propets/found/preview");
+            }
         })
         .catch(error => console.log(error));
 };
