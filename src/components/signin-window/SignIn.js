@@ -77,11 +77,11 @@ const onSubmitFormSignIn = (event, history, page) => {
             console.log(response);
             localStorage.setItem('email', email);
             if(page === "lost") {
-                history.push("/lost");
+                history.push("/propets/lost");
             }else if(page === "found") {
-                history.push("/found");
+                history.push("/propets/found");
             }else if(page === "home") {
-                history.push("/home");
+                history.push("/propets/home");
             }
         })
         .catch(error => console.log(error));
