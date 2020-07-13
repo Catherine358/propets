@@ -22,7 +22,7 @@ const HeaderWithAddBtn = (props) => {
                 <img src={logo} alt="logo" className="header-add-logo"/>
             </Grid>
             <Grid container item lg={6} md={8} sm={8} justify="center">
-                <Link to={"/home/new_post"}>
+                <Link to={"/propets/home/new_post"}>
                     <Button className="header-add-btn" variant="contained"><i className="fas fa-plus"/>Add new</Button>
                 </Link>
             </Grid>
