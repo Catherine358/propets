@@ -14,28 +14,28 @@ const MenuMini = (props) => {
                     <circle cx="50" cy="50" r="20" width="100" height="100"/>
                 </svg>
                 <ul>
-                    <Link to={"/home"}>
+                    <Link to={"/propets/home"}>
                         <li className={page === "home" && "selected"}><i className="fas fa-home"/></li>
                     </Link>
-                    <Link to={"/lost"}>
+                    <Link to={"/propets/lost"}>
                         <li className={page === "lost" && "selected"}><i className="fas fa-search"/></li>
                     </Link>
-                    <Link to={"/found"}>
+                    <Link to={"/propets/found"}>
                         <li className={page === "found" && "selected"}><i className="fas fa-paw"/></li>
                     </Link>
                     <li><i className="fas fa-bullhorn"/></li>
-                    <Link to={"/favourites"}>
+                    <Link to={"/propets/favourites"}>
                         <li><i className="fas fa-star"/></li>
                     </Link>
                 </ul>
             </div>
             <div className="profile-mini">
                     <div className="profile-picture">
-                        <Link to={"/profile"}>
+                        <Link to={"/propets/profile"}>
                             <img src={user.avatar} alt="profile-picture"/>
                         </Link>
                     </div>
-                <Link to={"/"}>
+                <Link to={"/propets"}>
                     <span onClick={() => {
                         localStorage.removeItem('token');
                         localStorage.removeItem('email');

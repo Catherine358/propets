@@ -32,39 +32,39 @@ const App = (props) => {
                 newPost: newPost,
                 setPost: setPost
             }}>
-                <Route exact path="/" render={props => (
+                <Route exact path="/propets" render={props => (
                     <div className="wrapper">
                         <Home/>
                     </div>
                 )}/>
-                <Route exact path="/lost/form" render={props => (
+                <Route exact path="/propets/lost/form" render={props => (
                     <LostFoundPageForm page="lost"/>
                 )}/>
-                <Route exact path="/found/form" render={props => (
+                <Route exact path="/propets/found/form" render={props => (
                     <LostFoundPageForm page="found"/>
                 )}/>
-                <Route exact path="/lost/preview" render={props => (
+                <Route exact path="/propets/lost/preview" render={props => (
                     <PreviewPage page="lost"/>
                 )}/>
-                <Route exact path="/found/preview" render={props => (
+                <Route exact path="/propets/found/preview" render={props => (
                     <PreviewPage page="found"/>
                 )}/>
-                <Route exact path="/lost" render={props => (
+                <Route exact path="/propets/lost" render={props => (
                     <LostFoundPage page="lost" user={user}/>
                 )}/>
-                <Route exact path="/found" render={props => (
+                <Route exact path="/propets/found" render={props => (
                     <LostFoundPage page="found" user={user}/>
                 )}/>
-                <Route exact path="/profile" render={props => (
+                <Route exact path="/propets/profile" render={props => (
                     <ProfilePage page="profile" user={user}/>
                 )}/>
-                <Route exact path="/home/new_post" render={props => (
+                <Route exact path="/propets/home/new_post" render={props => (
                     <NewPostForm/>
                 )}/>
-                <Route exact path="/home" render={props => (
+                <Route exact path="/propets/home" render={props => (
                     <HomePage page="home" user={user}/>
                 )}/>
-                <Route exact path="/favourites" render={props => (
+                <Route exact path="/propets/favourites" render={props => (
                     <FavouritesPage page="favourites"/>
                 )}/>
             </Context.Provider>

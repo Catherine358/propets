@@ -16,14 +16,14 @@ const onHandleSubmit = (post, history, page) => {
         postLostPet(email, post)
             .then(data => {
                 console.log(data)
-                history.push("/lost");
+                history.push("/propets/lost");
             })
             .catch(error => console.log(error));
     } else if(page === 'found') {
         postFoundPet(email, post)
             .then(data => {
                 console.log(data)
-                history.push("/found");
+                history.push("/propets/found");
             })
             .catch(error => console.log(error));
     }

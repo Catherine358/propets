@@ -26,11 +26,11 @@ const HeaderWhite = (props) => {
             <Grid container item lg={6} md={9} sm={8} justify="center">
                 <Button className="header-white-lost-btn" variant="contained" onClick={() => {
                     context.setPage('lost');
-                    history.push("/lost/form");
+                    history.push("/propets/lost/form");
                 }}><i className="fas fa-search"/>I lost my pet</Button>
                 <Button className="header-white-found-btn" variant="contained" onClick={() => {
                     context.setPage('found');
-                    history.push("/found/form");
+                    history.push("/propets/found/form");
                 }}><i className="fas fa-paw"/>I found a pet</Button>
             </Grid>
         </Grid>

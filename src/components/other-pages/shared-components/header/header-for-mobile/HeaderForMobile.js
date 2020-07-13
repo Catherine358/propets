@@ -33,7 +33,7 @@ const HeaderForMobile = (props) => {
                     }}/>}
                 </Grid>}
                 {type === "add-post" &&
-                    <Link to={"/home/new_post"}>
+                    <Link to={"/propets/home/new_post"}>
                         <i className="fas fa-plus"/>
                     </Link>}
             </Grid>
