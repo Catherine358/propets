@@ -1,16 +1,13 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import './form.scss';
 import Grid from "@material-ui/core/Grid";
-import pic from "../../../../img/dog-photo-small.png";
 import Button from "@material-ui/core/Button";
 import { withRouter } from "react-router";
-import { postLostPet } from "../../../../services";
 import { getCoordinates } from "../../../../utils";
 import { useSelector } from "react-redux";
-import {Context} from "../../../../context";
-import useFileHandlers from "../../../../custom-hooks";
+import { Context } from "../../../../context";
 
-const onHandleSubmit = (event, history, user, setPost) => {
+const onHandleSubmit = (event, history, user, setPost, setPage, page) => {
     event.preventDefault();
     const { name, avatar } = user;
     console.log(event.target.type.value);
@@ -46,7 +43,8 @@ const onHandleSubmit = (event, history, user, setPost) => {
             };
             console.log(post)
             setPost(post);
-            history.push("/lost/preview");
+            setPage(page);
+            history.push(`/${page}/preview`);
         })
         .catch(error => console.log(error));
 };
@@ -59,18 +57,18 @@ const FormMainBlock = (props) => {
 
     console.log(user)
 
-    const previewFile = (event) => {
-        const file = event.target.files[0];
-        const reader = new FileReader();
-
-        reader.onloadend = function () {
-            console.log(reader.result)
-        }
-
-        if(file) {
-            reader.readAsDataURL(file);
-        }
-    }
+    // const previewFile = (event) => {
+    //     const file = event.target.files[0];
+    //     const reader = new FileReader();
+    //
+    //     reader.onloadend = function () {
+    //         console.log(reader.result)
+    //     }
+    //
+    //     if(file) {
+    //         reader.readAsDataURL(file);
+    //     }
+    // }
 
     return (
         <Grid container direction="row" className="main-block-lost-form">
@@ -78,7 +76,7 @@ const FormMainBlock = (props) => {
                 {page === "lost" && <p className="header-form-lost">Lost your buddy? Keep calm and complete the form.</p>}
                 {page === "found" && <p className="header-form-lost">Found a pet? Please complete the form to help.</p>}
                 <form onSubmit={(event) =>
-                    onHandleSubmit(event, history, user, context.setPost)}>
+                    onHandleSubmit(event, history, user, context.setPost, context.setPage, page)}>
                     <Grid container direction="column" className="lost-form-container">
                         <Grid container direction="row">
                             <Grid container item sm={6} className="basic-pet-info">
@@ -131,7 +129,7 @@ const FormMainBlock = (props) => {
                                         </Grid>
                                         <Grid container item sm={6}>
                                             <input type="file" id="file" name="file" multiple disabled={true}
-                                                   className="file-browser" accept="image/*" onChange={previewFile}/>
+                                                   className="file-browser" accept="image/*"/>
                                         </Grid>
                                     </Grid>
                                 </Grid>

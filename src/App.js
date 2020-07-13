@@ -35,7 +35,10 @@ const App = (props) => {
                     <LostFoundPageForm page="found"/>
                 )}/>
                 <Route exact path="/lost/preview" render={props => (
-                    <PreviewPage/>
+                    <PreviewPage page="lost"/>
+                )}/>
+                <Route exact path="/found/preview" render={props => (
+                    <PreviewPage page="found"/>
                 )}/>
                 <Route exact path="/lost" render={props => (
                     <LostFoundPage page="lost"/>

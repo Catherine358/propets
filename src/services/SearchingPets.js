@@ -45,3 +45,19 @@ export const postLostPet = (email, post) => {
           return response.json();
       })
 };
+
+export const postFoundPet = (email, post) => {
+  const token = localStorage.getItem('token');
+  return fetch(`${BASE_URL_SEARCHING}/found/${email}`, {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+          'X-Token': token
+      },
+      body: JSON.stringify(post)
+  })
+      .then(response => {
+          console.log(response)
+          return response.json();
+      })
+};
