@@ -1,20 +1,11 @@
-import React, { useEffect } from "react";
+import React  from "react";
 import './asideBlock.scss';
 import Menu from "./Menu";
 import ProfilePicture from "./ProfilePicture";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchProfileInfo } from "../../../../actions/actions";
 
 
 const AsideBlock = (props) => {
-    const { page, selected } = props;
-    const user = useSelector(state => state.profileInfo.user);
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        const email = localStorage.getItem('email');
-        fetchProfileInfo(dispatch, email);
-    }, []);
+    const { page, selected, user } = props;
 
     console.log(user)
 

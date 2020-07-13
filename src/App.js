@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import { Switch, Route } from "react-router";
 import './App.css';
 import Home from "./components/first-page/Home";
@@ -10,10 +10,19 @@ import ProfilePage from "./components/other-pages/profile-page";
 import HomePage from "./components/other-pages/home-page";
 import FavouritesPage from "./components/other-pages/favourites-page";
 import NewPostForm from "./components/other-pages/home-page/home/new-post-form";
+import {useDispatch, useSelector} from "react-redux";
+import {fetchProfileInfo} from "./actions/actions";
 
 const App = (props) => {
     const [page, setPage] = useState("");
     const [newPost, setPost] = useState({});
+    const user = useSelector(state => state.profileInfo.user);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        const email = localStorage.getItem('email');
+        fetchProfileInfo(dispatch, email);
+    }, []);
 
     return (
         <Switch>
@@ -41,19 +50,19 @@ const App = (props) => {
                     <PreviewPage page="found"/>
                 )}/>
                 <Route exact path="/lost" render={props => (
-                    <LostFoundPage page="lost"/>
+                    <LostFoundPage page="lost" user={user}/>
                 )}/>
                 <Route exact path="/found" render={props => (
-                    <LostFoundPage page="found"/>
+                    <LostFoundPage page="found" user={user}/>
                 )}/>
                 <Route exact path="/profile" render={props => (
-                    <ProfilePage page="profile"/>
+                    <ProfilePage page="profile" user={user}/>
                 )}/>
                 <Route exact path="/home/new_post" render={props => (
                     <NewPostForm/>
                 )}/>
                 <Route exact path="/home" render={props => (
-                    <HomePage page="home"/>
+                    <HomePage page="home" user={user}/>
                 )}/>
                 <Route exact path="/favourites" render={props => (
                     <FavouritesPage page="favourites"/>

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import HeaderWhite from "../shared-components/header";
 import Grid from "@material-ui/core/Grid";
 import AsideBlock from "../shared-components/aside-block";
@@ -10,7 +10,7 @@ import MenuMini from "../shared-components/aside-block/MenuMini";
 const LostFoundPage = (props) => {
     const [menu, setMenu] = useState(false);
     const [bigMap, setBigMap] = useState(false);
-    const { page } = props;
+    const { page, user } = props;
 
     return (
         <div className="wrapper-main">
@@ -18,13 +18,13 @@ const LostFoundPage = (props) => {
             <div className="header-for-mobile">
                 <HeaderForMobile type={""} setMenu={setMenu} menu={menu}/>
             </div>
-            {menu && <Menu/>}
+            {menu && <Menu user={user}/>}
             <Grid container direction="row">
                 {!bigMap && <Grid container item sm={3} className="aside-block-container2">
-                    <AsideBlock page={page} selected={true}/>
+                    <AsideBlock page={page} selected={true} user={user}/>
                 </Grid>}
                 {bigMap && <Grid container item md={2}>
-                    <MenuMini page={page}/>
+                    <MenuMini page={page} user={user}/>
                 </Grid>}
                 <Grid container item md={bigMap ? 10 : 9}>
                     <MainBlock setBigMap={setBigMap} bigMap={bigMap} page={page}/>

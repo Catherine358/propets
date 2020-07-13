@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 const pic = "https://sun6-16.userapi.com/E-J3H_cTJO9xr3DE2g_g_6vazm5YPD-gGqeqIQ/7Z1WCb9JJiw.jpg";
 
 const MenuMini = (props) => {
-    const { page } = props;
+    const { page, user } = props;
 
     return (
         <div className="aside-block">
@@ -32,11 +32,14 @@ const MenuMini = (props) => {
             <div className="profile-mini">
                     <div className="profile-picture">
                         <Link to={"/profile"}>
-                            <img src={pic} alt="profile-picture"/>
+                            <img src={user.avatar} alt="profile-picture"/>
                         </Link>
                     </div>
                 <Link to={"/"}>
-                    <span><i className="fas fa-sign-out-alt"/></span>
+                    <span onClick={() => {
+                        localStorage.removeItem('token');
+                        localStorage.removeItem('email');
+                    }}><i className="fas fa-sign-out-alt"/></span>
                 </Link>
             </div>
         </div>

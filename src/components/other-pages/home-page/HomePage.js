@@ -7,7 +7,7 @@ import HeaderForMobile from "../shared-components/header/header-for-mobile";
 import Menu from "../shared-components/menu";
 
 const HomePage = (props) => {
-    const { page } = props;
+    const { page, user } = props;
     const [menu, setMenu] = useState(false);
 
     return (
@@ -16,10 +16,10 @@ const HomePage = (props) => {
             <div className="header-for-mobile">
                 <HeaderForMobile type={"add-post"} setMenu={setMenu} menu={menu}/>
             </div>
-            {menu && <Menu/>}
+            {menu && <Menu user={user}/>}
             <Grid container direction="row">
                 <Grid container item md={3} className="aside-block-container2">
-                    <AsideBlock selected={true} page={page}/>
+                    <AsideBlock selected={true} page={page} user={user}/>
                 </Grid>
                 <Grid container item md={9}>
                     <Home/>
