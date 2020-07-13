@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/propets/static/css/main.f0c9f185.chunk.css",
+    "main.js": "/propets/static/js/main.d987732b.chunk.js",
+    "main.js.map": "/propets/static/js/main.d987732b.chunk.js.map",
+    "runtime-main.js": "/propets/static/js/runtime-main.648257b3.js",
+    "runtime-main.js.map": "/propets/static/js/runtime-main.648257b3.js.map",
+    "static/css/2.af3c1da9.chunk.css": "/propets/static/css/2.af3c1da9.chunk.css",
+    "static/js/2.175ef753.chunk.js": "/propets/static/js/2.175ef753.chunk.js",
+    "static/js/2.175ef753.chunk.js.map": "/propets/static/js/2.175ef753.chunk.js.map",
+    "index.html": "/propets/index.html",
+    "precache-manifest.ab51ab06070ad3439dba9b417b333931.js": "/propets/precache-manifest.ab51ab06070ad3439dba9b417b333931.js",
+    "service-worker.js": "/propets/service-worker.js",
+    "static/css/2.af3c1da9.chunk.css.map": "/propets/static/css/2.af3c1da9.chunk.css.map",
+    "static/css/main.f0c9f185.chunk.css.map": "/propets/static/css/main.f0c9f185.chunk.css.map",
+    "static/js/2.175ef753.chunk.js.LICENSE.txt": "/propets/static/js/2.175ef753.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/propets/static/media/Montserrat-SemiBold.c641dbee.ttf",
+    "static/media/form.scss": "/propets/static/media/Screenshot_Scale.9c49ad04.png",
+    "static/media/welcomeSection.scss": "/propets/static/media/dog.8696757d.png",
+    "static/media/logo.svg": "/propets/static/media/logo.212a01b5.svg",
+    "static/media/logo_green.svg": "/propets/static/media/logo_green.31348d6e.svg",
+    "static/media/loop.svg": "/propets/static/media/loop.f610f6d2.svg",
+    "static/media/pet_photo.png": "/propets/static/media/pet_photo.65547223.png",
+    "static/media/petNeedSection.scss": "/propets/static/media/pets.6060af52.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.648257b3.js",
+    "static/css/2.af3c1da9.chunk.css",
+    "static/js/2.175ef753.chunk.js",
+    "static/css/main.f0c9f185.chunk.css",
+    "static/js/main.d987732b.chunk.js"
+  ]
+}
