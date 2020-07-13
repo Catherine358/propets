@@ -19,7 +19,7 @@ const PetInfo = (props) => {
 
     return (
         <Grid container direction="row" className="pet-info-container">
-            <Grid container item sm={5} className="pet-photo" style={{backgroundImage: `url(${photo})`}}/>
+            <Grid container item sm={5} className="pet-photo" style={{backgroundImage: `url(${photos[0]})`}}/>
             <Grid container item sm={7} className="pet-info">
                 <div className="pet-photo-mini" style={{backgroundImage: `url(${photo})`}}/>
                 <Grid container direction="row" className="details">

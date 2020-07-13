@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import './form.scss';
 import Grid from "@material-ui/core/Grid";
 import pic from "../../../../img/dog-photo-small.png";
@@ -7,10 +7,12 @@ import { withRouter } from "react-router";
 import { postLostPet } from "../../../../services";
 import { getCoordinates } from "../../../../utils";
 import { useSelector } from "react-redux";
+import {Context} from "../../../../context";
+import useFileHandlers from "../../../../custom-hooks";
 
-const onHandleSubmit = (event, history, user) => {
+const onHandleSubmit = (event, history, user, setPost) => {
     event.preventDefault();
-    const { username, avatar, email } = user;
+    const { name, avatar } = user;
     console.log(event.target.type.value);
     const type = event.target.type.value;
     const sex = event.target.sex.value;
@@ -19,6 +21,7 @@ const onHandleSubmit = (event, history, user) => {
     const addressArr = address.split(',');
     const photos = ["https://sun6-13.userapi.com/2xuIYHfKJjDhgUT_asXVUaXgJ8e_i2oGomXofQ/eqa5u0PWJi0.jpg"];
     const tags = event.target.features.value.split(',');
+    console.log(event.target.file.files[0]);
     getCoordinates(address)
         .then(location => {
             console.log(location)
@@ -26,13 +29,13 @@ const onHandleSubmit = (event, history, user) => {
                 type: type,
                 sex: sex,
                 breed: breed,
-                username: username,
+                username: name,
                 avatar: avatar,
                 address: {
-                    country: addressArr[0],
-                    city: addressArr[1],
-                    street: addressArr[2],
-                    building: addressArr[3]
+                    country: addressArr[0].trim(),
+                    city: addressArr[1].trim(),
+                    street: addressArr[2].trim(),
+                    building: addressArr[3].trim()
                 },
                 location:{
                     lat: location.lat,
@@ -42,12 +45,8 @@ const onHandleSubmit = (event, history, user) => {
                 tags: tags
             };
             console.log(post)
-            postLostPet(email, post)
-                .then(data => {
-                    console.log(data)
-                    history.push("/lost/preview");
-                })
-                .catch(error => console.log(error));
+            setPost(post);
+            history.push("/lost/preview");
         })
         .catch(error => console.log(error));
 };
@@ -55,14 +54,31 @@ const onHandleSubmit = (event, history, user) => {
 const FormMainBlock = (props) => {
     const { history, page } = props;
     const user = useSelector(state => state.profileInfo.user);
+    const context = useContext(Context);
+   // const { files, pending, next, uploading, uploaded, status, onSubmit, onChange } = useFileHandlers();
 
     console.log(user)
+
+    const previewFile = (event) => {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+
+        reader.onloadend = function () {
+            console.log(reader.result)
+        }
+
+        if(file) {
+            reader.readAsDataURL(file);
+        }
+    }
+
     return (
         <Grid container direction="row" className="main-block-lost-form">
             <Grid container item md={11} lg={8} direction="column" className="form-left-side">
                 {page === "lost" && <p className="header-form-lost">Lost your buddy? Keep calm and complete the form.</p>}
                 {page === "found" && <p className="header-form-lost">Found a pet? Please complete the form to help.</p>}
-                <form onSubmit={(event) => onHandleSubmit(event, history, user)}>
+                <form onSubmit={(event) =>
+                    onHandleSubmit(event, history, user, context.setPost)}>
                     <Grid container direction="column" className="lost-form-container">
                         <Grid container direction="row">
                             <Grid container item sm={6} className="basic-pet-info">
@@ -114,7 +130,8 @@ const FormMainBlock = (props) => {
                                             <label htmlFor="file">Browse</label>
                                         </Grid>
                                         <Grid container item sm={6}>
-                                            <input type="file" id="file" name="file" multiple className="file-browser"/>
+                                            <input type="file" id="file" name="file" multiple disabled={true}
+                                                   className="file-browser" accept="image/*" onChange={previewFile}/>
                                         </Grid>
                                     </Grid>
                                 </Grid>

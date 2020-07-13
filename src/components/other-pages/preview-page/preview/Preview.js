@@ -1,18 +1,35 @@
-import React from "react";
+import React, {useContext} from "react";
 import './preview.scss';
 import Grid from "@material-ui/core/Grid";
 import PetInfo from "../../lost-page/main-block/pet-info";
 import Button from "@material-ui/core/Button";
 import { FacebookShareButton, FacebookIcon } from "react-share";
+import { Context } from "../../../../context";
+import { postLostPet } from "../../../../services";
+import { withRouter } from "react-router";
 
 const url = "http://localhost:3000/lost/preview";
 
+const onHandleSubmit = (post, history) => {
+    const email = localStorage.getItem('email');
+    console.log(post)
+    postLostPet(email, post)
+        .then(data => {
+            console.log(data)
+            history.push("/lost"); // remember adding found page
+        })
+        .catch(error => console.log(error));
+};
+
 const Preview = (props) => {
+    const context = useContext(Context);
+    const { history } = props;
+
     return (
         <Grid container direction="row" className="preview-main-block">
             <Grid container item lg={8} md={11} className="preview-left-side" direction="column">
                 <p className="header-preview">Preview and Publish. Please share the post to your FB to be more effective.</p>
-                <PetInfo/>
+                <PetInfo post={context.newPost}/>
                 <p className="header-preview">Fingers crossed. We wish your fluffy to be found as soon as possible. Your post will expire in two weeks. To make it active again follow the instructions you’ll get in email.</p>
                 <Grid container direction="row">
                     <Grid container item sm={6} className="fb-share" justify="center">
@@ -23,7 +40,8 @@ const Preview = (props) => {
                     </Grid>
                     <Grid container item sm={6} justify="space-around">
                         <Button variant="contained" className="preview-btn-edit"><i className="fas fa-edit"/>Edit</Button>
-                        <Button className="preview-submit-btn" variant="contained">
+                        <Button className="preview-submit-btn" variant="contained" onClick={() =>
+                            onHandleSubmit(context.newPost, history)}>
                             <i className="fas fa-paw"/>Publish</Button>
                     </Grid>
                 </Grid>
@@ -36,4 +54,4 @@ const Preview = (props) => {
     )
 };
 
-export default Preview;
+export default withRouter(Preview);
