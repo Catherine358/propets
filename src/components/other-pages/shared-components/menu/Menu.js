@@ -38,7 +38,7 @@ const Menu = (props) => {
                     <p>{name[0]}<br/> {name[1]}</p>
                 </div>
             </Link>
-            <Link to={"/"}>
+            <Link to={"/propets"}>
                 <span onClick={() => {
                     localStorage.removeItem('token');
                     localStorage.removeItem('email');
