@@ -44,7 +44,7 @@ const onHandleSubmit = (event, history, user, setPost, setPage, page) => {
             console.log(post)
             setPost(post);
             setPage(page);
-            history.push(`/${page}/preview`);
+            history.push(`/propets/${page}/preview`);
         })
         .catch(error => console.log(error));
 };
