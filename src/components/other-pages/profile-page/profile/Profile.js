@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import './profile.scss';
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
-import PetInfo from "../../lost-page/main-block/pet-info";
 import Activity from "../activities";
 
 const pic = "https://sun6-16.userapi.com/E-J3H_cTJO9xr3DE2g_g_6vazm5YPD-gGqeqIQ/7Z1WCb9JJiw.jpg";
@@ -13,7 +12,7 @@ const Profile = (props) => {
 
     return (
         <Grid container direction="row" className="profile-main-block">
-            <Grid container item lg={8}>
+            <Grid container item lg={8} md={11} direction="column" className="profile-left-side">
                 <p className="header-profile">Your profile. Change, edit and manage your data.</p>
                 <form>
                     <Grid container direction="column" className="profile-info-container">
@@ -60,7 +59,7 @@ const Profile = (props) => {
                     </div>}
                 </form>
             </Grid>
-            <Grid container item lg={4} className="profile-right-side"/>
+            <Grid container item lg={4} md={1} className="profile-right-side"/>
         </Grid>
     )
 };

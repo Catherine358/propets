@@ -3,8 +3,9 @@ $monserat-medium: "Montserrat Medium", sans-serif;
 
 .menu-container {
   position: absolute;
-  height: 100%;
-  z-index: 3;
+  top: 70px;
+  height: calc(100% - 70px);
+  z-index: 1;
   width: 70%;
   display: flex;
   flex-direction: column;
@@ -16,6 +17,11 @@ $monserat-medium: "Montserrat Medium", sans-serif;
     justify-content: flex-start;
     font-size: 16px;
     color: white;
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
 
     svg {
       position: absolute;
@@ -48,6 +54,11 @@ $monserat-medium: "Montserrat Medium", sans-serif;
     border-bottom: 1px solid white;
     font-size: 12px;
     color: white;
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
 
     .profile-picture {
       margin-top: 30px;

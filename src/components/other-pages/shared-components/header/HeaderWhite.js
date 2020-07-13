@@ -7,13 +7,18 @@ import { withRouter } from "react-router";
 import {Context} from "../../../../context";
 
 const HeaderWhite = (props) => {
-    const { history } = props;
+    const { history, setMenu, menu } = props;
     const context = useContext(Context);
 
     return (
         <Grid container direction="row" className="header-white">
             <Grid sm={1} container item justify="center" className="header-white-menu-burger-btn">
-                <span className="burger">&#9776;</span>
+                {!menu ? <span className="burger" onClick={() => {
+                        setMenu(true);
+                    }}>&#9776;</span> :
+                    <span className="cross" onClick={() => {
+                        setMenu(false);
+                    }}>x</span>}
             </Grid>
             <Grid container item lg={6} md={3} sm={3}>
                 <img src={logo} alt="logo" className="header-white-logo"/>

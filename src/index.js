@@ -5,11 +5,18 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter } from "react-router-dom";
+import ErrorBoundary from "./error-boundary";
+import { Provider } from 'react-redux';
+import store from './store';
 
 ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+    <Provider store={store}>
+        <ErrorBoundary>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </ErrorBoundary>
+    </Provider>,
   document.getElementById('root')
 );
 

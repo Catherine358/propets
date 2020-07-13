@@ -1,21 +1,33 @@
 .wrapper {
     display: grid;
     grid-template-rows: 70px 623px 260px auto 125px 193px;
+    min-height: 100vh;
 }
 
 .wrapper-main {
     display: grid;
     grid-template-rows: 70px auto;
+    min-height: 100vh;
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 599px){
     .wrapper {
         grid-template-rows: 70px auto;
+    }
+
+    div.aside-block-container {
+        display: none;
     }
 }
 
 @media screen and (min-width: 600px){
     .header-for-mobile {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 959px){
+    div.aside-block-container2 {
         display: none;
     }
 }

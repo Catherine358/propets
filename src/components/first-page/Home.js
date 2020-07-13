@@ -17,8 +17,8 @@ const Home = (props) => {
     return (
         <>
             {form && <SignIn setForm={setForm} />}
-        <div className={form && "blur"}>
-            <Header setForm={setForm} setMenu={setMenu} menu={menu}/>
+        <div className={form ? "blur" : ""}>
+            <Header setForm={setForm} form={form} setMenu={setMenu} menu={menu}/>
             {menu && <Menu/>}
             <WelcomeSection setForm={setForm} form={form} />
             <MiddleLine/>

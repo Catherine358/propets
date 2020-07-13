@@ -4,6 +4,7 @@ import logo from "../../../../../img/icons/logo.svg";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import { withRouter } from "react-router";
+import {Link} from "react-router-dom";
 
 const HeaderForMobile = (props) => {
     const { history, type, setMenu, menu } = props;
@@ -23,7 +24,7 @@ const HeaderForMobile = (props) => {
                 <Grid container item xs={9}>
                     <img src={logo} alt="logo" className="header-logo"/>
                 </Grid>
-                {type !== "form" && <Grid container item xs={1}>
+                {type !== "form" && type !== "add-post" && <Grid container item xs={1}>
                     {!buttons ? <i className="fas fa-arrow-down" onClick={() => {
                         setButtons(true);
                     }}/> :
@@ -31,6 +32,10 @@ const HeaderForMobile = (props) => {
                         setButtons(false);
                     }}/>}
                 </Grid>}
+                {type === "add-post" &&
+                    <Link to={"/home/new_post"}>
+                        <i className="fas fa-plus"/>
+                    </Link>}
             </Grid>
             {buttons && <div className="header-for-mobile-buttons">
                 <Button className="header-for-mobile-lost-btn" variant="contained" onClick={() => {
