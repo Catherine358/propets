@@ -1,20 +1,35 @@
-import React, {useState} from "react";
-import pic from "../../../../../img/dog-photo-small.png";
-import photo from "../../../../../img/pet_photo.png";
+import React, { useState } from "react";
 import Grid from "@material-ui/core/Grid";
+import {countWhenPosted} from "../../../../../utils";
 
 const Post = (props) => {
-    const { favourite } = props;
+    const { favourite, post } = props;
     const [miniMenu, setMenu] = useState(false);
     const [fav, setFavourite] = useState(false);
+
+    let timeAgoPosted;
+
+    if(Object.entries(post).length !== 0) {
+        timeAgoPosted = countWhenPosted(post.datePost);
+        console.log(timeAgoPosted)
+    }
 
     return (
         <div className="post-left-side">
             <div className="post-header">
-                <img src={pic} alt="dog-photo-small"/>
+                <img src={post.avatar} alt="dog-photo-small"/>
                 <div className="post-header-text">
-                    <p>John Goodboi</p>
-                    <p className="time">2 h</p>
+                    <p>{post.username}</p>
+                    <p className="time">{
+                        timeAgoPosted !== undefined ?
+                            timeAgoPosted.hours === 0 ?
+                                timeAgoPosted.min + ' m' :
+                                timeAgoPosted.days === 0 ?
+                                    timeAgoPosted.hours + ' h' :
+                                    timeAgoPosted.years === 0 ?
+                                        timeAgoPosted.days + ' d' :
+                                        timeAgoPosted.years + ' y' : ''
+                    }</p>
                 </div>
                 {!favourite && <div className="post-icon">
                     <i className="fas fa-ellipsis-h" onClick={() => {
@@ -29,8 +44,8 @@ const Post = (props) => {
             <Grid container direction="row" className="post-text">
                 <Grid container item sm={2}/>
                 <Grid container item sm={8} justify="center">
-                    <img src={photo} alt="pet"/>
-                    <p>The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for jigs vex! Fox nymphs grab quick-jived waltz. Brick whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack
+                    <img src={post.images[0]} alt="pet"/>
+                    <p>{post.text}
                         <span>…more</span>
                     </p>
                 </Grid>
