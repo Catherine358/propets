@@ -61,3 +61,19 @@ export const getUserInfo = (email) => {
             return response.json();
         })
 };
+
+export const editUserInfo = (email, user) => {
+  const token = localStorage.getItem('token');
+  return fetch(`${BASE_URL_ACCOUNTING}/${email}`, {
+      method: 'PUT',
+      headers: {
+          'Content-Type': 'application/json',
+          'X-Token': token
+      },
+      body: JSON.stringify(user)
+  })
+      .then(response => {
+          console.log(response)
+          return response.json();
+      })
+};

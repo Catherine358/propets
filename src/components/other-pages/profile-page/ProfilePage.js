@@ -22,7 +22,7 @@ const ProfilePage = (props) => {
                     <AsideBlock selected={false} page={page} user={user}/>
                 </Grid>
                 <Grid container item md={9}>
-                    <Profile/>
+                    <Profile user={user}/>
                 </Grid>
             </Grid>
         </div>
