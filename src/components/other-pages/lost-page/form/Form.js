@@ -4,7 +4,6 @@ import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import { withRouter } from "react-router";
 import { getCoordinates } from "../../../../utils";
-import { useSelector } from "react-redux";
 import { Context } from "../../../../context";
 
 const onHandleSubmit = (event, history, user, setPost, setPage, page) => {
@@ -55,8 +54,7 @@ const onHandleSubmit = (event, history, user, setPost, setPage, page) => {
 };
 
 const FormMainBlock = (props) => {
-    const { history, page } = props;
-    const user = useSelector(state => state.profileInfo.user);
+    const { history, page, user } = props;
     const context = useContext(Context);
    // const { files, pending, next, uploading, uploaded, status, onSubmit, onChange } = useFileHandlers();
 

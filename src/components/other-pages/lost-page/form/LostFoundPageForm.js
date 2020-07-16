@@ -22,7 +22,7 @@ const LostFoundPageForm = (props) => {
                     <AsideBlock selected={false} page={page} user={user}/>
                 </Grid>
                 <Grid container item sm={9}>
-                    <FormMainBlock page={page}/>
+                    <FormMainBlock page={page} user={user}/>
                 </Grid>
             </Grid>
         </div>
