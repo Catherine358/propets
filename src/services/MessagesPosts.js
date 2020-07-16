@@ -14,3 +14,19 @@ export const getAllPosts = () => {
             return response.json();
         })
 };
+
+export const createNewPost = (email, newPost) => {
+  const token = localStorage.getItem('token');
+  return fetch(`${BASE_URL_POSTS}/${email}`, {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+          'X-Token': token
+      },
+      body: JSON.stringify(newPost)
+  })
+      .then(response => {
+          console.log(response)
+          return response.json();
+      })
+};

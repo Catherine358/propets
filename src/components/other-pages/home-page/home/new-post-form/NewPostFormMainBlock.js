@@ -22,7 +22,7 @@ const NewPostForm = (props) => {
                     <AsideBlock selected={false} page="" user={user}/>
                 </Grid>
                 <Grid container item sm={9}>
-                    <NewPost/>
+                    <NewPost user={user}/>
                 </Grid>
             </Grid>
         </div>
