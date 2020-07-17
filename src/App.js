@@ -14,10 +14,10 @@ import {useDispatch, useSelector} from "react-redux";
 import {fetchProfileInfo} from "./actions/actions";
 
 const App = (props) => {
+    const tokenTmp = localStorage.getItem('token') || '';
     const [page, setPage] = useState('');
     const [newPost, setPost] = useState({});
-    const [loginStatus, setStatus] = useState('NOT_LOGGED_IN');
-    const [token, setToken] = useState('');
+    const [token, setToken] = useState(tokenTmp);
     const user = useSelector(state => state.profileInfo.user);
     const dispatch = useDispatch();
 
@@ -27,17 +27,15 @@ const App = (props) => {
     }, []);
 
     useEffect(() => {
+        console.log(token)
         checkLoginStatus();
     }, []);
 
     const checkLoginStatus = () => {
-        if(localStorage.getItem('token') === null && loginStatus === 'LOGGED_IN') {
-            setStatus('NOT_LOGGED_IN');
+        if(localStorage.getItem('token') === null) {
             setToken('');
-        } else if(localStorage.getItem('token') !== null && loginStatus === 'NOT_LOGGED_IN') {
-            const tokenTmp = localStorage.getItem('token');
+        } else if(localStorage.getItem('token') !== null) {
             setToken(tokenTmp);
-            setStatus('LOGGED_IN');
         }
     };
 
@@ -47,44 +45,45 @@ const App = (props) => {
                 page: page,
                 setPage: setPage,
                 newPost: newPost,
-                setPost: setPost
+                setPost: setPost,
+                setToken: setToken
             }}>
-                <Route exact path="/propets" render={props => (
-                    token ? <Redirect to={"/propets/home"}/> :
-                    <div className="wrapper">
-                        <Home/>
-                    </div>
+                <Route exact path="/propets/home" render={props => (
+                    <HomePage {...props} page="home" user={user}/>
                 )}/>
                 {!token && <Redirect to={"/propets"}/>}
-                <Route exact path="/propets/lost/form" render={props => (
-                    <LostFoundPageForm page="lost" user={user}/>
-                )}/>
-                <Route exact path="/propets/found/form" render={props => (
-                    <LostFoundPageForm page="found" user={user}/>
-                )}/>
-                <Route exact path="/propets/lost/preview" render={props => (
-                    <PreviewPage page="lost" user={user}/>
-                )}/>
-                <Route exact path="/propets/found/preview" render={props => (
-                    <PreviewPage page="found" user={user}/>
-                )}/>
-                <Route exact path="/propets/lost" render={props => (
-                    <LostFoundPage page="lost" user={user}/>
-                )}/>
-                <Route exact path="/propets/found" render={props => (
-                    <LostFoundPage page="found" user={user}/>
-                )}/>
-                <Route exact path="/propets/profile" render={props => (
-                    <ProfilePage page="profile" user={user}/>
+                <Route exact path="/propets" render={props => (
+                    token ? <Redirect to={"/propets/home"}/> :
+                        <div className="wrapper">
+                            <Home {...props}/>
+                        </div>
                 )}/>
                 <Route exact path="/propets/home/new_post" render={props => (
-                    <NewPostForm user={user}/>
+                    <NewPostForm {...props} user={user}/>
                 )}/>
-                <Route exact path="/propets/home" render={props => (
-                    <HomePage page="home" user={user}/>
+                <Route exact path="/propets/lost/form" render={props => (
+                    <LostFoundPageForm {...props} page="lost" user={user}/>
+                )}/>
+                <Route exact path="/propets/found/form" render={props => (
+                    <LostFoundPageForm {...props} page="found" user={user}/>
+                )}/>
+                <Route exact path="/propets/lost/preview" render={props => (
+                    <PreviewPage {...props} page="lost" user={user}/>
+                )}/>
+                <Route exact path="/propets/found/preview" render={props => (
+                    <PreviewPage {...props} page="found" user={user}/>
+                )}/>
+                <Route exact path="/propets/lost" render={props => (
+                    <LostFoundPage {...props} page="lost" user={user}/>
+                )}/>
+                <Route exact path="/propets/found" render={props => (
+                    <LostFoundPage {...props} page="found" user={user}/>
+                )}/>
+                <Route exact path="/propets/profile" render={props => (
+                    <ProfilePage {...props} page="profile" user={user}/>
                 )}/>
                 <Route exact path="/propets/favourites" render={props => (
-                    <FavouritesPage page="favourites" user={user}/>
+                    <FavouritesPage {...props} page="favourites" user={user}/>
                 )}/>
             </Context.Provider>
         </Switch>

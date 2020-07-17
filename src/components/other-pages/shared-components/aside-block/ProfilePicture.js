@@ -1,11 +1,12 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Link } from "react-router-dom";
+import {Context} from "../../../../context";
 
 const pic = "https://sun6-16.userapi.com/E-J3H_cTJO9xr3DE2g_g_6vazm5YPD-gGqeqIQ/7Z1WCb9JJiw.jpg";
 
 const ProfilePicture = (props) => {
     const { page, user } = props;
-
+    const context = useContext(Context);
     const name = user.name !== undefined ? user.name.split(" ") : [];
 
     return (
@@ -23,6 +24,7 @@ const ProfilePicture = (props) => {
                 <span onClick={() => {
                     localStorage.removeItem('token');
                     localStorage.removeItem('email');
+                    context.setToken('');
                 }}><i className="fas fa-sign-out-alt"/>Logout</span>
             </Link>
         </div>
