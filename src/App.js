@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import { Switch, Route } from "react-router";
+import {Switch, Route, Redirect} from "react-router";
 import './App.css';
 import Home from "./components/first-page/Home";
 import LostFoundPage from "./components/other-pages/lost-page";
@@ -14,8 +14,10 @@ import {useDispatch, useSelector} from "react-redux";
 import {fetchProfileInfo} from "./actions/actions";
 
 const App = (props) => {
-    const [page, setPage] = useState("");
+    const [page, setPage] = useState('');
     const [newPost, setPost] = useState({});
+    const [loginStatus, setStatus] = useState('NOT_LOGGED_IN');
+    const [token, setToken] = useState('');
     const user = useSelector(state => state.profileInfo.user);
     const dispatch = useDispatch();
 
@@ -23,6 +25,21 @@ const App = (props) => {
         const email = localStorage.getItem('email');
         fetchProfileInfo(dispatch, email);
     }, []);
+
+    useEffect(() => {
+        checkLoginStatus();
+    }, []);
+
+    const checkLoginStatus = () => {
+        if(localStorage.getItem('token') === null && loginStatus === 'LOGGED_IN') {
+            setStatus('NOT_LOGGED_IN');
+            setToken('');
+        } else if(localStorage.getItem('token') !== null && loginStatus === 'NOT_LOGGED_IN') {
+            const tokenTmp = localStorage.getItem('token');
+            setToken(tokenTmp);
+            setStatus('LOGGED_IN');
+        }
+    };
 
     return (
         <Switch>
@@ -33,10 +50,12 @@ const App = (props) => {
                 setPost: setPost
             }}>
                 <Route exact path="/propets" render={props => (
+                    token ? <Redirect to={"/propets/home"}/> :
                     <div className="wrapper">
                         <Home/>
                     </div>
                 )}/>
+                {!token && <Redirect to={"/propets"}/>}
                 <Route exact path="/propets/lost/form" render={props => (
                     <LostFoundPageForm page="lost" user={user}/>
                 )}/>

@@ -14,17 +14,17 @@ const Favourites = (props) => {
             await getFavouritePosts(email)
                 .then(data => {
                     console.log(data)
-                    setFavorites(data.posts);
+                    setFavorites(data);
                 })
                 .catch(error => console.log(error));
         }
-        fetchPostsFavourites(email);
+        //fetchPostsFavourites(email);
     }, []);
 
     const arrTmp = [];
 
     postsFav.forEach(post => {
-        arrTmp.push(<Post favourite={true} post={post}/>);
+        arrTmp.push(<Post favourite={true} post={post.otherPosts}/>);
     });
 
     return (
