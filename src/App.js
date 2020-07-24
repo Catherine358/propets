@@ -51,8 +51,8 @@ const App = (props) => {
                 <Route exact path="/propets/home" render={props => (
                     <HomePage {...props} page="home" user={user}/>
                 )}/>
-                {!token && <Redirect to={"/propets"}/>}
-                <Route exact path="/propets" render={props => (
+                {!token && <Redirect to={"/"}/>}
+                <Route exact path="/" render={props => (
                     token ? <Redirect to={"/propets/home"}/> :
                         <div className="wrapper">
                             <Home {...props}/>
